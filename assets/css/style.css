@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+:root {
+    --orange-color: #da8b24;
+    --black-color: #0a0a0a;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.orange-color {
+    background-color: var(--orange-color);
+}
+
+.black-color-text {
+    color: var(--black-color);
+}
