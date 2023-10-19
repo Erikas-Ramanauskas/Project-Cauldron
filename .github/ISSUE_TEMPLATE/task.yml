@@ -1,0 +1,12 @@
+name: Task
+description: Issue for task
+title: 'TASK: '
+labels: Task
+projects: ['Erikas-Ramanauskas/3']
+body:
+- type: textarea
+  attributes:
+    label: "Description:"
+- type: markdown
+  attributes:
+    value: "Thanks for contributing to the Project-Cauldron!"
