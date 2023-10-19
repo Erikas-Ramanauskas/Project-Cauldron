@@ -1,0 +1,9 @@
+name: Dev Issue
+description: Issue for development task
+title: 'DEV: '
+labels: DEV Task
+projects: ['Erikas-Ramanauskas/3']
+body:
+- type: textarea
+  attributes:
+    label: "Description:"
