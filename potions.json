@@ -1,6 +1,7 @@
 {
   "potions": [
     {
+      "id": "1",
       "name": "Whispering Shadows Elixir",
       "ingredients": [
         "Bat Wing",
@@ -13,6 +14,7 @@
       "picture": ""
     },
     {
+      "id": "2",
       "name": "Inferno Ignition Tonic",
       "ingredients": [
         "Eye of Newt",
@@ -26,6 +28,7 @@
       "picture": ""
     },
     {
+      "id": "3",
       "name": "Faerie Dreamweaver Elixir",
       "ingredients": [
         "Lizard tail",
@@ -39,6 +42,7 @@
       "picture": ""
     },
     {
+      "id": "4",
       "name": "Wispwood Whispers Elixir",
       "ingredients": [
         "Werewolf Fur",
@@ -52,6 +56,7 @@
       "picture": ""
     },
     {
+      "id": "5",
       "name": "Lunar Reverie Brew",
       "ingredients": [
         "Unicorn Horn",
@@ -64,6 +69,7 @@
       "picture": ""
     },
     {
+      "id": "6",
       "name": "Draconic Resilience Elixir",
       "ingredients": [
         "Frogs leg",
@@ -77,6 +83,7 @@
       "picture": ""
     },
     {
+      "id": "7",
       "name": "Shadowcloak Elixir",
       "ingredients": [
         "Lizard tail",
@@ -90,6 +97,7 @@
       "picture": ""
     },
     {
+      "id": "8",
       "name": "Viper's Visions Draught",
       "ingredients": [
         "Vampire's fang",
@@ -103,6 +111,7 @@
       "picture": ""
     },
     {
+      "id": "9",
       "name": "Siren's Lament Potion",
       "ingredients": [
         "Basilisk Venom",
@@ -115,6 +124,7 @@
       "picture": ""
     },
     {
+      "id": "10",
       "name": "Astral Sojourn Serum",
       "ingredients": [
         "Serpent Scales",
@@ -128,6 +138,7 @@
       "picture": ""
     },
     {
+      "id": "11",
       "name": "Petrifying Euphoria Brew",
       "ingredients": [
         "Lizard tail",
@@ -141,6 +152,7 @@
       "picture": ""
     },
     {
+      "id": "12",
       "name": "Eagle's Insight Elixir",
       "ingredients": [
         "Wyvern Scale",
@@ -154,6 +166,7 @@
       "picture": ""
     },
     {
+      "id": "13",
       "name": "Pixie's Giggling Goblet",
       "ingredients": [
         "Werewolf Fur",
@@ -166,6 +179,7 @@
       "picture": ""
     },
     {
+      "id": "14",
       "name": "Chimera's Chalice Mix",
       "ingredients": [
         "Eye of Newt",
@@ -179,6 +193,7 @@
       "picture": ""
     },
     {
+      "id": "15",
       "name": "Moonlit Mirage Elixir",
       "ingredients": [
         "Dragon's Tooth",
@@ -192,6 +207,7 @@
       "picture": ""
     },
     {
+      "id": "16",
       "name": "Elemental Harmony Elixir",
       "ingredients": [
         "Frogs leg",
@@ -205,6 +221,7 @@
       "picture": ""
     },
     {
+      "id": "17",
       "name": "Leviathan's Call Concoction",
       "ingredients": [
         "Kraken Ink",
@@ -217,6 +234,7 @@
       "picture": ""
     },
     {
+      "id": "18",
       "name": "Harpy's Lullaby Elixir",
       "ingredients": [
         "Lizard tail",
@@ -230,6 +248,7 @@
       "picture": ""
     },
     {
+      "id": "19",
       "name": "Mystic Serenity Elixir",
       "ingredients": [
         "Bat Wing",
@@ -243,6 +262,7 @@
       "picture": ""
     },
     {
+      "id": "20",
       "name": "Naiad's Aquatic Aura Brew",
       "ingredients": [
         "Ancient Celestial Sand",
@@ -256,6 +276,7 @@
       "picture": ""
     },
     {
+      "id": "21",
       "name": "Gryphon's Quill Inkwell",
       "ingredients": [
         "Eye of Newt",
@@ -268,6 +289,7 @@
       "picture": ""
     },
     {
+      "id": "22",
       "name": "Djinn's Desire Elixir",
       "ingredients": [
         "Kraken Ink",
@@ -281,6 +303,7 @@
       "picture": ""
     },
     {
+      "id": "23",
       "name": "Spectral Whisper Draft",
       "ingredients": [
         "Dragon's Tooth",
@@ -294,6 +317,7 @@
       "picture": ""
     },
     {
+      "id": "24",
       "name": "Thunderstrike Fury Elixir",
       "ingredients": [
         "Serpent Scales",
@@ -307,6 +331,7 @@
       "picture": ""
     },
     {
+      "id": "25",
       "name": "Eclipsed Destiny Elixir",
       "ingredients": [
         "Lizard tail",
@@ -321,6 +346,7 @@
       "picture": ""
     },
     {
+      "id": "26",
       "name": "Celestial Alchemy Concoction",
       "ingredients": [
         "Unicorn Horn",
@@ -334,6 +360,82 @@
       "agility": "0",
       "health": "8",
       "picture": ""
+    }
+  ],
+  "ingredients":[{
+    "id": "1",
+    "name": "Bat Wing",
+    "picture": ""
+    },
+    {
+    "id": "2",
+    "name": "Basilisk Venom",
+    "picture": ""
+    },
+    {
+    "id": "3",
+    "name": "Eye of Newt",
+    "picture": ""
+    },
+    {
+    "id": "4",
+    "name": "Unicorn Horn",
+    "picture": ""
+    },
+    {
+    "id": "5",
+    "name": "Split Bark",
+    "picture": ""
+    },
+    {
+    "id": "6",
+    "name": "Lizard tail",
+    "picture": ""
+    },
+    {
+    "id": "7",
+    "name": "Vampire's fang",
+    "picture": ""
+    },
+    {
+    "id": "8",
+    "name": "Kraken Ink",
+    "picture": ""
+    },
+    {
+    "id": "9",
+    "name": "Werewolf Fur",
+    "picture": ""
+    },
+    {
+    "id": "10",
+    "name": "Wyvern Scale",
+    "picture": ""
+    },
+    {
+    "id": "11",
+    "name": "Dragon's Tooth",
+    "picture": ""
+    },
+    {
+    "id": "12",
+    "name": "Serpent Scales",
+    "picture": ""
+    },
+    {
+    "id": "13",
+    "name": "Ancient Celestial Sand",
+    "picture": ""
+    },
+    {
+    "id": "14",
+    "name": "Phoenix Feather",
+    "picture": ""
+    },
+    {
+    "id": "15",
+    "name": "Frogs leg",
+    "picture": ""
     }
   ]
 }
