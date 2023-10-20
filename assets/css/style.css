@@ -54,3 +54,9 @@ body {
     background: url('../images/background_720.webp') no-repeat center center;
     background-size: cover;
 }
+
+.footer-links {
+    font-size: 15px;
+    text-decoration: none;
+    color: inherit;
+}
