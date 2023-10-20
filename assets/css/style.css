@@ -17,6 +17,11 @@ body {
     overflow-x: hidden;
 }
 
+.greyscaled-image {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
 .orange-color {
     background-color: var(--orange-color);
 }
