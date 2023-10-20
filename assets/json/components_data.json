@@ -1,11 +1,13 @@
 {
-  "potions": [
+"potions": [
     {
-      "id": "1",
+      "id": "0",
       "name": "Whispering Shadows Elixir",
       "ingredients": [
         "Bat Wing",
-        "Basilisk Venom"
+        "Basilisk Venom",
+        "6",
+        "x"
       ],
       "strength": "1",
       "dexterity": "0",
@@ -14,12 +16,14 @@
       "picture": ""
     },
     {
-      "id": "2",
+      "id": "1",
       "name": "Inferno Ignition Tonic",
       "ingredients": [
         "Eye of Newt",
         "Unicorn Horn",
-        "Split Bark"
+        "Split Bark",
+        "13",
+        "x"
       ],
       "strength": "2",
       "dexterity": "0",
@@ -28,12 +32,14 @@
       "picture": ""
     },
     {
-      "id": "3",
+      "id": "2",
       "name": "Faerie Dreamweaver Elixir",
       "ingredients": [
         "Lizard tail",
         "Vampire's fang",
-        "Kraken Ink"
+        "Kraken Ink",
+        "14",
+        "x"
       ],
       "strength": "3",
       "dexterity": "-1",
@@ -42,12 +48,14 @@
       "picture": ""
     },
     {
-      "id": "4",
+      "id": "3",
       "name": "Wispwood Whispers Elixir",
       "ingredients": [
         "Werewolf Fur",
         "Wyvern Scale",
-        "Eye of Newt"
+        "Eye of Newt",
+        "19",
+        "x"
       ],
       "strength": "3",
       "dexterity": "0",
@@ -56,11 +64,13 @@
       "picture": ""
     },
     {
-      "id": "5",
+      "id": "4",
       "name": "Lunar Reverie Brew",
       "ingredients": [
         "Unicorn Horn",
-        "Phoenix Feather"
+        "Phoenix Feather",
+        "9",
+        "x"
       ],
       "strength": "0",
       "dexterity": "1",
@@ -69,12 +79,14 @@
       "picture": ""
     },
     {
-      "id": "6",
+      "id": "5",
       "name": "Draconic Resilience Elixir",
       "ingredients": [
         "Frogs leg",
         "Dragon's Tooth",
-        "Bat Wing"
+        "Bat Wing",
+        "15",
+        "x"
       ],
       "strength": "0",
       "dexterity": "2",
@@ -83,12 +95,14 @@
       "picture": ""
     },
     {
-      "id": "7",
+      "id": "6",
       "name": "Shadowcloak Elixir",
       "ingredients": [
         "Lizard tail",
         "Eye of Newt",
-        "Ancient Celestial Sand"
+        "Ancient Celestial Sand",
+        "4",
+        "x"
       ],
       "strength": "-1",
       "dexterity": "3",
@@ -97,12 +111,14 @@
       "picture": ""
     },
     {
-      "id": "8",
+      "id": "7",
       "name": "Viper's Visions Draught",
       "ingredients": [
         "Vampire's fang",
         "Bat Wing",
-        "Split Bark"
+        "Split Bark",
+        "1",
+        "x"
       ],
       "strength": "0",
       "dexterity": "3",
@@ -111,11 +127,13 @@
       "picture": ""
     },
     {
-      "id": "9",
+      "id": "8",
       "name": "Siren's Lament Potion",
       "ingredients": [
         "Basilisk Venom",
-        "Wyvern Scale"
+        "Wyvern Scale",
+        "12",
+        "x"
       ],
       "strength": "0",
       "dexterity": "0",
@@ -124,12 +142,14 @@
       "picture": ""
     },
     {
-      "id": "10",
+      "id": "9",
       "name": "Astral Sojourn Serum",
       "ingredients": [
         "Serpent Scales",
         "Unicorn Horn",
-        "Kraken Ink"
+        "Kraken Ink",
+        "23",
+        "x"
       ],
       "strength": "0",
       "dexterity": "0",
@@ -138,12 +158,14 @@
       "picture": ""
     },
     {
-      "id": "11",
+      "id": "10",
       "name": "Petrifying Euphoria Brew",
       "ingredients": [
         "Lizard tail",
         "Frogs leg",
-        "Split Bark"
+        "Split Bark",
+        "2",
+        "x"
       ],
       "strength": "-1",
       "dexterity": "0",
@@ -152,12 +174,14 @@
       "picture": ""
     },
     {
-      "id": "12",
+      "id": "11",
       "name": "Eagle's Insight Elixir",
       "ingredients": [
         "Wyvern Scale",
         "Vampire's fang",
-        "Basilisk Venom"
+        "Basilisk Venom",
+        "5",
+        "x"
       ],
       "strength": "0",
       "dexterity": "-1",
@@ -166,11 +190,13 @@
       "picture": ""
     },
     {
-      "id": "13",
+      "id": "12",
       "name": "Pixie's Giggling Goblet",
       "ingredients": [
         "Werewolf Fur",
-        "Phoenix Feather"
+        "Phoenix Feather",
+        "3",
+        "x"
       ],
       "strength": "-1",
       "dexterity": "0",
@@ -179,12 +205,13 @@
       "picture": ""
     },
     {
-      "id": "14",
+      "id": "13",
       "name": "Chimera's Chalice Mix",
       "ingredients": [
         "Eye of Newt",
         "Unicorn Horn",
-        "Werewolf Fur"
+        "Werewolf Fur",
+        "25"
       ],
       "strength": "-2",
       "dexterity": "0",
@@ -193,12 +220,14 @@
       "picture": ""
     },
     {
-      "id": "15",
+      "id": "14",
       "name": "Moonlit Mirage Elixir",
       "ingredients": [
         "Dragon's Tooth",
         "Serpent Scales",
-        "Split Bark"
+        "Split Bark",
+        "18",
+        "x"
       ],
       "strength": "-3",
       "dexterity": "1",
@@ -207,12 +236,13 @@
       "picture": ""
     },
     {
-      "id": "16",
+      "id": "15",
       "name": "Elemental Harmony Elixir",
       "ingredients": [
         "Frogs leg",
         "Wyvern Scale",
-        "Ancient Celestial Sand"
+        "Ancient Celestial Sand",
+        "26"
       ],
       "strength": "-3",
       "dexterity": "0",
@@ -221,11 +251,13 @@
       "picture": ""
     },
     {
-      "id": "17",
+      "id": "16",
       "name": "Leviathan's Call Concoction",
       "ingredients": [
         "Kraken Ink",
-        "Basilisk Venom"
+        "Basilisk Venom",
+        "10",
+        "x"
       ],
       "strength": "0",
       "dexterity": "-1",
@@ -234,12 +266,14 @@
       "picture": ""
     },
     {
-      "id": "18",
+      "id": "17",
       "name": "Harpy's Lullaby Elixir",
       "ingredients": [
         "Lizard tail",
         "Serpent Scales",
-        "Split Bark"
+        "Split Bark",
+        "7",
+        "x"
       ],
       "strength": "0",
       "dexterity": "-2",
@@ -248,12 +282,14 @@
       "picture": ""
     },
     {
-      "id": "19",
+      "id": "18",
       "name": "Mystic Serenity Elixir",
       "ingredients": [
         "Bat Wing",
         "Dragon's Tooth",
-        "Phoenix Feather"
+        "Phoenix Feather",
+        "16",
+        "x"
       ],
       "strength": "1",
       "dexterity": "-3",
@@ -262,12 +298,14 @@
       "picture": ""
     },
     {
-      "id": "20",
+      "id": "19",
       "name": "Naiad's Aquatic Aura Brew",
       "ingredients": [
         "Ancient Celestial Sand",
         "Kraken Ink",
-        "Vampire's fang"
+        "Vampire's fang",
+        "21",
+        "x"
       ],
       "strength": "0",
       "dexterity": "-3",
@@ -276,11 +314,13 @@
       "picture": ""
     },
     {
-      "id": "21",
+      "id": "20",
       "name": "Gryphon's Quill Inkwell",
       "ingredients": [
         "Eye of Newt",
-        "Phoenix Feather"
+        "Phoenix Feather",
+        "8",
+        "x"
       ],
       "strength": "0",
       "dexterity": "0",
@@ -289,12 +329,14 @@
       "picture": ""
     },
     {
-      "id": "22",
+      "id": "21",
       "name": "Djinn's Desire Elixir",
       "ingredients": [
         "Kraken Ink",
         "Frogs leg",
-        "Werewolf Fur"
+        "Werewolf Fur",
+        "17",
+        "x"
       ],
       "strength": "0",
       "dexterity": "0",
@@ -303,12 +345,14 @@
       "picture": ""
     },
     {
-      "id": "23",
+      "id": "22",
       "name": "Spectral Whisper Draft",
       "ingredients": [
         "Dragon's Tooth",
         "Serpent Scales",
-        "Wyvern Scale"
+        "Wyvern Scale",
+        "20",
+        "x"
       ],
       "strength": "1",
       "dexterity": "0",
@@ -317,12 +361,14 @@
       "picture": ""
     },
     {
-      "id": "24",
+      "id": "23",
       "name": "Thunderstrike Fury Elixir",
       "ingredients": [
         "Serpent Scales",
         "Ancient Celestial Sand",
-        "Frogs leg"
+        "Frogs leg",
+        "22",
+        "x"
       ],
       "strength": "0",
       "dexterity": "1",
@@ -331,22 +377,23 @@
       "picture": ""
     },
     {
-      "id": "25",
+      "id": "24",
       "name": "Eclipsed Destiny Elixir",
       "ingredients": [
         "Lizard tail",
         "Basilisk Venom",
         "Dragon's Tooth",
-        "Ancient Celestial Sand"
+        "Ancient Celestial Sand",
+        "11"
       ],
-      "strength": "0",
+      "strength": "x",
       "dexterity": "0",
       "agility": "0",
       "health": "5",
       "picture": ""
     },
     {
-      "id": "26",
+      "id": "25",
       "name": "Celestial Alchemy Concoction",
       "ingredients": [
         "Unicorn Horn",
@@ -355,289 +402,291 @@
         "Phoenix Feather",
         "Bat Wing"
       ],
-      "strength": "0",
+      "strength": "24",
       "dexterity": "0",
       "agility": "0",
       "health": "8",
       "picture": ""
     }
   ],
-  "ingredients":[{
-    "id": "1",
-    "name": "Bat Wing",
-    "picture": ""
+ "ingredients": [
+    {
+        "id": "0",
+        "name": "Bat Wing",
+        "picture": ""
     },
     {
-    "id": "2",
-    "name": "Basilisk Venom",
-    "picture": ""
+        "id": "1",
+        "name": "Basilisk Venom",
+        "picture": ""
     },
     {
-    "id": "3",
-    "name": "Eye of Newt",
-    "picture": ""
+        "id": "2",
+        "name": "Eye of Newt",
+        "picture": ""
     },
     {
-    "id": "4",
-    "name": "Unicorn Horn",
-    "picture": ""
+        "id": "3",
+        "name": "Unicorn Horn",
+        "picture": ""
     },
     {
-    "id": "5",
-    "name": "Split Bark",
-    "picture": ""
+        "id": "4",
+        "name": "Split Bark",
+        "picture": ""
     },
     {
-    "id": "6",
-    "name": "Lizard tail",
-    "picture": ""
+        "id": "5",
+        "name": "Lizard tail",
+        "picture": ""
     },
     {
-    "id": "7",
-    "name": "Vampire's fang",
-    "picture": ""
+        "id": "6",
+        "name": "Vampire's fang",
+        "picture": ""
     },
     {
-    "id": "8",
-    "name": "Kraken Ink",
-    "picture": ""
+        "id": "7",
+        "name": "Kraken Ink",
+        "picture": ""
     },
     {
-    "id": "9",
-    "name": "Werewolf Fur",
-    "picture": ""
+        "id": "8",
+        "name": "Werewolf Fur",
+        "picture": ""
     },
     {
-    "id": "10",
-    "name": "Wyvern Scale",
-    "picture": ""
+        "id": "9",
+        "name": "Wyvern Scale",
+        "picture": ""
     },
     {
-    "id": "11",
-    "name": "Dragon's Tooth",
-    "picture": ""
+        "id": "10",
+        "name": "Dragon's Tooth",
+        "picture": ""
     },
     {
-    "id": "12",
-    "name": "Serpent Scales",
-    "picture": ""
+        "id": "11",
+        "name": "Serpent Scales",
+        "picture": ""
     },
     {
-    "id": "13",
-    "name": "Ancient Celestial Sand",
-    "picture": ""
+        "id": "12",
+        "name": "Ancient Celestial Sand",
+        "picture": ""
     },
     {
-    "id": "14",
-    "name": "Phoenix Feather",
-    "picture": ""
+        "id": "13",
+        "name": "Phoenix Feather",
+        "picture": ""
     },
     {
-    "id": "15",
-    "name": "Frogs leg",
-    "picture": ""
+        "id": "14",
+        "name": "Frogs leg",
+        "picture": ""
     }
-  ],
-  "opponents": [
-  {
-    "id": 1,
-    "Villain": "Little Pumpkin",
-    "Strength": 5,
-    "Agility": 3,
-    "Dexterity": 4,
-    "extraStr": 1,
-    "extraAgil": 1,
-    "extraDex": 2
-  },
-  {
-    "id": 2,
-    "Villain": "Mini Witch",
-    "Strength": 4,
-    "Agility": 4,
-    "Dexterity": 4,
-    "extraStr": 1,
-    "extraAgil": 1,
-    "extraDex": 2
-  },
-  {
-    "id": 3,
-    "Villain": "Tiny Vampire",
-    "Strength": 3,
-    "Agility": 5,
-    "Dexterity": 4,
-    "extraStr": 1,
-    "extraAgil": 2,
-    "extraDex": 1
-  },
-  {
-    "id": 4,
-    "Villain": "Baby Bumblebee",
-    "Strength": 3,
-    "Agility": 3,
-    "Dexterity": 6,
-    "extraStr": 1,
-    "extraAgil": 1,
-    "extraDex": 2
-  },
-  {
-    "id": 5,
-    "Villain": "Junior Ghostbuster",
-    "Strength": 4,
-    "Agility": 4,
-    "Dexterity": 4,
-    "extraStr": 1,
-    "extraAgil": 1,
-    "extraDex": 2
-  },
-  {
-    "id": 6,
-    "Villain": "Toddler Mummy",
-    "Strength": 4,
-    "Agility": 3,
-    "Dexterity": 5,
-    "extraStr": 1,
-    "extraAgil": 1,
-    "extraDex": 2
-  },
-  {
-    "id": 7,
-    "Villain": "Petite Pirate",
-    "Strength": 5,
-    "Agility": 4,
-    "Dexterity": 3,
-    "extraStr": 2,
-    "extraAgil": 1,
-    "extraDex": 1
-  },
-  {
-    "id": 8,
-    "Villain": "Adorable Alien",
-    "Strength": 3,
-    "Agility": 5,
-    "Dexterity": 4,
-    "extraStr": 1,
-    "extraAgil": 2,
-    "extraDex": 1
-  },
-  {
-    "id": 9,
-    "Villain": "Sweet Skeleton",
-    "Strength": 4,
-    "Agility": 3,
-    "Dexterity": 5,
-    "extraStr": 1,
-    "extraAgil": 1,
-    "extraDex": 2
-  },
-  {
-    "id": 10,
-    "Villain": "Baby Bat",
-    "Strength": 3,
-    "Agility": 4,
-    "Dexterity": 5,
-    "extraStr": 1,
-    "extraAgil": 2,
-    "extraDex": 1
-  },
-  {
-    "id": 11,
-    "Villain": "Mini Monster",
-    "Strength": 5,
-    "Agility": 4,
-    "Dexterity": 3,
-    "extraStr": 2,
-    "extraAgil": 1,
-    "extraDex": 1
-  },
-  {
-    "id": 12,
-    "Villain": "Lil' Fairy Princess",
-    "Strength": 3,
-    "Agility": 4,
-    "Dexterity": 5,
-    "extraStr": 1,
-    "extraAgil": 2,
-    "extraDex": 1
-  },
-  {
-    "id": 13,
-    "Villain": "Tiny Superhero",
-    "Strength": 5,
-    "Agility": 4,
-    "Dexterity": 3,
-    "extraStr": 2,
-    "extraAgil": 1,
-    "extraDex": 1
-  },
-  {
-    "id": 14,
-    "Villain": "Mini Mouse",
-    "Strength": 4,
-    "Agility": 5,
-    "Dexterity": 3,
-    "extraStr": 1,
-    "extraAgil": 2,
-    "extraDex": 1
-  },
-  {
-    "id": 15,
-    "Villain": "Little Dinosaur",
-    "Strength": 5,
-    "Agility": 3,
-    "Dexterity": 4,
-    "extraStr": 2,
-    "extraAgil": 1,
-    "extraDex": 1
-  },
-  {
-    "id": 16,
-    "Villain": "Junior Zombie",
-    "Strength": 4,
-    "Agility": 5,
-    "Dexterity": 3,
-    "extraStr": 1,
-    "extraAgil": 2,
-    "extraDex": 1
-  },
-  {
-    "id": 17,
-    "Villain": "Tiny Astronaut",
-    "Strength": 4,
-    "Agility": 4,
-    "Dexterity": 4,
-    "extraStr": 1,
-    "extraAgil": 1,
-    "extraDex": 2
-  },
-  {
-    "id": 18,
-    "Villain": "Little Red Riding Hood",
-    "Strength": 4,
-    "Agility": 4,
-    "Dexterity": 4,
-    "extraStr": 1,
-    "extraAgil": 1,
-    "extraDex": 2
-  },
-  {
-    "id": 19,
-    "Villain": "Little Wolf",
-    "Strength": 5,
-    "Agility": 3,
-    "Dexterity": 4,
-    "extraStr": 2,
-    "extraAgil": 1,
-    "extraDex": 1
-  },
-  {
-    "id": 20,
-    "Villain": "Baby Ladybug",
-    "Strength": 3,
-    "Agility": 4,
-    "Dexterity": 5,
-    "extraStr": 1,
-    "extraAgil": 2,
-    "extraDex": 1
-  }
+],
+  "villains": [
+    {
+        "id": 0,
+        "villain": "Little Pumpkin",
+        "Strength": 5,
+        "Agility": 3,
+        "Dexterity": 4,
+        "extraStr": 1,
+        "extraAgil": 1,
+        "extraDex": 2
+    },
+    {
+        "id": 1,
+        "villain": "Mini Witch",
+        "Strength": 4,
+        "Agility": 4,
+        "Dexterity": 4,
+        "extraStr": 1,
+        "extraAgil": 1,
+        "extraDex": 2
+    },
+    {
+        "id": 2,
+        "villain": "Tiny Vampire",
+        "Strength": 3,
+        "Agility": 5,
+        "Dexterity": 4,
+        "extraStr": 1,
+        "extraAgil": 2,
+        "extraDex": 1
+    },
+    {
+        "id": 3,
+        "villain": "Baby Bumblebee",
+        "Strength": 3,
+        "Agility": 3,
+        "Dexterity": 6,
+        "extraStr": 1,
+        "extraAgil": 1,
+        "extraDex": 2
+    },
+    {
+        "id": 4,
+        "villain": "Junior Ghostbuster",
+        "Strength": 4,
+        "Agility": 4,
+        "Dexterity": 4,
+        "extraStr": 1,
+        "extraAgil": 1,
+        "extraDex": 2
+    },
+    {
+        "id": 5,
+        "villain": "Toddler Mummy",
+        "Strength": 4,
+        "Agility": 3,
+        "Dexterity": 5,
+        "extraStr": 1,
+        "extraAgil": 1,
+        "extraDex": 2
+    },
+    {
+        "id": 6,
+        "villain": "Petite Pirate",
+        "Strength": 5,
+        "Agility": 4,
+        "Dexterity": 3,
+        "extraStr": 2,
+        "extraAgil": 1,
+        "extraDex": 1
+    },
+    {
+        "id": 7,
+        "villain": "Adorable Alien",
+        "Strength": 3,
+        "Agility": 5,
+        "Dexterity": 4,
+        "extraStr": 1,
+        "extraAgil": 2,
+        "extraDex": 1
+    },
+    {
+        "id": 8,
+        "villain": "Sweet Skeleton",
+        "Strength": 4,
+        "Agility": 3,
+        "Dexterity": 5,
+        "extraStr": 1,
+        "extraAgil": 1,
+        "extraDex": 2
+    },
+    {
+        "id": 9,
+        "villain": "Baby Bat",
+        "Strength": 3,
+        "Agility": 4,
+        "Dexterity": 5,
+        "extraStr": 1,
+        "extraAgil": 2,
+        "extraDex": 1
+    },
+    {
+        "id": 10,
+        "villain": "Mini Monster",
+        "Strength": 5,
+        "Agility": 4,
+        "Dexterity": 3,
+        "extraStr": 2,
+        "extraAgil": 1,
+        "extraDex": 1
+    },
+    {
+        "id": 11,
+        "villain": "Lil' Fairy Princess",
+        "Strength": 3,
+        "Agility": 4,
+        "Dexterity": 5,
+        "extraStr": 1,
+        "extraAgil": 2,
+        "extraDex": 1
+    },
+    {
+        "id": 12,
+        "villain": "Tiny Superhero",
+        "Strength": 5,
+        "Agility": 4,
+        "Dexterity": 3,
+        "extraStr": 2,
+        "extraAgil": 1,
+        "extraDex": 1
+    },
+    {
+        "id": 13,
+        "villain": "Mini Mouse",
+        "Strength": 4,
+        "Agility": 5,
+        "Dexterity": 3,
+        "extraStr": 1,
+        "extraAgil": 2,
+        "extraDex": 1
+    },
+    {
+        "id": 14,
+        "villain": "Little Dinosaur",
+        "Strength": 5,
+        "Agility": 3,
+        "Dexterity": 4,
+        "extraStr": 2,
+        "extraAgil": 1,
+        "extraDex": 1
+    },
+    {
+        "id": 15,
+        "villain": "Junior Zombie",
+        "Strength": 4,
+        "Agility": 5,
+        "Dexterity": 3,
+        "extraStr": 1,
+        "extraAgil": 2,
+        "extraDex": 1
+    },
+    {
+        "id": 16,
+        "villain": "Tiny Astronaut",
+        "Strength": 4,
+        "Agility": 4,
+        "Dexterity": 4,
+        "extraStr": 1,
+        "extraAgil": 1,
+        "extraDex": 2
+    },
+    {
+        "id": 17,
+        "villain": "Little Red Riding Hood",
+        "Strength": 4,
+        "Agility": 4,
+        "Dexterity": 4,
+        "extraStr": 1,
+        "extraAgil": 1,
+        "extraDex": 2
+    },
+    {
+        "id": 18,
+        "villain": "Little Wolf",
+        "Strength": 5,
+        "Agility": 3,
+        "Dexterity": 4,
+        "extraStr": 2,
+        "extraAgil": 1,
+        "extraDex": 1
+    },
+    {
+        "id": 19,
+        "villain": "Baby Ladybug",
+        "Strength": 3,
+        "Agility": 4,
+        "Dexterity": 5,
+        "extraStr": 1,
+        "extraAgil": 2,
+        "extraDex": 1
+    }
 ]
+
 }
