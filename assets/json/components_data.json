@@ -489,7 +489,7 @@
   "villains": [
     {
         "id": 0,
-        "villain": "Little Pumpkin",
+        "name": "Little Pumpkin",
         "Strength": 5,
         "Agility": 3,
         "Dexterity": 4,
@@ -499,7 +499,7 @@
     },
     {
         "id": 1,
-        "villain": "Mini Witch",
+        "name": "Mini Witch",
         "Strength": 4,
         "Agility": 4,
         "Dexterity": 4,
@@ -509,7 +509,7 @@
     },
     {
         "id": 2,
-        "villain": "Tiny Vampire",
+        "name": "Tiny Vampire",
         "Strength": 3,
         "Agility": 5,
         "Dexterity": 4,
@@ -519,7 +519,7 @@
     },
     {
         "id": 3,
-        "villain": "Baby Bumblebee",
+        "name": "Baby Bumblebee",
         "Strength": 3,
         "Agility": 3,
         "Dexterity": 6,
@@ -529,7 +529,7 @@
     },
     {
         "id": 4,
-        "villain": "Junior Ghostbuster",
+        "name": "Junior Ghostbuster",
         "Strength": 4,
         "Agility": 4,
         "Dexterity": 4,
@@ -539,7 +539,7 @@
     },
     {
         "id": 5,
-        "villain": "Toddler Mummy",
+        "name": "Toddler Mummy",
         "Strength": 4,
         "Agility": 3,
         "Dexterity": 5,
@@ -549,7 +549,7 @@
     },
     {
         "id": 6,
-        "villain": "Petite Pirate",
+        "name": "Petite Pirate",
         "Strength": 5,
         "Agility": 4,
         "Dexterity": 3,
@@ -559,7 +559,7 @@
     },
     {
         "id": 7,
-        "villain": "Adorable Alien",
+        "name": "Adorable Alien",
         "Strength": 3,
         "Agility": 5,
         "Dexterity": 4,
@@ -569,7 +569,7 @@
     },
     {
         "id": 8,
-        "villain": "Sweet Skeleton",
+        "name": "Sweet Skeleton",
         "Strength": 4,
         "Agility": 3,
         "Dexterity": 5,
@@ -579,7 +579,7 @@
     },
     {
         "id": 9,
-        "villain": "Baby Bat",
+        "name": "Baby Bat",
         "Strength": 3,
         "Agility": 4,
         "Dexterity": 5,
@@ -589,7 +589,7 @@
     },
     {
         "id": 10,
-        "villain": "Mini Monster",
+        "name": "Mini Monster",
         "Strength": 5,
         "Agility": 4,
         "Dexterity": 3,
@@ -599,7 +599,7 @@
     },
     {
         "id": 11,
-        "villain": "Lil' Fairy Princess",
+        "name": "Lil' Fairy Princess",
         "Strength": 3,
         "Agility": 4,
         "Dexterity": 5,
@@ -609,7 +609,7 @@
     },
     {
         "id": 12,
-        "villain": "Tiny Superhero",
+        "name": "Tiny Superhero",
         "Strength": 5,
         "Agility": 4,
         "Dexterity": 3,
@@ -619,7 +619,7 @@
     },
     {
         "id": 13,
-        "villain": "Mini Mouse",
+        "name": "Mini Mouse",
         "Strength": 4,
         "Agility": 5,
         "Dexterity": 3,
@@ -629,7 +629,7 @@
     },
     {
         "id": 14,
-        "villain": "Little Dinosaur",
+        "name": "Little Dinosaur",
         "Strength": 5,
         "Agility": 3,
         "Dexterity": 4,
@@ -639,7 +639,7 @@
     },
     {
         "id": 15,
-        "villain": "Junior Zombie",
+        "name": "Junior Zombie",
         "Strength": 4,
         "Agility": 5,
         "Dexterity": 3,
@@ -649,7 +649,7 @@
     },
     {
         "id": 16,
-        "villain": "Tiny Astronaut",
+        "name": "Tiny Astronaut",
         "Strength": 4,
         "Agility": 4,
         "Dexterity": 4,
@@ -659,7 +659,7 @@
     },
     {
         "id": 17,
-        "villain": "Little Red Riding Hood",
+        "name": "Little Red Riding Hood",
         "Strength": 4,
         "Agility": 4,
         "Dexterity": 4,
@@ -669,7 +669,7 @@
     },
     {
         "id": 18,
-        "villain": "Little Wolf",
+        "name": "Little Wolf",
         "Strength": 5,
         "Agility": 3,
         "Dexterity": 4,
@@ -679,7 +679,7 @@
     },
     {
         "id": 19,
-        "villain": "Baby Ladybug",
+        "name": "Baby Ladybug",
         "Strength": 3,
         "Agility": 4,
         "Dexterity": 5,

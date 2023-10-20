@@ -18,6 +18,7 @@ body {
     overflow-x: hidden;
 }
 
+/* used for potions and ingredients that has current 0 value */
 .greyscaled-image {
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
