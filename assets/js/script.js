@@ -9,22 +9,23 @@ let playerStats = {
     dexterity: 0,
     vitality: 0,
 }
-let vilains;
 
+let villains
 
 // takes jason data and updates variables
-fetch("/assets/json/potions.json")
+fetch("/assets/json/components_data.json")
     .then((response) => response.json())
     .then((json) => {
         components_data = json;
         potions = components_data.potions;
         ingredients = components_data.ingredients;
-        vilains = components_data.vilains;
+        villains = components_data.villains;
         checkLocalStorage()
         
         // used as load function as variables are not loaded yet
-        selectVilain(0)
-        
+        selectvillain(0)
+        createIngredientsInventory();
+        createPotionsInventory();
     });
     
     
@@ -33,9 +34,7 @@ fetch("/assets/json/potions.json")
 function checkLocalStorage() {
     if (localStorage.getItem("potions") !== null) {
         let discoveredPotions = JSON.parse(localStorage.getItem("potions"));
-        for (let i = 0; i < discoveredPotions.length; i++) {
-            potions[i].discovered = discoveredPotions[i];
-        }
+        potions = discoveredPotions;
     }
     // if local storage is empty, set all potions to undiscovered and save to local storage
     else {
@@ -45,13 +44,6 @@ function checkLocalStorage() {
         localStorage.setItem("potions", JSON.stringify(potions));
     }
 }
-
-    
-// main load function that is called to set up the enviroment in html file
-window.addEventListener("load", function () {
-    createIngredientsInventory();
-    createPotionsInventory();
-});
 
 
 
@@ -83,39 +75,77 @@ function addDiscoveredPotion(potionID) {
 
 
 
-//  select random vilain and display it's stats in html
-function selectVilain(turn) { 
-    let vilain = vilain[getRandomInt(vilains.length)];
-    document.getElementById("vilain-name").innerHTML = vilain.name;
-    document.getElementById("vilain-image").src = vilain.image; 
+//  select random villain and display it's stats in html
+function selectvillain(turn) { 
+    let villain = villains[getRandomInt(villains.length)];
+
+    /*
+    document.getElementById("villain-name").innerHTML = villain.name;
+    document.getElementById("villain-image").src = villain.image; 
     
-    // vilain stats
-    strenght = vilain.strenght + turn * vilain.exraStrenght;
-    agility = vilain.agility + turn * vilain.exraAgility;
-    dexterity = vilain.dexterity + turn * vilain.exraDexterity;
+    // villain stats
+    strenght = villain.strenght + turn * villain.exraStrenght;
+    agility = villain.agility + turn * villain.exraAgility;
+    dexterity = villain.dexterity + turn * villain.exraDexterity;
     
-    document.getElementById("vilain-strenght").innerHTML = strenght;
-    document.getElementById("vilain-agility").innerHTML = agility;
-    document.getElementById("vilain-dexterity").innerHTML = dexterity;
+    document.getElementById("villain-strenght").innerHTML = strenght;
+    document.getElementById("villain-agility").innerHTML = agility;
+    document.getElementById("villain-dexterity").innerHTML = dexterity;
+    */
 }
 
-// adjust vilain stats based on potion used
-function adjustVilainStats(strenght, agility, dexterity) {
-    document.getElementById("vilain-strenght").innerHTML += strenght;
-    document.getElementById("vilain-agility").innerHTML += agility;
-    document.getElementById("vilain-dexterity").innerHTML += dexterity;
+// adjust villain stats based on potion used
+function adjustvillainStats(strenght, agility, dexterity) {
+    /*
+    document.getElementById("villain-strenght").innerHTML += strenght;
+    document.getElementById("villain-agility").innerHTML += agility;
+    document.getElementById("villain-dexterity").innerHTML += dexterity;
+    */
 }
 
 
 // create ingredients inventory at the begining all items will have greyscaled-image class
 function createIngredientsInventory() {
-    let ingredientsInventory = document.getElementById("ingredients-inventory");
+    let ingredientsInventory = document.getElementById("inventory-ingredients");
     for (let i = 0; i < ingredients.length; i++) {
+        let parent = document.createElement("div");
         let ingredient = document.createElement("img");
-        ingredient.setAttribute("src", ingredients[i].image);
+        ingredient.setAttribute("src", ingredients[i].picture);
         ingredient.setAttribute("class", "greyscaled-image");
-        ingredient.setAttribute("data-ingredient-id", ingredients[i].id);
-        ingredient.setAttribute("data-ingredient-ammount", ingredients[i].ammount);
-        ingredientsInventory.appendChild(ingredient);
+        parent.setAttribute("data-ingredient-id", i);
+        parent.setAttribute("data-ingredient-ammount", 0);
+        parent.appendChild(ingredient);
+        ingredientsInventory.appendChild(parent);
     }  
 }
+
+// create potions inventory at the begining all items will have greyscaled-image class
+function createPotionsInventory() {
+    let potionsInventory = document.getElementById("inventory-potions");
+    for (let i = 0; i < 30; i++) {
+        let parent = document.createElement("div");
+        let potion = document.createElement("img");
+        parent.setAttribute("class", "potion-container");
+        // checks if potion is discovered and if it is not image is not displayed
+        console.log(potions[1].discovered);
+        if (potions[i]?.discovered == undefined) {
+       
+        }
+        else if (potions[i].discovered) {
+                potion.setAttribute("src", potions[i].image);
+            potion.setAttribute("class", "greyscaled-image");
+        }
+        else {
+            // change to unknown image later
+            potion.setAttribute("src", "");
+        }
+        parent.setAttribute("id", "potion-" + i);
+        parent.setAttribute("data-potion-id", i);
+        parent.setAttribute("data-potion-ammount", 0);
+        parent.appendChild(potion); 
+        potionsInventory.appendChild(parent);
+    }  
+}
+
+
+console.log("script.js loaded");
