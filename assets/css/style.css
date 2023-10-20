@@ -64,3 +64,15 @@ body {
 .recipes-btn, .rules-btn {
     width: 120px;
 }
+
+.ingredients-img:hover, .potions-img:hover {
+    cursor: grab;
+}
+
+.ingredients-img:active, .potions-img:active {
+    cursor: grabbing;
+}
+
+.potions-img {
+    width: 40px !important;
+}
