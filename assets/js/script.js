@@ -1,15 +1,15 @@
 // main variables
 
-let potions
-let ingredients
-let cauldronIngredients = []
+let potions;
+let ingredients;
+let cauldronIngredients = [];
 let playerStats = {
     strenght: 0,
     agility: 0,
     dexterity: 0,
     vitality: 0,
 }
-let vilains
+let vilains;
 
 
 // takes jason data and updates variables
