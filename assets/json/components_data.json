@@ -437,5 +437,207 @@
     "name": "Frogs leg",
     "picture": ""
     }
-  ]
+  ],
+  "opponents": [
+  {
+    "id": 1,
+    "Villain": "Little Pumpkin",
+    "Strength": 5,
+    "Agility": 3,
+    "Dexterity": 4,
+    "extraStr": 1,
+    "extraAgil": 1,
+    "extraDex": 2
+  },
+  {
+    "id": 2,
+    "Villain": "Mini Witch",
+    "Strength": 4,
+    "Agility": 4,
+    "Dexterity": 4,
+    "extraStr": 1,
+    "extraAgil": 1,
+    "extraDex": 2
+  },
+  {
+    "id": 3,
+    "Villain": "Tiny Vampire",
+    "Strength": 3,
+    "Agility": 5,
+    "Dexterity": 4,
+    "extraStr": 1,
+    "extraAgil": 2,
+    "extraDex": 1
+  },
+  {
+    "id": 4,
+    "Villain": "Baby Bumblebee",
+    "Strength": 3,
+    "Agility": 3,
+    "Dexterity": 6,
+    "extraStr": 1,
+    "extraAgil": 1,
+    "extraDex": 2
+  },
+  {
+    "id": 5,
+    "Villain": "Junior Ghostbuster",
+    "Strength": 4,
+    "Agility": 4,
+    "Dexterity": 4,
+    "extraStr": 1,
+    "extraAgil": 1,
+    "extraDex": 2
+  },
+  {
+    "id": 6,
+    "Villain": "Toddler Mummy",
+    "Strength": 4,
+    "Agility": 3,
+    "Dexterity": 5,
+    "extraStr": 1,
+    "extraAgil": 1,
+    "extraDex": 2
+  },
+  {
+    "id": 7,
+    "Villain": "Petite Pirate",
+    "Strength": 5,
+    "Agility": 4,
+    "Dexterity": 3,
+    "extraStr": 2,
+    "extraAgil": 1,
+    "extraDex": 1
+  },
+  {
+    "id": 8,
+    "Villain": "Adorable Alien",
+    "Strength": 3,
+    "Agility": 5,
+    "Dexterity": 4,
+    "extraStr": 1,
+    "extraAgil": 2,
+    "extraDex": 1
+  },
+  {
+    "id": 9,
+    "Villain": "Sweet Skeleton",
+    "Strength": 4,
+    "Agility": 3,
+    "Dexterity": 5,
+    "extraStr": 1,
+    "extraAgil": 1,
+    "extraDex": 2
+  },
+  {
+    "id": 10,
+    "Villain": "Baby Bat",
+    "Strength": 3,
+    "Agility": 4,
+    "Dexterity": 5,
+    "extraStr": 1,
+    "extraAgil": 2,
+    "extraDex": 1
+  },
+  {
+    "id": 11,
+    "Villain": "Mini Monster",
+    "Strength": 5,
+    "Agility": 4,
+    "Dexterity": 3,
+    "extraStr": 2,
+    "extraAgil": 1,
+    "extraDex": 1
+  },
+  {
+    "id": 12,
+    "Villain": "Lil' Fairy Princess",
+    "Strength": 3,
+    "Agility": 4,
+    "Dexterity": 5,
+    "extraStr": 1,
+    "extraAgil": 2,
+    "extraDex": 1
+  },
+  {
+    "id": 13,
+    "Villain": "Tiny Superhero",
+    "Strength": 5,
+    "Agility": 4,
+    "Dexterity": 3,
+    "extraStr": 2,
+    "extraAgil": 1,
+    "extraDex": 1
+  },
+  {
+    "id": 14,
+    "Villain": "Mini Mouse",
+    "Strength": 4,
+    "Agility": 5,
+    "Dexterity": 3,
+    "extraStr": 1,
+    "extraAgil": 2,
+    "extraDex": 1
+  },
+  {
+    "id": 15,
+    "Villain": "Little Dinosaur",
+    "Strength": 5,
+    "Agility": 3,
+    "Dexterity": 4,
+    "extraStr": 2,
+    "extraAgil": 1,
+    "extraDex": 1
+  },
+  {
+    "id": 16,
+    "Villain": "Junior Zombie",
+    "Strength": 4,
+    "Agility": 5,
+    "Dexterity": 3,
+    "extraStr": 1,
+    "extraAgil": 2,
+    "extraDex": 1
+  },
+  {
+    "id": 17,
+    "Villain": "Tiny Astronaut",
+    "Strength": 4,
+    "Agility": 4,
+    "Dexterity": 4,
+    "extraStr": 1,
+    "extraAgil": 1,
+    "extraDex": 2
+  },
+  {
+    "id": 18,
+    "Villain": "Little Red Riding Hood",
+    "Strength": 4,
+    "Agility": 4,
+    "Dexterity": 4,
+    "extraStr": 1,
+    "extraAgil": 1,
+    "extraDex": 2
+  },
+  {
+    "id": 19,
+    "Villain": "Little Wolf",
+    "Strength": 5,
+    "Agility": 3,
+    "Dexterity": 4,
+    "extraStr": 2,
+    "extraAgil": 1,
+    "extraDex": 1
+  },
+  {
+    "id": 20,
+    "Villain": "Baby Ladybug",
+    "Strength": 3,
+    "Agility": 4,
+    "Dexterity": 5,
+    "extraStr": 1,
+    "extraAgil": 2,
+    "extraDex": 1
+  }
+]
 }
