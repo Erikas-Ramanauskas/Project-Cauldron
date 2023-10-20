@@ -18,6 +18,11 @@ body {
     overflow-x: hidden;
 }
 
+.greyscaled-image {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
 .orange-color {
     background-color: var(--orange-color);
 }
@@ -53,6 +58,11 @@ body {
     background-size: cover;
 }
 
+.footer-links {
+    font-size: 15px;
+    text-decoration: none;
+    color: inherit;
+}
 
 /* Game board */
 #game-board-navbar {
