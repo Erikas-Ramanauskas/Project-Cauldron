@@ -1,3 +1,4 @@
+/* Global */
 * {
     margin: 0;
     padding: 0;
@@ -38,6 +39,8 @@ body {
     color: var(--white-color);
 }
 
+
+/* Home page */
 .main-heading {
     font-size: 10vw;
     text-align: center;
@@ -48,4 +51,16 @@ body {
 .background {
     background: url('../images/background_720.webp') no-repeat center center;
     background-size: cover;
+}
+
+
+/* Game board */
+#game-board-navbar {
+    height: 15vh;
+    background: url('../images/general/game-board-header.png') no-repeat center center;
+    background-size: contain;
+}
+
+.recipes-btn, .rules-btn {
+    width: 120px;
 }
