@@ -1,0 +1,173 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main-container {
+    background-image: url('../images/general/witches_kitchen_background.png');
+    height: 100vh;
+    position: relative;
+}
+
+.title {
+
+}
+
+.recipe-book-container {
+    position: relative;
+}
+
+.recipe-book {
+    background-image: url('../images/general/recipe_book.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 450px;
+    position: absolute;
+    bottom: -60vh;
+    left: 15vw;
+}
+
+.cauldron-container {
+    position: relative;
+}
+
+.cauldron {
+    background-image: url('../images/general/cauldron.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    bottom: -90vh;
+}
+
+.content-list {
+    background-color: blue;
+}
+
+.ingredients-list {
+    background-image: url('../images/general/frame_kitchen_ingredients.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    width: 100vw;
+}
+
+.ingredient {
+    background-color: orange;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main-container {
+    background-image: url('../images/general/witches_kitchen_background.png');
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+#main-container > .container{
+    height: 100vh;
+    width: 100vw;
+}
+
+.container > .row {
+    height: 100%;
+}
+
+.recipe-book-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cauldron-container {
+    display: flex;
+    align-self: flex-end;
+    height: 70vh;
+    width: 1000px;
+    margin-bottom: 5vh;
+}
+
+.ingredients-list-container {
+    height: 90%;
+}
+
+.ingredients-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.cauldron {
+    background-image: url('../images/general/cauldron.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.ingredients-list {
+    background-image: url('../images/general/frame_kitchen_ingredients.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+}
+
+.ingredients-list > .row {
+    width: 75%;
+    margin: auto;
+}
+
+.ingredient {
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.2s ease-in-out;
+}
+
+.ingredient:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.content-list {
+    background-image: url('../images/general/frame_cauldron_content.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0 100px;
+}
+
+.recipe-book-container {
+    height: 350%;
+    width: 100%;
+    position: relative;
+}
+
+.recipe-book {
+    background-image: url('../images/general/recipe_book.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    height: 100%;
+    left: 85%;
+    top: 100%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.recipe-book:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#title {
+    background-image: url('../images/general/kitchen_label.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 25%;
+    position: absolute;
+}

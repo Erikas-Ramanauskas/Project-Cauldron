@@ -5,15 +5,13 @@
       "name": "Whispering Shadows Elixir",
       "ingredients": [
         "Bat Wing",
-        "Basilisk Venom",
-        "6",
-        "x"
+        "Basilisk Venom"
       ],
       "strength": "1",
       "dexterity": "0",
       "agility": "0",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/whispering_shadows_elixir.png"
     },
     {
       "id": "1",
@@ -21,15 +19,13 @@
       "ingredients": [
         "Eye of Newt",
         "Unicorn Horn",
-        "Split Bark",
-        "13",
-        "x"
+        "Split Bark"
       ],
       "strength": "2",
       "dexterity": "0",
       "agility": "0",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/inferno_ignition_tonic.png"
     },
     {
       "id": "2",
@@ -37,15 +33,13 @@
       "ingredients": [
         "Lizard tail",
         "Vampire's fang",
-        "Kraken Ink",
-        "14",
-        "x"
+        "Kraken Ink"
       ],
       "strength": "3",
       "dexterity": "-1",
       "agility": "0",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/faerie_dreamweaver_elixir.png"
     },
     {
       "id": "3",
@@ -53,30 +47,26 @@
       "ingredients": [
         "Werewolf Fur",
         "Wyvern Scale",
-        "Eye of Newt",
-        "19",
-        "x"
+        "Eye of Newt"
       ],
       "strength": "3",
       "dexterity": "0",
       "agility": "-1",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/wispwood_whispers_elixir.png"
     },
     {
       "id": "4",
       "name": "Lunar Reverie Brew",
       "ingredients": [
         "Unicorn Horn",
-        "Phoenix Feather",
-        "9",
-        "x"
+        "Phoenix Feather"
       ],
       "strength": "0",
       "dexterity": "1",
       "agility": "0",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/lunar_reverie_brew.png"
     },
     {
       "id": "5",
@@ -84,15 +74,13 @@
       "ingredients": [
         "Frogs leg",
         "Dragon's Tooth",
-        "Bat Wing",
-        "15",
-        "x"
+        "Bat Wing"
       ],
       "strength": "0",
       "dexterity": "2",
       "agility": "0",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/draconic_resilience_elixir.png"
     },
     {
       "id": "6",
@@ -100,15 +88,13 @@
       "ingredients": [
         "Lizard tail",
         "Eye of Newt",
-        "Ancient Celestial Sand",
-        "4",
-        "x"
+        "Ancient Celestial Sand"
       ],
       "strength": "-1",
       "dexterity": "3",
       "agility": "0",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/shadowcloak_elixir.png"
     },
     {
       "id": "7",
@@ -116,30 +102,26 @@
       "ingredients": [
         "Vampire's fang",
         "Bat Wing",
-        "Split Bark",
-        "1",
-        "x"
+        "Split Bark"
       ],
       "strength": "0",
       "dexterity": "3",
       "agility": "-1",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/vipers_visions_draught.png"
     },
     {
       "id": "8",
       "name": "Siren's Lament Potion",
       "ingredients": [
         "Basilisk Venom",
-        "Wyvern Scale",
-        "12",
-        "x"
+        "Wyvern Scale"
       ],
       "strength": "0",
       "dexterity": "0",
       "agility": "1",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/sirens_lament_potion.png"
     },
     {
       "id": "9",
@@ -147,15 +129,13 @@
       "ingredients": [
         "Serpent Scales",
         "Unicorn Horn",
-        "Kraken Ink",
-        "23",
-        "x"
+        "Kraken Ink"
       ],
       "strength": "0",
       "dexterity": "0",
       "agility": "2",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/astral_sojourn_serum.png"
     },
     {
       "id": "10",
@@ -163,15 +143,13 @@
       "ingredients": [
         "Lizard tail",
         "Frogs leg",
-        "Split Bark",
-        "2",
-        "x"
+        "Split Bark"
       ],
       "strength": "-1",
       "dexterity": "0",
       "agility": "3",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/petrifying_euphoria_brew.png"
     },
     {
       "id": "11",
@@ -179,45 +157,39 @@
       "ingredients": [
         "Wyvern Scale",
         "Vampire's fang",
-        "Basilisk Venom",
-        "5",
-        "x"
+        "Basilisk Venom"
       ],
       "strength": "0",
       "dexterity": "-1",
       "agility": "3",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/eagles_insight_elixir.png"
     },
     {
       "id": "12",
       "name": "Pixie's Giggling Goblet",
       "ingredients": [
         "Werewolf Fur",
-        "Phoenix Feather",
-        "3",
-        "x"
+        "Phoenix Feather"
       ],
       "strength": "-1",
       "dexterity": "0",
       "agility": "0",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/pixies_giggling_goblet.png"
     },
     {
       "id": "13",
       "name": "Chimera's Chalice Mix",
       "ingredients": [
         "Eye of Newt",
-        "Unicorn Horn",
-        "Werewolf Fur",
-        "25"
+        "Unicorn Horn"
       ],
       "strength": "-2",
       "dexterity": "0",
       "agility": "0",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/chimeras_chalice_mix.png"
     },
     {
       "id": "14",
@@ -225,15 +197,13 @@
       "ingredients": [
         "Dragon's Tooth",
         "Serpent Scales",
-        "Split Bark",
-        "18",
-        "x"
+        "Split Bark"
       ],
       "strength": "-3",
       "dexterity": "1",
       "agility": "0",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/moonlit_mirage_elixir.png"
     },
     {
       "id": "15",
@@ -241,29 +211,26 @@
       "ingredients": [
         "Frogs leg",
         "Wyvern Scale",
-        "Ancient Celestial Sand",
-        "26"
+        "Ancient Celestial Sand"
       ],
       "strength": "-3",
       "dexterity": "0",
       "agility": "1",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/elemental_harmony_elixir.png"
     },
     {
       "id": "16",
       "name": "Leviathan's Call Concoction",
       "ingredients": [
         "Kraken Ink",
-        "Basilisk Venom",
-        "10",
-        "x"
+        "Basilisk Venom"
       ],
       "strength": "0",
       "dexterity": "-1",
       "agility": "0",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/leviathans_call_concoction.png"
     },
     {
       "id": "17",
@@ -271,15 +238,13 @@
       "ingredients": [
         "Lizard tail",
         "Serpent Scales",
-        "Split Bark",
-        "7",
-        "x"
+        "Split Bark"
       ],
       "strength": "0",
       "dexterity": "-2",
       "agility": "0",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/harpys_lullaby_elixir.png"
     },
     {
       "id": "18",
@@ -287,15 +252,13 @@
       "ingredients": [
         "Bat Wing",
         "Dragon's Tooth",
-        "Phoenix Feather",
-        "16",
-        "x"
+        "Phoenix Feather"
       ],
       "strength": "1",
       "dexterity": "-3",
       "agility": "0",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/mystic_serenity_elixir.png"
     },
     {
       "id": "19",
@@ -303,30 +266,26 @@
       "ingredients": [
         "Ancient Celestial Sand",
         "Kraken Ink",
-        "Vampire's fang",
-        "21",
-        "x"
+        "Vampire's fang"
       ],
       "strength": "0",
       "dexterity": "-3",
       "agility": "1",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/naiads_aquatic_aura_brew.png"
     },
     {
       "id": "20",
       "name": "Gryphon's Quill Inkwell",
       "ingredients": [
         "Eye of Newt",
-        "Phoenix Feather",
-        "8",
-        "x"
+        "Phoenix Feather"
       ],
       "strength": "0",
       "dexterity": "0",
       "agility": "-1",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/gryphons_quill_inkwell.png"
     },
     {
       "id": "21",
@@ -334,15 +293,13 @@
       "ingredients": [
         "Kraken Ink",
         "Frogs leg",
-        "Werewolf Fur",
-        "17",
-        "x"
+        "Werewolf Fur"
       ],
       "strength": "0",
       "dexterity": "0",
       "agility": "-2",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/djinns_desire_elixir.png"
     },
     {
       "id": "22",
@@ -350,15 +307,13 @@
       "ingredients": [
         "Dragon's Tooth",
         "Serpent Scales",
-        "Wyvern Scale",
-        "20",
-        "x"
+        "Wyvern Scale"
       ],
       "strength": "1",
       "dexterity": "0",
       "agility": "-3",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/spectral_whisper_draft.png"
     },
     {
       "id": "23",
@@ -366,15 +321,13 @@
       "ingredients": [
         "Serpent Scales",
         "Ancient Celestial Sand",
-        "Frogs leg",
-        "22",
-        "x"
+        "Frogs leg"
       ],
       "strength": "0",
       "dexterity": "1",
       "agility": "-3",
       "health": "0",
-      "picture": ""
+      "picture": "/assets/images/potions/thunderstrike_fury_elixir.png"
     },
     {
       "id": "24",
@@ -383,14 +336,13 @@
         "Lizard tail",
         "Basilisk Venom",
         "Dragon's Tooth",
-        "Ancient Celestial Sand",
-        "11"
+        "Ancient Celestial Sand"
       ],
       "strength": "x",
       "dexterity": "0",
       "agility": "0",
       "health": "5",
-      "picture": ""
+      "picture": "/assets/images/potions/eclipsed_destiny_elixir.png"
     },
     {
       "id": "25",
@@ -406,84 +358,84 @@
       "dexterity": "0",
       "agility": "0",
       "health": "8",
-      "picture": ""
+      "picture": "/assets/images/potions/celestial_alchemy_concoction.png"
     }
   ],
  "ingredients": [
     {
         "id": "0",
         "name": "Bat Wing",
-        "picture": ""
+        "picture": "/assets/images/ingredients/bat_wing.png"
     },
     {
         "id": "1",
         "name": "Basilisk Venom",
-        "picture": ""
+        "picture": "/assets/images/ingredients/basilisk_venom.png"
     },
     {
         "id": "2",
         "name": "Eye of Newt",
-        "picture": ""
+        "picture": "/assets/images/ingredients/eye_of_newt.png"
     },
     {
         "id": "3",
         "name": "Unicorn Horn",
-        "picture": ""
+        "picture": "/assets/images/ingredients/unicorn_horn.png"
     },
     {
         "id": "4",
         "name": "Split Bark",
-        "picture": ""
+        "picture": "/assets/images/ingredients/split_bark.png"
     },
     {
         "id": "5",
         "name": "Lizard tail",
-        "picture": ""
+        "picture": "/assets/images/ingredients/lizard_tail.png"
     },
     {
         "id": "6",
         "name": "Vampire's fang",
-        "picture": ""
+        "picture": "/assets/images/ingredients/vampires_fang.png"
     },
     {
         "id": "7",
         "name": "Kraken Ink",
-        "picture": ""
+        "picture": "/assets/images/ingredients/kraken_ink.png"
     },
     {
         "id": "8",
         "name": "Werewolf Fur",
-        "picture": ""
+        "picture": "/assets/images/ingredients/werewolf_fur.png"
     },
     {
         "id": "9",
         "name": "Wyvern Scale",
-        "picture": ""
+        "picture": "/assets/images/ingredients/wyvern_scale.png"
     },
     {
         "id": "10",
         "name": "Dragon's Tooth",
-        "picture": ""
+        "picture": "/assets/images/ingredients/dragons_tooth.png"
     },
     {
         "id": "11",
         "name": "Serpent Scales",
-        "picture": ""
+        "picture": "/assets/images/ingredients/serpent_scales.png"
     },
     {
         "id": "12",
         "name": "Ancient Celestial Sand",
-        "picture": ""
+        "picture": "/assets/images/ingredients/ancient_celestial_sand.png"
     },
     {
         "id": "13",
         "name": "Phoenix Feather",
-        "picture": ""
+        "picture": "/assets/images/ingredients/phoenix_feather.png"
     },
     {
         "id": "14",
         "name": "Frogs leg",
-        "picture": ""
+        "picture": "/assets/images/ingredients/frogs_leg.png"
     }
 ],
   "villains": [
