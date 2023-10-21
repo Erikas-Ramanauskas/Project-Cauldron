@@ -3,15 +3,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'UnifrakturMaguntia', sans-serif;
     letter-spacing: 1px;
 }
 
 :root {
-    --orange-color: #da8b24;
-    --dark-orange-color: #ad752a;
-    --black-color: #0a0a0a;
-    --white-color: #e4e1e1;
+    --text: #eca72c;
+    --background: #44355b;
+    --primary: #ee5622;
+    --secondary: #31263e;
+    --accent: #221e22;
+
+    --orange-color: #eca72c;
+    --dark-orange-color: #31263e;
+    --black-color: #44355b;
+    --white-color: #fff;
 }
 
 body {
@@ -20,8 +26,8 @@ body {
 
 /* used for potions and ingredients that has current 0 value */
 .greyscaled-image {
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
 }
 
 .orange-color {
@@ -77,35 +83,3 @@ body {
     color: inherit;
 }
 
-/* Game board */
-#game-board-navbar {
-    height: 15vh;
-    background: url('../images/general/game-board-header.png') no-repeat center center;
-    background-size: contain;
-}
-
-#game-board{
-    touch-action: none;
-}
-
-.recipes-btn, .rules-btn {
-    width: 120px;
-}
-
-.ingredient-img, .potion-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.ingredients-img:hover, .potions-img:hover {
-    cursor: grab;
-}
-
-.ingredients-img:active, .potions-img:active {
-    cursor: grabbing;
-}
-
-.potions-img {
-    width: 40px !important;
-}

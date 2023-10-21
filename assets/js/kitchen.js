@@ -29,8 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // parse json file
-
-    fetch("https://erikas-ramanauskas.github.io/Project-Cauldron/assets/json/components_data.json")
+    fetch('assets/json/components_data.json')
         .then((response) => response.json())
         .then((json) => {
 
@@ -55,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     makeIngredientsDraggable();
-    
+
     interact('.cauldron').dropzone({
         accept: '.ingredient',
         ondragenter: function (event) {
@@ -115,7 +114,7 @@ function makeIngredientsDraggable() {
 function makeIngredientsNotDraggable() {
     interact('.ingredient').unset();
 }
-    
+
 function resetElementPosition(element) {
     element.style.transform = 'translate(0px, 0px)';
     element.setAttribute('data-x', 0);
@@ -126,17 +125,17 @@ function arraysEqual(arr1, arr2) {
     if (arr1.length !== arr2.length) {
       return false;
     }
-  
+
     // Sort the arrays
     const sortedArr1 = arr1.slice().sort();
     const sortedArr2 = arr2.slice().sort();
-  
+
     for (let i = 0; i < sortedArr1.length; i++) {
       if (sortedArr1[i] !== sortedArr2[i]) {
         return false;
       }
     }
-  
+
     return true;
   }
 
@@ -196,7 +195,7 @@ function updateContentList(ingredientName, ingredientImage) {
     ingredientNameElement.classList.add('ingredient-name');
     ingredientNameElement.innerHTML = ingredientName;
     contentItem.appendChild(ingredientNameElement);
-    
+
     contentItem.style.backgroundImage = ingredientImage;
     contentList.appendChild(contentItem);
 }
