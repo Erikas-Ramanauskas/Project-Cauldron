@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // parse json file
 
-    fetch("/assets/json/components_data.json")
+    fetch("https://erikas-ramanauskas.github.io/Project-Cauldron/assets/json/components_data.json")
         .then((response) => response.json())
         .then((json) => {
 
