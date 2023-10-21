@@ -1,68 +1,12 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-#main-container {
-    background-image: url('../images/general/witches_kitchen_background.png');
-    height: 100vh;
-    position: relative;
-}
-
-.title {
-
-}
-
-.recipe-book-container {
-    position: relative;
-}
-
-.recipe-book {
-    background-image: url('../images/general/recipe_book.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 40%;
-    height: 450px;
-    position: absolute;
-    bottom: -60vh;
-    left: 15vw;
-}
-
-.cauldron-container {
-    position: relative;
-}
-
-.cauldron {
-    background-image: url('../images/general/cauldron.gif');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 500px;
-    position: absolute;
-    bottom: -90vh;
-}
-
-.content-list {
-    background-color: blue;
-}
-
-.ingredients-list {
-    background-image: url('../images/general/frame_kitchen_ingredients.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 90vh;
-    width: 100vw;
-}
-
-.ingredient {
-    background-color: orange;
-} */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.greyscaled-image {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
 }
 
 #main-container {
@@ -126,19 +70,46 @@
 .ingredient {
     background-size: contain;
     background-repeat: no-repeat;
-    transition: transform 0.2s ease-in-out;
+    z-index: 2;
+    position: relative;
 }
 
-.ingredient:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-}
-
-.content-list {
+.content-list-container {
     background-image: url('../images/general/frame_cauldron_content.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: 0 100px;
+    background-position: center 80px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.content-list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+    margin-top: 10vh;
+}
+
+.content-item {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 4.5vw;
+    width: 4.5vw;
+    margin-top: 5px;
+    position: relative;
+}
+
+.ingredient-name {
+    position: absolute;
+    left: 5.5vw;
+    margin-top: 1.2vw;
+    width: 100%;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: black;
+    white-space: nowrap;
 }
 
 .recipe-book-container {
@@ -171,3 +142,55 @@
     width: 25%;
     position: absolute;
 }
+
+.cauldron-hover::before {
+    content: "+";
+    position: absolute;
+    right: -1px;
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 50%;
+    font-size: 16px;
+    border: 1px solid black;
+  }
+
+  .dropdown-alert {
+    opacity: 0;
+    background-image: url('../images/general/frame_page_flip.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 13%;
+    width: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .dropdown-alert-text {
+    /* make text sit in center of container, slightly to the left with responsive font size based on parent container */
+    position: absolute;
+    top: 48%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1vw;
+    font-weight: bold;
+    color: black;
+    white-space: nowrap;
+  }
+
+  .dropdown-alert-img {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 150%;
+    width: 100%;
+    position: absolute;
+    top: -30%;
+    left: 120%;
+    margin: auto;
+  }

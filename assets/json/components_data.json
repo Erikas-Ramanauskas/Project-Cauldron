@@ -70,7 +70,7 @@
     },
     {
       "id": "5",
-      "name": "Draconic Resilience Elixir",
+      "name": "Dragonic Resilience Elixir",
       "ingredients": [
         "Frogs leg",
         "Dragon's Tooth",
@@ -80,7 +80,7 @@
       "dexterity": "2",
       "agility": "0",
       "health": "0",
-      "picture": "/assets/images/potions/draconic_resilience_elixir.png"
+      "picture": "/assets/images/potions/dragonic_resilience_elixir.png"
     },
     {
       "id": "6",
@@ -303,7 +303,7 @@
     },
     {
       "id": "22",
-      "name": "Spectral Whisper Draft",
+      "name": "Spectral Whisper Draught",
       "ingredients": [
         "Dragon's Tooth",
         "Serpent Scales",
@@ -313,7 +313,7 @@
       "dexterity": "0",
       "agility": "-3",
       "health": "0",
-      "picture": "/assets/images/potions/spectral_whisper_draft.png"
+      "picture": "/assets/images/potions/spectral_whisper_draught.png"
     },
     {
       "id": "23",

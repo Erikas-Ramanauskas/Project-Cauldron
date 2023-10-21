@@ -1,16 +1,202 @@
+const draggableConfig = {
+    onstart: function (event) {
+        event.target.classList.add('dragging');
+    },
+    onmove: function (event) {
+        var target = event.target;
+        var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+        var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+        target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+        target.setAttribute('data-x', x);
+        target.setAttribute('data-y', y);
+    },
+    onend: function (event) {
+        resetElementPosition(event.target);
+    },
+};
+
 document.addEventListener("DOMContentLoaded", function () {
     const ingredientElements = document.querySelectorAll('.ingredient');
+    let cauldronContents = [];
+    let potions;
+    let ingredients;
     // parse json file
+
     fetch("/assets/json/components_data.json")
         .then((response) => response.json())
         .then((json) => {
             const componentsData = json;
-            const potions = componentsData.potions;
-            const ingredients = componentsData.ingredients;
+            potions = componentsData.potions;
+            ingredients = componentsData.ingredients;
 
             for (let i = 0; i < ingredientElements.length; i++) {
                 ingredientElements[i].style.backgroundImage = `url('${ingredients[i].picture}')`;
+                // set the ingredient's name as a data attribute
+                ingredientElements[i].setAttribute('data-name', ingredients[i].name);
             }
-        })
+    });
+
+    document.querySelector('.cauldron').addEventListener('click', function () {
+        brewPotion(potions, cauldronContents);
+    });
+
+    makeIngredientsDraggable();
+    
+    interact('.cauldron').dropzone({
+        accept: '.ingredient',
+        ondragenter: function (event) {
+            const ingredient = event.relatedTarget;
+            ingredient.classList.add('cauldron-hover');
+        },
+        ondragleave: function (event) {
+            const ingredient = event.relatedTarget;
+            ingredient.classList.remove('cauldron-hover');
+        },
+        ondrop: function (event) {
+            const ingredient = event.relatedTarget;
+            ingredient.classList.remove('cauldron-hover');
+
+            // Add the ingredient to the cauldron
+            const ingredientName = ingredient.getAttribute('data-name');
+            if (cauldronContents.length < 4){
+                cauldronContents.push(ingredientName);
+                updateContentList(ingredientName, ingredient.style.backgroundImage);
+            } else if (cauldronContents.length === 4) {
+                cauldronContents.push(ingredientName);
+                updateContentList(ingredientName, ingredient.style.backgroundImage);
+                // append greyscaled-image class to all ingredients
+                const ingredientsInventory = document.querySelectorAll('.ingredient');
+                for (let i = 0; i < ingredientsInventory.length; i++) {
+                    ingredientsInventory[i].classList.add('greyscaled-image');
+                }
+                // make ingredients not draggable
+                makeIngredientsNotDraggable();
+
+            }
+
+            resetElementPosition(ingredient);
+        },
+    });
 
 });
+
+function makeIngredientsDraggable() {
+    interact('.ingredient').draggable(draggableConfig);
+}
+
+function makeIngredientsNotDraggable() {
+    interact('.ingredient').unset();
+}
+    
+function resetElementPosition(element) {
+    element.style.transform = 'translate(0px, 0px)';
+    element.setAttribute('data-x', 0);
+    element.setAttribute('data-y', 0);
+}
+
+function arraysEqual(arr1, arr2) {
+    if (arr1.length !== arr2.length) {
+      return false;
+    }
+  
+    // Sort the arrays
+    const sortedArr1 = arr1.slice().sort();
+    const sortedArr2 = arr2.slice().sort();
+  
+    for (let i = 0; i < sortedArr1.length; i++) {
+      if (sortedArr1[i] !== sortedArr2[i]) {
+        return false;
+      }
+    }
+  
+    return true;
+  }
+
+const dropdownAlert = document.querySelector('.dropdown-alert');
+const dropdownAlertText = document.querySelector('.dropdown-alert-text');
+
+function brewPotion(potions, cauldronContents) {
+    makeIngredientsNotDraggable();
+
+    // change the cauldron gif to cauldron-brew.gif
+    const cauldron = document.querySelector('.cauldron');
+    cauldron.style.backgroundImage = "url('/assets/images/general/cauldron_brew.gif')";
+    // wait 3 seconds
+    setTimeout(function () {
+        // change the cauldron gif to cauldron.gif
+        cauldron.style.backgroundImage = "url('/assets/images/general/cauldron.gif')";
+    }, 2500);
+
+    for(let potion of potions) {
+
+        if(arraysEqual(potion.ingredients, cauldronContents)) {
+            dropdownAlertText.innerHTML = 'You brewed: ';
+            const potionImg = document.createElement('div');
+            potionImg.classList.add('dropdown-alert-img');
+            potionImg.style.backgroundImage = `url('${potion.picture}')`;
+            dropdownAlertText.appendChild(potionImg);
+
+            // make the dropdown alert visible for 3 seconds, animate opacity using gsap
+            gsap.to(dropdownAlert, {duration: 0.5, opacity: 1});
+            setTimeout(function () {
+                gsap.to(dropdownAlert, {duration: 0.5, opacity: 0});
+            }
+            , 1000);
+
+            resetContentList(cauldronContents);
+            addDiscoveredPotion(potion.id);
+            return;
+        }
+
+    }
+    // make the dropdown alert visible for 3 seconds, animate opacity using gsap, set text to "No potion found"
+    dropdownAlertText.innerHTML = 'No potion found';
+    gsap.to(dropdownAlert, {duration: 0.5, opacity: 1});
+    setTimeout(function () {
+        gsap.to(dropdownAlert, {duration: 0.5, opacity: 0});
+    }
+    , 1000);
+    resetContentList(cauldronContents);
+}
+
+function updateContentList(ingredientName, ingredientImage) {
+    const contentList = document.querySelector('.content-list');
+    const contentItem = document.createElement('div');
+    const ingredientNameElement = document.createElement('h2');
+
+    contentItem.classList.add('content-item');
+    ingredientNameElement.classList.add('ingredient-name');
+    ingredientNameElement.innerHTML = ingredientName;
+    contentItem.appendChild(ingredientNameElement);
+    
+    contentItem.style.backgroundImage = ingredientImage;
+    contentList.appendChild(contentItem);
+}
+
+function resetContentList(cauldronContents) {
+    const contentList = document.querySelector('.content-list');
+    contentList.innerHTML = '';
+    cauldronContents.length = 0;
+    // remove greyscaled-image class from all ingredients
+    const ingredientsInventory = document.querySelectorAll('.ingredient');
+    for (let i = 0; i < ingredientsInventory.length; i++) {
+        ingredientsInventory[i].classList.remove('greyscaled-image');
+    }
+    makeIngredientsDraggable();
+}
+
+function addDiscoveredPotion(potionID) {
+// Get the array of potions from local storage
+    console.log(potionID);
+    const potions = JSON.parse(localStorage.getItem('potions')) || [];
+    if (potionID >= 0 && potionID < potions.length ) {
+        // If the potion is found, set its "discovered" attribute to true
+        potions[potionID].discovered = true;
+
+        // Update the potions array in local storage
+        localStorage.setItem('potions', JSON.stringify(potions));
+    } else {
+        console.log(`Potion with ID ${potionID} was not found.`);
+    }
+}
