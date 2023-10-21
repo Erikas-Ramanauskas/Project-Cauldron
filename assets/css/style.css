@@ -84,6 +84,10 @@ body {
     background-size: contain;
 }
 
+#game-board{
+    touch-action: none;
+}
+
 .recipes-btn, .rules-btn {
     width: 120px;
 }

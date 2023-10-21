@@ -14,7 +14,7 @@ let villains
 let gameturn = 0
 
 // takes jason data and updates variables
-fetch("/assets/json/components_data.json")
+fetch("https://erikas-ramanauskas.github.io/Project-Cauldron/assets/json/components_data.json")
     .then((response) => response.json())
     .then((json) => {
         components_data = json;
@@ -27,7 +27,16 @@ fetch("/assets/json/components_data.json")
         selectvillain(0)
         createIngredientsInventory();
         createPotionsInventory();
-
+        
+        // testing
+        addDiscoveredPotion(3)
+        addDiscoveredPotion(4)
+        addDiscoveredPotion(8)
+        addDiscoveredPotion(5)
+        addDiscoveredPotion(1)
+        addDiscoveredPotion(22)
+        addDiscoveredPotion(15)
+        
     })
     .then(() => {
         // Initialize the tooltips
@@ -64,16 +73,12 @@ function addDiscoveredPotion(potionID) {
   // Get the array of potions from local storage
   const potions = JSON.parse(localStorage.getItem('potions')) || [];
 
-  // Find the potion by its "id" attribute
-  const potionIndex = potions.findIndex((potion) => potion.id === potionID);
-
-  if (potionIndex !== -1) {
+  if (potionID >= 0 && potionID < potions.length ) {
     // If the potion is found, set its "discovered" attribute to true
-    potions[potionIndex].discovered = true;
-
+    potions[potionID].discovered = true;
+  
     // Update the potions array in local storage
     localStorage.setItem('potions', JSON.stringify(potions));
-    console.log(`Potion with ID ${potionID} has been discovered.`);
   } else {
     console.log(`Potion with ID ${potionID} was not found.`);
   }
