@@ -1,8 +1,12 @@
 /* Game board */
-#game-board {
+body {
+    overflow-x: hidden;
     touch-action: none;
-    background-image: url('../images/background_720.webp');
-    background-size: contain;
+    background: url('../images/background_720.webp') no-repeat center center;
+    background-size: cover;
+}
+#game-board {
+    --bs-gutter-x: 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -43,6 +47,7 @@
 
 /* Potions */
 #inventory-potions-container {
+    --bs-gutter-x: 0;
     min-height: 5rem;
     background: url('../images/general/frame_inventory.png') no-repeat center 0;
     background-size: cover;
@@ -63,7 +68,7 @@
 }
 
 .potion-img {
-    width: 40px;
+    width: 2.5rem;
 }
 
 .player-hover::before {

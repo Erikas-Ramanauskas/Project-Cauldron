@@ -10,108 +10,109 @@
   <title>Game Board</title>
 </head>
 
-<body>
-  <section>
-    <!-- Players and inventory -->
-    <div class="row w-100" id="game-board">
+<body class="d-flex flex-column vh-100">
 
-      <!-- Enemy Card -->
-      <div class="col-4">
-        <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
-          <div class="card-header w-100 bg-transparent border-0">
-            <h5 class="card-title text-center">Enemy-Name</h5>
-            <!-- Enemy Stats -->
-            <div class="row px-2 pt-3 pb-4 enemy-stats-section">
-              <div class="col">
-                <div class="progress">
-                  <div id="player-hp" class="progress-bar bg-warning" role="progressbar" aria-valuenow="85"
-                    aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                    <span class="text-left pl-2 progress-item">HP</span>
-                  </div>
+  <!-- Players -->
+  <div class="row w-100 flex-grow-1" id="game-board">
+
+    <!-- Enemy Card -->
+    <div class="col-4">
+      <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
+        <div class="card-header w-100 bg-transparent border-0">
+          <h5 class="card-title text-center">Enemy-Name</h5>
+          <!-- Enemy Stats -->
+          <div class="row px-2 pt-3 pb-4 enemy-stats-section">
+            <div class="col">
+              <div class="progress">
+                <div id="player-hp" class="progress-bar bg-warning" role="progressbar" aria-valuenow="85"
+                  aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+                  <span class="text-left pl-2 progress-item">HP</span>
                 </div>
-                <div class="progress">
-                  <div id="enemy-strength" class="progress-bar bg-danger" role="progressbar" aria-valuenow="50"
-                    aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-                    <span class="text-left pl-2 progress-item">Strength</span>
-                  </div>
+              </div>
+              <div class="progress">
+                <div id="enemy-strength" class="progress-bar bg-danger" role="progressbar" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                  <span class="text-left pl-2 progress-item">Strength</span>
                 </div>
-                <div class="progress">
-                  <div id="enemy-agility" class="progress-bar bg-success" role="progressbar" aria-valuenow="80"
-                    aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                    <span class="text-left pl-2 progress-item">Agility</span>
-                  </div>
+              </div>
+              <div class="progress">
+                <div id="enemy-agility" class="progress-bar bg-success" role="progressbar" aria-valuenow="80"
+                  aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                  <span class="text-left pl-2 progress-item">Agility</span>
                 </div>
-                <div class="progress">
-                  <div id="enemy-dexterity" class="progress-bar bg-info" role="progressbar" aria-valuenow="65"
-                    aria-valuemin="0" aria-valuemax="100" style="width: 65%">
-                    <span class="text-left pl-2 progress-item">Dexterity</span>
-                  </div>
+              </div>
+              <div class="progress">
+                <div id="enemy-dexterity" class="progress-bar bg-info" role="progressbar" aria-valuenow="65"
+                  aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                  <span class="text-left pl-2 progress-item">Dexterity</span>
                 </div>
               </div>
             </div>
-            <!-- ./enemy stats -->
           </div>
-          <div class="card-body">
-            <img src="assets/images/enemies/Tiny_Vampire-removebg-preview.png" class="card-img-bottom" alt="tiny-vampire">
-          </div>
+          <!-- ./enemy stats -->
+        </div>
+        <div class="card-body">
+          <img src="assets/images/enemies/Tiny_Vampire-removebg-preview.png" class="card-img-bottom" alt="tiny-vampire">
         </div>
       </div>
-      <!-- ./enemy card -->
+    </div>
+    <!-- ./enemy card -->
 
-      <!-- Player Card -->
-      <div class="col-4">
-        <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
-          <div class="card-header w-100 bg-transparent border-0">
-            <h5 class="card-title text-center">Player-Name</h5>
-            <!-- Player Stats -->
-            <div class="row px-2 pt-3 pb-4 player-stats-section">
-              <div class="col">
-                <div class="progress">
-                  <div id="player-hp" class="progress-bar bg-warning" role="progressbar" aria-valuenow="85"
-                    aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                    <span class="text-left pl-2 progress-item">HP</span>
-                  </div>
+    <!-- Player Card -->
+    <div class="col-4">
+      <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
+        <div class="card-header w-100 bg-transparent border-0">
+          <h5 class="card-title text-center">Player-Name</h5>
+          <!-- Player Stats -->
+          <div class="row px-2 pt-3 pb-4 player-stats-section">
+            <div class="col">
+              <div class="progress">
+                <div id="player-hp" class="progress-bar bg-warning" role="progressbar" aria-valuenow="85"
+                  aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+                  <span class="text-left pl-2 progress-item">HP</span>
                 </div>
-                <div class="progress">
-                  <div id="player-strength" class="progress-bar bg-danger" role="progressbar" aria-valuenow="85"
-                    aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                    <span class="text-left pl-2 progress-item">Strength</span>
-                  </div>
+              </div>
+              <div class="progress">
+                <div id="player-strength" class="progress-bar bg-danger" role="progressbar" aria-valuenow="85"
+                  aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+                  <span class="text-left pl-2 progress-item">Strength</span>
                 </div>
-                <div class="progress">
-                  <div id="player-agility" class="progress-bar bg-success" role="progressbar" aria-valuenow="70"
-                    aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                    <span class="text-left pl-2 progress-item">Agility</span>
-                  </div>
+              </div>
+              <div class="progress">
+                <div id="player-agility" class="progress-bar bg-success" role="progressbar" aria-valuenow="70"
+                  aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                  <span class="text-left pl-2 progress-item">Agility</span>
                 </div>
-                <div class="progress">
-                  <div id="player-dexterity" class="progress-bar bg-info" role="progressbar" aria-valuenow="80"
-                    aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                    <span class="text-left pl-2 progress-item">Dexterity</span>
-                  </div>
+              </div>
+              <div class="progress">
+                <div id="player-dexterity" class="progress-bar bg-info" role="progressbar" aria-valuenow="80"
+                  aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                  <span class="text-left pl-2 progress-item">Dexterity</span>
                 </div>
               </div>
             </div>
-            <!-- ./player stats -->
           </div>
-          <div class="card-body">
-            <div class="player">
-              <img src="assets/images/player/player-removebg-preview.png" class="card-img-bottom" alt="grim-reaper">
-            </div>
+          <!-- ./player stats -->
+        </div>
+        <div class="card-body">
+          <div class="player">
+            <img src="assets/images/player/player-removebg-preview.png" class="card-img-bottom" alt="grim-reaper">
           </div>
         </div>
       </div>
-      <!-- ./player card -->
+    </div>
+    <!-- ./player card -->
 
+  </div>
+
+  <!-- Inventory -->
+  <div id="inventory-potions-container" class="row w-100 mt-auto">
+    <!-- Inventory potions -->
+    <div class="text-center col px-0">
+      <ul id="inventory-potions" class="list-inline px-4 pt-4"></ul>
     </div>
-    <div id="inventory-potions-container" class="row w-100">
-      <!-- Inventory potions -->
-      <div class="text-center col px-0">
-        <ul id="inventory-potions" class="list-inline px-4 pt-4"></ul>
-      </div>
-      <!-- ./inventory potions -->
-    </div>
-  </section>
+    <!-- ./inventory potions -->
+  </div>
 
   <!-- Game Rules Modal -->
   <div class="modal fade" id="gameRulesModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
