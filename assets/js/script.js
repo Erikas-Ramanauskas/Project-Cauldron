@@ -10,6 +10,7 @@ let playerStats = {
     vitality: 0,
 }
 let villains
+let gameturn = 0
 
 
 // takes jason data and updates variables
@@ -20,12 +21,14 @@ fetch("/assets/json/components_data.json")
         potions = components_data.potions;
         ingredients = components_data.ingredients;
         villains = components_data.villains;
-        checkLocalStorage()
         
         // used as load function as variables are not loaded yet
+        checkLocalStorage()
         selectvillain(0)
         createIngredientsInventory();
         createPotionsInventory();
+        
+        
     });
     
     
@@ -44,7 +47,6 @@ function checkLocalStorage() {
         localStorage.setItem("potions", JSON.stringify(potions));
     }
 }
-
 
 
 // global functions
@@ -76,7 +78,7 @@ function addDiscoveredPotion(potionID) {
 
 
 //  select random villain and display it's stats in html
-function selectvillain(turn) { 
+function selectvillain(gameturn) { 
     let villain = villains[getRandomInt(villains.length)];
 
     /*
