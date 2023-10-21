@@ -1,0 +1,16 @@
+.creator-card {
+    width: 200px;
+    height: 250px;
+    background-color: var(--orange-color);
+    color: var(--black-color);
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.card-links {
+    text-decoration: none;
+    color: inherit;
+}

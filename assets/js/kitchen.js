@@ -1,3 +1,7 @@
+let cauldronContents = [];
+let potions;
+let ingredients;
+
 const draggableConfig = {
     onstart: function (event) {
         event.target.classList.add('dragging');
@@ -18,14 +22,13 @@ const draggableConfig = {
 
 document.addEventListener("DOMContentLoaded", function () {
     const ingredientElements = document.querySelectorAll('.ingredient');
-    let cauldronContents = [];
-    let potions;
-    let ingredients;
+
     // parse json file
 
     fetch("https://erikas-ramanauskas.github.io/Project-Cauldron/assets/json/components_data.json")
         .then((response) => response.json())
         .then((json) => {
+
             const componentsData = json;
             potions = componentsData.potions;
             ingredients = componentsData.ingredients;
@@ -35,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // set the ingredient's name as a data attribute
                 ingredientElements[i].setAttribute('data-name', ingredients[i].name);
             }
+            checkLocalStorage()
     });
 
     document.querySelector('.cauldron').addEventListener('click', function () {
@@ -84,6 +88,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+function checkLocalStorage() {
+    if (localStorage.getItem("potions") !== null) {
+        let discoveredPotions = JSON.parse(localStorage.getItem("potions"));
+        potions = discoveredPotions;
+    }
+    // if local storage is empty, set all potions to undiscovered and save to local storage
+    else {
+        for (let i = 0; i < potions.length; i++) {
+            potions[i].discovered = false;
+        }
+        localStorage.setItem("potions", JSON.stringify(potions));
+    }
+}
 
 function makeIngredientsDraggable() {
     interact('.ingredient').draggable(draggableConfig);
