@@ -141,6 +141,7 @@
     height: 100%;
     width: 25%;
     position: absolute;
+    left: 120px;
 }
 
 .cauldron-hover::before {
@@ -233,7 +234,6 @@
     width: 30%;
 }
 
-.left-page {}
 .left-page-header {
     display: flex;
     align-items: center;
@@ -308,7 +308,6 @@
 
 .recipe-ingredient-img {
     display: inline-block;
-    background-image: url('../images/ingredients/ancient_celestial_sand.png');
     background-repeat: no-repeat;
     background-size: contain;
     height: 3.5vw;
@@ -365,4 +364,59 @@
     justify-content: center;
     font-size: large;
     font-weight: bold;
+}
+
+.close-btn {
+    background-color: lightcoral;
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: 2px solid black;
+}
+
+.close-btn::after {
+    content: "X";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+}
+
+.back-btn {
+    background-image: url('../images/general/frame_cauldron_content.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 10%;
+    width: 5%;
+
+    position: absolute;
+    /* make responsive */
+    left: 40px;
+    top: 30px;
+    border: 2px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+
+    z-index: 3;
+}
+
+.back-btn::after {
+    content: "<";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
