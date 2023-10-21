@@ -41,6 +41,10 @@ document.addEventListener("DOMContentLoaded", function () {
         brewPotion(potions, cauldronContents);
     });
 
+    document.querySelector('.recipe-book').addEventListener('click', function () {
+        showRecipeBook();
+    });
+
     makeIngredientsDraggable();
     
     interact('.cauldron').dropzone({
@@ -198,5 +202,91 @@ function addDiscoveredPotion(potionID) {
         localStorage.setItem('potions', JSON.stringify(potions));
     } else {
         console.log(`Potion with ID ${potionID} was not found.`);
+    }
+}
+
+function getPotions() {
+    // Get the array of potions from local storage
+    const potions = JSON.parse(localStorage.getItem('potions')) || [];
+    let discoveredPotions = [];
+    for (let potion of potions) {
+        if (potion.discovered) {
+            discoveredPotions.push(potion);
+        }
+    }
+    return [potions.length, discoveredPotions.length];
+}
+
+function showRecipeBook() {
+    const discoveredPotions = getPotions();
+
+    const openRecipeBook = document.querySelector('.open-recipe-book-container');
+    openRecipeBook.style.display = 'block';
+
+    const potionTitleElement = document.querySelector('.left-page-header-title');
+    const potionImageElement = document.querySelector('.left-page-header-img');
+    const potionStatsElements = document.querySelectorAll('.stat-text');
+    const recipeIngredientImageElements = document.querySelectorAll('.recipe-ingredient-img');
+    const recipeIngredientNameElements = document.querySelectorAll('.recipe-ingredient-text');
+
+    const nextPageButton = document.querySelector('.next');
+    const previousPageButton = document.querySelector('.previous');
+
+    if (discoveredPotions.length > 0) {
+        const potion = discoveredPotions[1][0];
+        potionTitleElement.innerHTML = potion.name;
+        potionImageElement.style.backgroundImage = `url('${potion.picture}')`;
+        potionStatsElements[0].innerHTML = potion.strenght;
+        potionStatsElements[1].innerHTML = potion.agility;
+        potionStatsElements[2].innerHTML = potion.dexterity;
+        for (let i = 0; i < potion.ingredients.length; i++) {
+            recipeIngredientImageElements[i].style.backgroundImage = `url('${potion.ingredients[i].picture}')`;
+            recipeIngredientNameElements[i].innerHTML = potion.ingredients[i].name;
+        }
+    }
+
+    nextPageButton.addEventListener('click', function () {
+        showNextPotion();
+    });
+    previousPageButton.addEventListener('click', function () {
+        showPreviousPotion();
+    });
+
+    function showNextPotion() {
+        if (discoveredPotions[1].length > 0) {
+            if (discoveredPotions[1].length > 1) {
+                discoveredPotions[0] = (discoveredPotions[0] + 1) % discoveredPotions[1].length;
+            }
+            const potion = discoveredPotions[1][discoveredPotions[0]];
+            potionTitleElement.innerHTML = potion.name;
+            potionImageElement.style.backgroundImage = `url('${potion.picture}')`;
+            potionStatsElements[0].innerHTML = potion.strenght;
+            potionStatsElements[1].innerHTML = potion.agility;
+            potionStatsElements[2].innerHTML = potion.dexterity;
+            for (let i = 0; i < potion.ingredients.length; i++) {
+                recipeIngredientImageElements[i].style.backgroundImage = `url('${potion.ingredients[i].picture}')`;
+                recipeIngredientNameElements[i].innerHTML = potion.ingredients[i].name;
+            }
+        }
+    }
+
+    function showPreviousPotion() {
+        if (discoveredPotions[1].length > 0) {
+            if (discoveredPotions[0] === 0) {
+                discoveredPotions[0] = discoveredPotions[1].length - 1;
+            } else {
+                discoveredPotions[0]--;
+            }
+            const potion = discoveredPotions[1][discoveredPotions[0]];
+            potionTitleElement.innerHTML = potion.name;
+            potionImageElement.style.backgroundImage = `url('${potion.picture}')`;
+            potionStatsElements[0].innerHTML = potion.strenght;
+            potionStatsElements[1].innerHTML = potion.agility;
+            potionStatsElements[2].innerHTML = potion.dexterity;
+            for (let i = 0; i < potion.ingredients.length; i++) {
+                recipeIngredientImageElements[i].style.backgroundImage = `url('${potion.ingredients[i].picture}')`;
+                recipeIngredientNameElements[i].innerHTML = potion.ingredients[i].name;
+            }
+        }
     }
 }

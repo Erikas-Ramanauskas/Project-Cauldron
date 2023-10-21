@@ -194,3 +194,175 @@
     left: 120%;
     margin: auto;
   }
+
+.open-recipe-book-container {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 99;
+}
+.open-recipe-book {
+    background-image: url('../images/general/open_recipe_book.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.left-page, .right-page {
+    margin-top: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.left-page, .right-page {
+    height: 40%;
+    width: 30%;
+}
+
+.left-page {}
+.left-page-header {
+    display: flex;
+    align-items: center;
+}
+.left-page-header-title {
+    margin-left: 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200%;
+    
+
+}
+.left-page-header-img {
+    background-image: url('../images/potions/djinns_desire_elixir.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 5vw;
+    width: 100%;
+}
+.left-page-content {
+    position: relative;
+}
+.circle {
+    /* draw solid circle with border */
+    position: absolute;
+    /* center vertically */
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+    border: 3px solid black;
+}
+
+.left-page-stat {
+    margin-left: 40px;
+    margin-top: 25px;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+.left-page-stat > p {
+    /* center text vertically */
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-left: 50px;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+.right-page-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.right-page-header-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200%;
+}
+.right-page-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-ingredient-img {
+    display: inline-block;
+    background-image: url('../images/ingredients/ancient_celestial_sand.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 3.5vw;
+    width: 3.5vw;
+}
+
+.right-page-ingredient {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+.recipe-ingredient-text {
+    font-size: 1.2vw;
+    font-weight: bold;
+    color: black;
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+.page-btns-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    margin: 0;
+}
+.previous {
+    background-image: url('../images/general/frame_page_flip.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 10vh;
+    width: 10vw;
+    margin-left: 5%;
+    margin-top: 5%;
+    display: flex;
+    padding-top: 15px;
+    justify-content: center;
+    font-size: large;
+    font-weight: bold;
+}
+.next {
+    background-image: url('../images/general/frame_page_flip.png');
+    transform: scaleX(-1);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 10vh;
+    width: 10vw;
+    margin-right: 5%;
+    margin-top: 5%;
+    display: flex;
+    padding-top: 15px;
+    justify-content: center;
+    font-size: large;
+    font-weight: bold;
+}
