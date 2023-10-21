@@ -28,14 +28,16 @@ Live demo: https://Erikas-Ramanauskas.github.io/Project-Cauldron
 #### First time user
 - As a first-time user, I want to see the home page so that I can quickly understand the purpose of the site
 - As a first-time user, I want to see the game rules so that I can understand how to play the game
-- As a first-time user, I want to see the navigation bar so that I can easily navigate the site
-- As a first-time user, I want to see the footer so that I can find the team members
+- As a first-time user, I want to see the game menu so that I can easily navigate the site
+- As a first-time user, I want to see the game credits so that I can know who made the game
+- As a first-time user, I want to see the kitchen so that I can try to make potions
 
 #### Game player
 - As a player, I want to see the game board so that I can play the game
-- As a player I want to see cauldron animations while playing a game so that i can feel the halloween spirit
+- As a player I want to see cauldron animations while playing a game so that I can feel the halloween spirit
 - As a player, I want to see the recipes of the potions so that I can know what to make
 - As a player, I want to see the ingredients so that I can know what I need to collect
+- As a player, I want to see the ingredients I added to the cauldron so that I can know what I need to add more to make a potion
 - As a player, I want to see my stats so I know what potions I need to prepare
 - As a player, I want to see my enemies so I know what I need to fight
 - As a player, I want to see the enemy stats so I know what I need to fight

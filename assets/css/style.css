@@ -48,15 +48,27 @@ body {
 
 /* Home page */
 .main-heading {
-    font-size: 10vw;
+    font-size: 65px;
     text-align: center;
-    padding-top: 12vw;
-    padding-bottom: 12vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .background {
     background: url('../images/background_720.webp') no-repeat center center;
     background-size: cover;
+    height: 100vh;
+}
+
+.button-box {
+    width: 250px;
+    height: 400px;
+    border: 3px solid var(--orange-color);
+    border-radius: 20px;
+}
+
+.button-custom {
+    width: 70%;
 }
 
 .footer-links {
@@ -72,8 +84,18 @@ body {
     background-size: contain;
 }
 
+#game-board{
+    touch-action: none;
+}
+
 .recipes-btn, .rules-btn {
     width: 120px;
+}
+
+.ingredient-img, .potion-img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .ingredients-img:hover, .potions-img:hover {
