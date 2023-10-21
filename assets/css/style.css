@@ -9,14 +9,14 @@
 
 :root {
     --text: #eca72c;
-    --background: #44355b;
+    --background: #504069;
     --primary: #ee5622;
     --secondary: #31263e;
-    --accent: #221e22;
+    --accent: #221E22;
 
     --orange-color: #eca72c;
-    --dark-orange-color: #31263e;
-    --black-color: #44355b;
+    --dark-orange-color: #ee5622;
+    --black-color: #504069;
     --white-color: #fff;
 }
 
@@ -66,10 +66,17 @@ body {
     min-height: 100vh;
 }
 
-.button-box {
+.box {
+    background-color: #eca52c85 ;
     width: 250px;
     height: 400px;
-    border: 3px solid var(--orange-color);
+    border-radius: 20px;
+    box-shadow: #31263E 0px 5px 15px;
+}
+
+.button-box {
+    background-color: #ECA72C ;
+    box-shadow: #31263E 0px 5px 20px;
     border-radius: 20px;
 }
 
