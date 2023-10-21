@@ -1,0 +1,63 @@
+/* Game board */
+#game-board-navbar {
+    height: 15vh;
+    background: url('../images/general/game-board-header.png') no-repeat center center;
+    background-size: contain;
+}
+
+#game-board {
+    touch-action: none;
+    background-image: url('../images/background_720.webp');
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cauldron {
+    display: contents;
+}
+
+.card {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+.card-title {
+    color: #eca72c;
+}
+
+.card-img-top {
+    width: 300px;
+}
+
+.cauldron-card {
+    width: 150px;
+}
+
+.recipes-btn,
+.rules-btn {
+    width: 120px;
+}
+
+.ingredient-img,
+.potion-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ingredients-img:hover,
+.potions-img:hover {
+    cursor: grab;
+}
+
+.ingredients-img:active,
+.potions-img:active {
+    cursor: grabbing;
+}
+
+.potions-img {
+    width: 40px !important;
+}
