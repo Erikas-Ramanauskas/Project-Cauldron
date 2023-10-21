@@ -57,7 +57,7 @@ body {
 .background {
     background: url('../images/background_720.webp') no-repeat center center;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .button-box {
