@@ -28,7 +28,11 @@ fetch("/assets/json/components_data.json")
         createIngredientsInventory();
         createPotionsInventory();
 
-
+    })
+    .then(() => {
+        // Initialize the tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
     });
 
 
@@ -124,6 +128,12 @@ function createIngredientsInventory() {
         parent.classList.add("ingredient-container");
         parent.setAttribute("data-ingredient-id", i);
         parent.setAttribute("data-ingredient-ammount", 0);
+
+        // tooltip
+        parent.setAttribute("data-bs-toggle", "tooltip");
+        parent.setAttribute("data-bs-placement", "top");
+        parent.setAttribute("data-bs-title", ingredients[i].name);
+
         parent.appendChild(ingredient);
 
         grid.appendChild(parent);
@@ -146,9 +156,14 @@ function createPotionsInventory() {
 
         }
         else if (potions[i].discovered) {
-                potion.setAttribute("src", potions[i].picture);
-                potion.setAttribute("alt", potions[i].name);
+            potion.setAttribute("src", potions[i].picture);
+            potion.setAttribute("alt", potions[i].name);
             potion.classList.add("greyscaled-image", "potion-img");
+
+            // // tooltip
+            parent.setAttribute("data-bs-toggle", "tooltip");
+            parent.setAttribute("data-bs-placement", "top");
+            parent.setAttribute("data-bs-title", potions[i].name);
         }
         else {
             // change to unknown image later
