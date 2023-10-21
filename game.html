@@ -34,14 +34,11 @@
 
       <!-- Enemy Card -->
       <div class="col-4">
-        <div class="card h-100">
-          <div class="card-body">
+        <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
+          <div class="card-header w-100 bg-transparent">
             <h5 class="card-title text-center">Enemy-Name</h5>
-            <img src="assets/images/enemies/Tiny_Vampire-removebg-preview.png" class="card-img-top" alt="tiny-vampire">
-          </div>
-          <div class="card-footer bg-transparent">
             <!-- Enemy Stats -->
-            <div class="row enemy-stats-section">
+            <div class="row px-2 pt-3 pb-4 enemy-stats-section">
               <div class="col">
                 <div class="progress">
                   <div id="player-hp" class="progress-bar bg-warning" role="progressbar" aria-valuenow="85"
@@ -71,22 +68,20 @@
             </div>
             <!-- ./enemy stats -->
           </div>
+          <div class="card-body">
+            <img src="assets/images/enemies/Tiny_Vampire-removebg-preview.png" class="card-img-bottom" alt="tiny-vampire">
+          </div>
         </div>
       </div>
       <!-- ./enemy card -->
 
       <!-- Player Card -->
       <div class="col-4">
-        <div class="card h-100">
-          <div class="card-body">
+        <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
+          <div class="card-header w-100">
             <h5 class="card-title text-center">Player-Name</h5>
-            <div class="player">
-              <img src="assets/images/player/player-removebg-preview.png" class="card-img-top" alt="grim-reaper">
-            </div>
-          </div>
-          <div class="card-footer bg-transparent">
             <!-- Player Stats -->
-            <div class="row player-stats-section">
+            <div class="row px-2 pt-3 pb-4 player-stats-section">
               <div class="col">
                 <div class="progress">
                   <div id="player-hp" class="progress-bar bg-warning" role="progressbar" aria-valuenow="85"
@@ -115,6 +110,11 @@
               </div>
             </div>
             <!-- ./player stats -->
+          </div>
+          <div class="card-body">
+            <div class="player">
+              <img src="assets/images/player/player-removebg-preview.png" class="card-img-bottom" alt="grim-reaper">
+            </div>
           </div>
         </div>
       </div>
