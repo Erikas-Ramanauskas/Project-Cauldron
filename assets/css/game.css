@@ -48,16 +48,29 @@
     display: block;
 }
 
-.ingredients-img:hover,
-.potions-img:hover {
+.grabbable, .potion-img:hover {
     cursor: grab;
 }
 
-.ingredients-img:active,
-.potions-img:active {
+.grabbing {
     cursor: grabbing;
 }
 
-.potions-img {
-    width: 40px !important;
+.potion-img {
+    width: 40px;
 }
+
+.player-hover::before {
+    content: "+";
+    position: absolute;
+    right: -1px;
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 50%;
+    font-size: 16px;
+    border: 1px solid black;
+  }
