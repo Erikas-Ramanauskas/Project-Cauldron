@@ -73,14 +73,14 @@
       <div class="col-4">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="potions-tab" data-bs-toggle="tab" data-bs-target="#potions-tab-pane"
-              type="button" role="tab" aria-controls="potions-tab-pane" aria-selected="true">
+            <button class="nav-link active" id="potions-tab" data-bs-toggle="tab" data-bs-target="#inventory-potions"
+              type="button" role="tab" aria-controls="inventory-potions" aria-selected="true">
               Potions
             </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients-tab-pane"
-              type="button" role="tab" aria-controls="ingredients-tab-pane" aria-selected="false">
+            <button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#inventory-ingredients"
+              type="button" role="tab" aria-controls="inventory-ingredients" aria-selected="false">
               Ingredients
             </button>
           </li>
@@ -88,14 +88,14 @@
         <div class="tab-content" id="myTabContent">
 
           <!-- Potions Tab -->
-          <div class="tab-pane fade show active" id="potions-tab-pane" role="tabpanel" aria-labelledby="potions-tab"
+          <div class="tab-pane fade show active" id="inventory-potions" role="tabpanel" aria-labelledby="potions-tab"
             tabindex="0">
             <!-- potion grid using js -->
           </div>
           <!-- ./potions tab -->
 
           <!-- Ingredients Tab -->
-          <div class="tab-pane fade" id="ingredients-tab-pane" role="tabpanel" aria-labelledby="ingredients-tab"
+          <div class="tab-pane fade" id="inventory-ingredients" role="tabpanel" aria-labelledby="ingredients-tab"
             tabindex="0">
             <!-- ingredient grid using js -->
           </div>
@@ -212,56 +212,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
   </script>
+  <script src="assets/js/script.js"></script>
 
-  <!-- Grid for ingredients and potions -->
-  <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const ingredients = [
-        "ancient_celestial_sand",
-        "basilisk_venom",
-        "bat_wing",
-        "dragons_tooth",
-        "eye_of_newt",
-        "frogs_leg",
-        "kraken_ink",
-        "lizard_tail",
-        "phoenix_feather",
-        "serpent_scales",
-        "split_bark",
-        "unicorn_horn",
-        "vampires_fang",
-        "werewolf_fur",
-        "wyvern_scale",
-      ];
-
-      const potions = [
-        "petrifying_euphoria_brew",
-        "djinns_desire_elixir",
-        "mystic_serenity_elixir",
-        "spectral_whisper_draught",
-        "eagles_insight_elixir",
-        "chimeras_chalice_mix",
-        "lunar_reverie_brew",
-        "whispering_shadows_elixir",
-        "dragonic_resilience_elixir",
-        "harpys_lullaby_elixir",
-        "moonlit_mirage_elixir",
-        "pixies_giggling_goblet",
-        "astral_sojourn_elixir",
-        "shadowcloak_elixir",
-        "leviathans_call_concoction",
-        "sirens_lament_potion",
-        "gryphons_quill_inkwell",
-        "thunderstrike_fury_elixir",
-        "elemental_harmony_elixir",
-        "faerie_dreamveaver_elixir",
-        "celestial_alchemy_conoction",
-        "naiads_aquatic_aura_brew",
-        "inferno_ignition_tonic",
-        "eclipsed_destiny_elixir",
-        "vipers_visions_draught",
-        "wispwood_whispers_elixir",
-      ];
 
       /**
      * Populates the given tab with a grid of items (ingredients or potions).
@@ -300,7 +253,7 @@
       const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
       const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
     })
-  </script>
+  </script> -->
 </body>
 
 </html>

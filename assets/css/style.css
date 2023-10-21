@@ -76,6 +76,12 @@ body {
     width: 120px;
 }
 
+.ingredient-img, .potion-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .ingredients-img:hover, .potions-img:hover {
     cursor: grab;
 }
