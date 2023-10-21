@@ -1,3 +1,9 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .creator-card {
     width: 200px;
     height: 250px;
@@ -8,9 +14,10 @@
     padding: 10px;
     font-size: 20px;
     display: inline-block;
+    box-shadow: #31263E 0px 5px 15px;
 }
 
-.card-links {
-    text-decoration: none;
-    color: inherit;
+.creator-card:hover {
+    width: 220px;
+    height: 270px;
 }
