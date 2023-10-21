@@ -215,8 +215,9 @@ function resetContentList(cauldronContents) {
 
 function addDiscoveredPotion(potionID) {
 // Get the array of potions from local storage
-    console.log(potionID);
+    
     const potions = JSON.parse(localStorage.getItem('potions')) || [];
+    console.log(potions);
     if (potionID >= 0 && potionID < potions.length ) {
         // If the potion is found, set its "discovered" attribute to true
         potions[potionID].discovered = true;
