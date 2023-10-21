@@ -1,3 +1,5 @@
+"use strict";
+
 // main variables
 
 let potions;
@@ -116,6 +118,7 @@ function createIngredientsInventory() {
         ingredient.setAttribute("class", "greyscaled-image");
         parent.setAttribute("data-ingredient-id", i);
         parent.setAttribute("data-ingredient-ammount", 0);
+        parent.setAttribute("data-item-type", "ingredient");
         parent.appendChild(ingredient);
         ingredientsInventory.appendChild(parent);
     }  
@@ -124,6 +127,7 @@ function createIngredientsInventory() {
 // create potions inventory at the begining all items will have greyscaled-image class
 function createPotionsInventory() {
     let potionsInventory = document.getElementById("inventory-potions");
+    potionsInventory.classList.add("row", "row-cols-4", "g-2");
     for (let i = 0; i < 30; i++) {
         let parent = document.createElement("div");
         let potion = document.createElement("img");
@@ -144,6 +148,7 @@ function createPotionsInventory() {
         parent.setAttribute("id", "potion-" + i);
         parent.setAttribute("data-potion-id", i);
         parent.setAttribute("data-potion-ammount", 0);
+        parent.setAttribute("data-item-type", "potion");
         parent.appendChild(potion); 
         potionsInventory.appendChild(parent);
     }  
