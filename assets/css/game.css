@@ -30,7 +30,7 @@ body {
 .card-header {
     max-width: 15rem;
 }
-.player-stats-section, .enemy-stats-section {
+.player-stats-section, .villain-stats-section {
     background: url('../images/general/frame_stats.png') no-repeat center center;
     background-size: cover;
 }
@@ -71,7 +71,7 @@ body {
     width: 2.5rem;
 }
 
-.player-hover::before {
+.character-hover::before {
     content: "+";
     position: absolute;
     right: -1px;

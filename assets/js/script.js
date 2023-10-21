@@ -75,7 +75,8 @@ function selectvillain(gameturn) {
 }
 
 // adjust villain stats based on potion used
-function adjustvillainStats(strenght, agility, dexterity) {
+function adjustVillainStats(strenght, agility, dexterity) {
+    alert("test: adjusting Villain stats");
     /*
     document.getElementById("villain-strenght").innerHTML += strenght;
     document.getElementById("villain-agility").innerHTML += agility;
@@ -84,11 +85,11 @@ function adjustvillainStats(strenght, agility, dexterity) {
 }
 
 function adjustPlayerStats(potion) {
-    console.log("adjusting player stats");
+   alert("test: adjusting player stats");
 }
 
-function adjustPotionAmmount(potion) {
-    console.log("adjusting potion ammount");
+function adjustPotionAmount(potion) {
+    alert("test: adjusting potion amount");
 }
 
 /**
@@ -162,22 +163,45 @@ function resetElementPosition(element) {
 
 makePotionsDraggable();
 
+// setup player dropzone
 interact('.player').dropzone({
     accept: '.potion',
     ondragenter: function (event) {
         const potion = event.relatedTarget;
-        potion.classList.add('player-hover');
+        potion.classList.add('character-hover');
     },
     ondragleave: function (event) {
         const potion = event.relatedTarget;
-        potion.classList.remove('player-hover');
+        potion.classList.remove('character-hover');
     },
     ondrop: function (event) {
         const potion = event.relatedTarget;
-        potion.classList.remove('player-hover');
+        potion.classList.remove('character-hover');
 
         adjustPlayerStats(potion);
-        adjustPotionAmmount(potion);
+        adjustPotionAmount(potion);
+
+        resetElementPosition(potion);
+    },
+});
+
+// setup villain dropzone
+interact('.villain').dropzone({
+    accept: '.potion',
+    ondragenter: function (event) {
+        const potion = event.relatedTarget;
+        potion.classList.add('character-hover');
+    },
+    ondragleave: function (event) {
+        const potion = event.relatedTarget;
+        potion.classList.remove('character-hover');
+    },
+    ondrop: function (event) {
+        const potion = event.relatedTarget;
+        potion.classList.remove('character-hover');
+
+        adjustVillainStats(potion);
+        adjustPotionAmount(potion);
 
         resetElementPosition(potion);
     },

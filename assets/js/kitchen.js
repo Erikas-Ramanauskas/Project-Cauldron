@@ -101,7 +101,7 @@ function checkLocalStorage() {
     // if local storage is empty, set all potions to undiscovered and save to local storage
     else {
         for (let i = 0; i < potions.length; i++) {
-            // TODO: set all potions to undiscovered
+            // FIXME: set all potions to undiscovered
             potions[i].discovered = true;  // temporary, to display all potions on game board
         }
         localStorage.setItem("potions", JSON.stringify(potions));
