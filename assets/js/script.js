@@ -14,6 +14,7 @@ let villains
 let gameturn = 0
 
 // takes jason data and updates variables
+// change path depending of the deployed site.
 fetch("https://erikas-ramanauskas.github.io/Project-Cauldron/assets/json/components_data.json")
     .then((response) => response.json())
     .then((json) => {
