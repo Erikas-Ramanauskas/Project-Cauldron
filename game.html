@@ -214,46 +214,6 @@
   </script>
   <script src="assets/js/script.js"></script>
 
-    document.addEventListener("DOMContentLoaded", function () {
-
-      /**
-     * Populates the given tab with a grid of items (ingredients or potions).
-     *
-     * @param {string} type - The type of items ("ingredients" or "potions").
-     * @param {Array<string>} items - The list of item names to display.
-     */
-      function populateTab(type, items) {
-        const tabPane = document.getElementById(`${type}-tab-pane`);
-        const grid = document.createElement("div");
-
-        // grid classes
-        grid.classList.add("row", "row-cols-4", "g-2");
-
-        items.forEach((item) => {
-          const img = document.createElement("img");
-          img.classList.add(`${type}-img`);
-
-          // tooltips
-          img.setAttribute("data-bs-toggle", "tooltip");
-          img.setAttribute("data-bs-placement", "top");
-          img.setAttribute("data-bs-title", item.replaceAll("_", " "));
-
-          // set image source
-          img.src = `assets/images/${type}/${item}.png`;
-          grid.appendChild(img);
-        });
-
-        tabPane.appendChild(grid);
-      }
-
-      populateTab("ingredients", ingredients);
-      populateTab("potions", potions);
-
-      // Initialize the tooltips
-      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-    })
-  </script> -->
 </body>
 
 </html>
