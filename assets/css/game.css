@@ -1,10 +1,4 @@
 /* Game board */
-#game-board-navbar {
-    height: 15vh;
-    background: url('../images/general/game-board-header.png') no-repeat center center;
-    background-size: contain;
-}
-
 #game-board {
     touch-action: none;
     background-image: url('../images/background_720.webp');
@@ -47,12 +41,13 @@
     border-radius: 10px;
 }
 
-.recipes-btn,
-.rules-btn {
-    width: 120px;
+/* Potions */
+#inventory-potions-container {
+    min-height: 5rem;
+    background: url('../images/general/frame_inventory.png') no-repeat center 0;
+    background-size: cover;
 }
 
-.ingredient-img,
 .potion-img {
     width: 100%;
     height: auto;

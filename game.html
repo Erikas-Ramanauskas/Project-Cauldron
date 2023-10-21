@@ -30,12 +30,12 @@
       </div>
     </nav> -->
     <!-- Players and inventory -->
-    <div class="row row-cols-1" id="game-board">
+    <div class="row w-100" id="game-board">
 
       <!-- Enemy Card -->
       <div class="col-4">
         <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
-          <div class="card-header w-100 bg-transparent">
+          <div class="card-header w-100 bg-transparent border-0">
             <h5 class="card-title text-center">Enemy-Name</h5>
             <!-- Enemy Stats -->
             <div class="row px-2 pt-3 pb-4 enemy-stats-section">
@@ -78,7 +78,7 @@
       <!-- Player Card -->
       <div class="col-4">
         <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
-          <div class="card-header w-100">
+          <div class="card-header w-100 bg-transparent border-0">
             <h5 class="card-title text-center">Player-Name</h5>
             <!-- Player Stats -->
             <div class="row px-2 pt-3 pb-4 player-stats-section">
@@ -121,10 +121,10 @@
       <!-- ./player card -->
 
     </div>
-    <div class="row">
+    <div id="inventory-potions-container" class="row w-100">
       <!-- Inventory potions -->
-      <div id="inventory-potions-container" class="text-center col">
-        <ul id="inventory-potions" class="list-inline"></ul>
+      <div class="text-center col px-0">
+        <ul id="inventory-potions" class="list-inline px-4 pt-4"></ul>
       </div>
       <!-- ./inventory potions -->
     </div>
