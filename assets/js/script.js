@@ -14,8 +14,8 @@ let villains
 let gameturn = 0
 
 // takes jason data and updates variables
-// change path depending of the deployed site.
-fetch("https://erikas-ramanauskas.github.io/Project-Cauldron/assets/json/components_data.json")
+
+fetch('assets/json/components_data.json')
     .then((response) => response.json())
     .then((json) => {
         components_data = json;
@@ -28,7 +28,7 @@ fetch("https://erikas-ramanauskas.github.io/Project-Cauldron/assets/json/compone
         selectvillain(0)
         createIngredientsInventory();
         createPotionsInventory();
-        
+
         // testing
         addDiscoveredPotion(3)
         addDiscoveredPotion(4)
@@ -37,7 +37,7 @@ fetch("https://erikas-ramanauskas.github.io/Project-Cauldron/assets/json/compone
         addDiscoveredPotion(1)
         addDiscoveredPotion(22)
         addDiscoveredPotion(15)
-        
+
     })
     .then(() => {
         // Initialize the tooltips
@@ -77,7 +77,7 @@ function addDiscoveredPotion(potionID) {
   if (potionID >= 0 && potionID < potions.length ) {
     // If the potion is found, set its "discovered" attribute to true
     potions[potionID].discovered = true;
-  
+
     // Update the potions array in local storage
     localStorage.setItem('potions', JSON.stringify(potions));
   } else {
