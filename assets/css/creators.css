@@ -18,8 +18,7 @@
 }
 
 .creator-card:hover {
-    width: 220px;
-    height: 270px;
+    background-color: var(--ligth-orange-color);
 }
 
 .return_btn {
