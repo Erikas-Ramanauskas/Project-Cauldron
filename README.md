@@ -19,10 +19,17 @@ Live demo: https://Erikas-Ramanauskas.github.io/Project-Cauldron
 
 ## Agile Methodology
 ### Project Goals
-...
+- Provide the user with a fun to play Halloween themed game.
+- The game can be played in a standard web browser.
+- The game combines elements of strategy with luck.
+- The game contains elements that users can choose to explore.
+
 
 ### Target Audience
-...
+- The game is aimed at people of all ages with an interest in gaming.
+- In particular the game is aimed towards those with an interest in fiction and fantasy with its inclusion of witches, potions and otherworldly enemies.
+- The game is aimed at those who like elements of strategy as well as luck to progress through the game rounds. It is not about speed of execution.
+
 
 ### User Stories
 #### First time user
@@ -80,7 +87,7 @@ At the start of each sprint, the _User Stories_ are selected from the _Product B
 ![Project Table](docs/images/project-table.png)
 
 ## UX Design
-...
+All aspects of the UX design flow directly from the fact that the goal is the creation of a browser based game. From the moment the user navigates to the website the user should feel that they are now playing a game. Therefore the landing page does not have a navigation bar and footer typical of most information provision type sites. Instead it has a button based “game menu”. The menu is positioned front and centre and the user options are simple and clear. The second element is the inclusion of a colourful background in keeping with the theme of the site. This colourful theme simple navigation is repeated throughout. The pages containing the game rules and creator information continue this approach. The game itself is contained across 2 pages. These continue the overall design approach but contain increased imagery and colour. The aim is to clearly let the user know that they are now in the game proper and also to achieve the goal of providing elements to explore.
 
 ## UI Design
 ### Components
@@ -106,22 +113,29 @@ At the start of each sprint, the _User Stories_ are selected from the _Product B
 ...
 
 ## Technologies Used
-...
+- HTML
+- CSS
+- Javascript
+- Figma (For Wireframes)
+- Bootstrap (for styling and grid)
+- Font Awesome (for icons)
+- Favicon (for favicon generation)
+- Github Pages (for deployment)
+
 
 ## Testing
 See [TESTING.md](TESTING.md) for details.
 
 ## Deployment
-...
+This site has been deployed from a GitHub repository using GitHub technology to GitHub Pages. The site can be accessed <a href="https://erikas-ramanauskas.github.io/Project-Cauldron/" target="_blank">here</a>.
 
 ## Credits
-...
-
-## Credits
-...
+- ChatGPT was used to generate images used in this project.
+- Project and Readme templates were provided by Code Institute
 
 ## Acknowledgements
-...
+- Code Institute and the Hackathon team for running the Code Institute October 2023 Hackathon
+- Hackathon Facilitator Joy Zadan for guidance and encouragement.
 
 ## Team
 - Melody Shutt

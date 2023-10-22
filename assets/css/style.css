@@ -90,3 +90,8 @@ body {
     color: inherit;
 }
 
+#playerSelect .modal-content {
+    background: rgb(49,38,62);
+    background: radial-gradient(circle, rgba(49,38,62,1) 0%, rgba(224, 178, 104, 0.806) 48%, rgba(0,0,0,1) 100%);;
+    color: #ffffff;
+}
