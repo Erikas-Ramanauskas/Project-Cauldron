@@ -174,10 +174,11 @@ function brewPotion(potions, cauldronContents) {
     for(let potion of potions) {
 
         if(arraysEqual(potion.ingredients, cauldronContents)) {
-            dropdownAlertText.innerHTML = 'You brewed: ';
+            const potionsInInventory = getInventory().length;
+            dropdownAlertText.innerHTML = ` (${potionsInInventory+1}/10) You brewed: `;
             const potionImg = document.createElement('div');
             potionImg.classList.add('dropdown-alert-img');
-            potionImg.style.backgroundImage = `url('${potion.picture}')`;
+            potionImg.style.backgroundImage = `url('Project-Cauldron/${potion.picture}')`;
             dropdownAlertText.appendChild(potionImg);
 
             // make the dropdown alert visible for 3 seconds, animate opacity using gsap
@@ -188,7 +189,18 @@ function brewPotion(potions, cauldronContents) {
             , 1000);
 
             resetContentList(cauldronContents);
-            addToInventory(potion);
+
+            console.log(potionsInInventory);
+            if (potionsInInventory < 10) {
+                addToInventory(potion);
+            } else {
+                dropdownAlertText.innerHTML = 'Inventory full';
+                gsap.to(dropdownAlert, {duration: 0.5, opacity: 1});
+                setTimeout(function () {
+                    gsap.to(dropdownAlert, {duration: 0.5, opacity: 0});
+                }
+                , 1000);
+            }
             return;
         }
 
