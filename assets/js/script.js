@@ -1,54 +1,83 @@
 // main variables
 import { getInventory, removeFromInventory, addToInventory } from "./inventory.js"
 import generateCharacters from './generate_characters.js';
-
-let villain;
-let player;
-let gameturn = 0
-
-generateCharacters(1, "assets/images/hero.png")
-    .then(characters => {
-        villain = characters.enemy;
-        player = characters.player;
-
-        displayVillain(villain);
-        displayPlayer(player);
-        displayPotions();
-    })
-
+import applyPotion from './apply_potion.js';
 
 // Initialize the tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
+runGame();
 
-//  select random villain and display it's stats in html
-function selectvillain(gameturn) {
-    let villain = villains[getRandomInt(villains.length)];
-
-    /*
-    document.getElementById("villain-name").innerHTML = villain.name;
-    document.getElementById("villain-image").src = villain.image;
-
-    // villain stats
-    strength = villain.strength + turn * villain.exrastrength;
-    agility = villain.agility + turn * villain.exraAgility;
-    dexterity = villain.dexterity + turn * villain.exraDexterity;
-
-    document.getElementById("villain-strength").innerHTML = strength;
-    document.getElementById("villain-agility").innerHTML = agility;
-    document.getElementById("villain-dexterity").innerHTML = dexterity;
-    */
+// save game round in local storage
+function setGameRound(turn) {
+    localStorage.setItem("turn", turn);
 }
 
-// adjust villain stats based on potion used
-function adjustVillainStats(strength, agility, dexterity) {
-    alert("test: adjusting Villain stats");
-    /*
-    document.getElementById("villain-strength").innerHTML += strength;
-    document.getElementById("villain-agility").innerHTML += agility;
-    document.getElementById("villain-dexterity").innerHTML += dexterity;
-    */
+// get game round from local storage
+function getGameRound() {
+    let turn = localStorage.getItem("turn");
+    return turn;
+}
+
+// save character in local storage
+function setCurrentCharacter(character, characterName) {
+    localStorage.setItem(characterName, JSON.stringify(character));
+}
+
+// get character from local storage
+function getCharacter(characterName) {
+    let character = localStorage.getItem(characterName);
+    if (!character) {
+        character = {};
+    } else {
+        character = JSON.parse(character);
+    }
+    return character;
+}
+
+// generate characters
+function runRound(difficulty = 0.1) {
+    return generateCharacters(0.1, "assets/images/hero.png")
+        .then(characters => {
+            let villain = characters.enemy;
+            let player = characters.player;
+
+            // save characters in local storage
+            setCurrentCharacter(villain, "villain");
+            setCurrentCharacter(player, "player");
+        })
+        .catch(err => {
+            console.error("Error generating characters:", err);
+        });
+}
+
+function runGame() {
+    let turn = getGameRound();
+    if (!turn || turn <= 0) {
+        setGameRound(1);
+        runRound()
+            .then(() => {
+                console.log('villain');
+                // get characters from local storage
+                let villain = getCharacter("villain");
+                let player = getCharacter("player");
+                // display characters
+                displayVillain(villain);
+                displayPlayer(player);
+                displayPotions();
+            })
+    } else {
+
+        // get characters from local storage
+        let villain = getCharacter("villain");
+        let player = getCharacter("player");
+
+        // display characters
+        displayVillain(villain);
+        displayPlayer(player);
+        displayPotions();
+    }
 }
 
 function displayPlayerImg() {
@@ -111,18 +140,10 @@ function displayVillain(villain) {
 }
 
 
-function adjustPlayerStats(potion) {
-
-}
-
-function adjustPotionAmount(potion) {
-}
-
 /**
 * Adds brewed potions to the potions inventory
 */
 function displayPotions() {
-
     let potions = getInventory();   // get potions from local storage
     let potionsInventory = document.getElementById("inventory-potions");
     potionsInventory.innerHTML = "";
@@ -215,8 +236,6 @@ interact('.player').dropzone({
         // get data porion-id from potion
         const potionId = potion.getAttribute("data-potion-id");
 
-        adjustPlayerStats(potion);
-        removeFromInventory(potionId);
         displayPotions();
 
         resetElementPosition(potion);
@@ -241,8 +260,6 @@ interact('.villain').dropzone({
         // get data porion-id from potion
         const potionId = potion.getAttribute("data-potion-id");
 
-        adjustVillainStats(potion);
-        removeFromInventory(potionId);
         displayPotions();
 
         resetElementPosition(potion);
