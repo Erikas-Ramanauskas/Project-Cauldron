@@ -8,7 +8,7 @@
     width: 200px;
     height: 250px;
     background-color: var(--orange-color);
-    color: var(--black-color);
+    color: var(--purple-color);
     border-radius: 20px;
     margin: 20px;
     padding: 10px;
@@ -36,10 +36,10 @@
 
 .btn {
     border: none;
-    color: #fff;
+    color: var(--white-color);
 } 
 .btn:hover {
-    color: #eca72c;
+    color: var(--orange-color);
     background: none;
     border: none;
 }

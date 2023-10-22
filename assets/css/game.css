@@ -1,4 +1,15 @@
 /* Game board */
+
+/* @font-face {
+    font-family: funny_witches;
+    src: url(/assets/fonts/FunnyWitchesDemoRegular.ttf)
+    format('truetype');
+} */
+
+*{
+    font-family: 'withces_magic', sans-serif;
+}
+
 body {
     overflow-x: hidden;
     touch-action: none;
@@ -120,6 +131,7 @@ body {
     align-items: center;
     background-image: url(../images/general/frame_stats.png);
     background-size: 172px;
+    background-repeat: no-repeat;
     border: none;
     width: 171px;
     height: 82px;
@@ -129,7 +141,11 @@ body {
 .menu_icon {
     display: flex;
     flex-direction: column;
-    color: var(--black-color);
+    color: var(--purple-color);
     text-decoration: none;
     margin-bottom: 10px;
+}
+
+.menu_icon:hover {
+    color: var(--ligth-orange-color);
 }
