@@ -2,6 +2,7 @@ let cauldronContents = [];
 let potions;
 let ingredients;
 
+
 const draggableConfig = {
     onstart: function (event) {
         event.target.classList.add('dragging');
