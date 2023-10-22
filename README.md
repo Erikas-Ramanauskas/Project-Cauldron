@@ -108,9 +108,34 @@ All aspects of the UX design flow directly from the fact that the goal is the cr
 ### Wireframes
 ...
 
-
 ## Features
-...
+### Home Page
+- Designed to look like a game menu rather than a website home page.
+- Contains a colourful background image in keeping with the theme of the game.
+- A simple game menu is located front and centre.
+### Game Menu
+- This is the key feature on the home page.
+- Contains 4 buttons that are links leading to the Game Page, the Witches Kitchen, the Creators Page and the Rules Page
+### Game Page
+- Displays all the information the Player needs to play the fight aspect of the game.
+- Player area displays information on the players current, health, strength, agility and dexterity.
+- Enemy area displays information on the strength, agility and dexterity of the next opponent the player faces.
+- Potions Area displays the brewed potions the player currently has available together with their properties and allows the player choose potions to use in the current round.
+- Kitchen button allows the player to visit the Witches Kitchen at any point to brew potions.
+- Clicking the Fight button allows the player to fight the enemy and complete the round once they are ready.
+### Witches Kitchen
+- Recipe Book image when clicked on opens the book and allows the player to view potions that can be brewed from the various ingredients.
+- The ingredients area shows currently available ingredients.
+- Drag and Drop allows available ingredients to be dragged and dropped into the Cauldron.
+- Dropping ingredients into the cauldron “mixes” them and dropping in ingredients in a combination from the book will create the specified potion.
+- The potions area displays created potions and these are then available in the Game Page also as described above.
+### Rules Page
+- Contains a text area outlining the rules of the game.
+- Buttons allow navigation to other pages. This simple navigation approach is consistent with the game style applied throughout.
+### Creators Page
+- Contains a simple card for each of the members of the team behind the project.
+- The cards are also links to each of the team members chosen personal website allowing users and players to find out more about the team.
+- Each of the creators have been assigned humorous titles in line with the overall fantasy/Halloween theme.
 
 ## Technologies Used
 - HTML
@@ -121,7 +146,6 @@ All aspects of the UX design flow directly from the fact that the goal is the cr
 - Font Awesome (for icons)
 - Favicon (for favicon generation)
 - Github Pages (for deployment)
-
 
 ## Testing
 See [TESTING.md](TESTING.md) for details.
