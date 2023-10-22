@@ -10,7 +10,6 @@
       "strength": "1",
       "dexterity": "0",
       "agility": "0",
-      "vitality": "0",
       "picture": "assets/images/potions/whispering_shadows_elixir.png"
     },
     {
@@ -24,7 +23,6 @@
       "strength": "2",
       "dexterity": "0",
       "agility": "0",
-      "vitality": "0",
       "picture": "assets/images/potions/inferno_ignition_tonic.png"
     },
     {
@@ -38,7 +36,6 @@
       "strength": "3",
       "dexterity": "-1",
       "agility": "0",
-      "vitality": "0",
       "picture": "assets/images/potions/faerie_dreamveaver_elixir.png"
     },
     {
@@ -52,7 +49,6 @@
       "strength": "3",
       "dexterity": "0",
       "agility": "-1",
-      "vitality": "0",
       "picture": "assets/images/potions/wispwood_whispers_elixir.png"
     },
     {
@@ -65,7 +61,6 @@
       "strength": "0",
       "dexterity": "1",
       "agility": "0",
-      "vitality": "0",
       "picture": "assets/images/potions/lunar_reverie_brew.png"
     },
     {
@@ -79,7 +74,6 @@
       "strength": "0",
       "dexterity": "2",
       "agility": "0",
-      "vitality": "0",
       "picture": "assets/images/potions/dragonic_resilience_elixir.png"
     },
     {
@@ -93,7 +87,6 @@
       "strength": "-1",
       "dexterity": "3",
       "agility": "0",
-      "vitality": "0",
       "picture": "assets/images/potions/shadowcloak_elixir.png"
     },
     {
@@ -107,7 +100,6 @@
       "strength": "0",
       "dexterity": "3",
       "agility": "-1",
-      "vitality": "0",
       "picture": "assets/images/potions/vipers_visions_draught.png"
     },
     {
@@ -120,7 +112,6 @@
       "strength": "0",
       "dexterity": "0",
       "agility": "1",
-      "vitality": "0",
       "picture": "assets/images/potions/sirens_lament_potion.png"
     },
     {
@@ -134,7 +125,6 @@
       "strength": "0",
       "dexterity": "0",
       "agility": "2",
-      "vitality": "0",
       "picture": "assets/images/potions/astral_sojourn_elixir.png"
     },
     {
@@ -148,7 +138,6 @@
       "strength": "-1",
       "dexterity": "0",
       "agility": "3",
-      "vitality": "0",
       "picture": "assets/images/potions/petrifying_euphoria_brew.png"
     },
     {
@@ -162,7 +151,6 @@
       "strength": "0",
       "dexterity": "-1",
       "agility": "3",
-      "vitality": "0",
       "picture": "assets/images/potions/eagles_insight_elixir.png"
     },
     {
@@ -175,7 +163,6 @@
       "strength": "-1",
       "dexterity": "0",
       "agility": "0",
-      "vitality": "0",
       "picture": "assets/images/potions/pixies_giggling_goblet.png"
     },
     {
@@ -188,7 +175,6 @@
       "strength": "-2",
       "dexterity": "0",
       "agility": "0",
-      "vitality": "0",
       "picture": "assets/images/potions/chimeras_chalice_mix.png"
     },
     {
@@ -202,7 +188,6 @@
       "strength": "-3",
       "dexterity": "1",
       "agility": "0",
-      "vitality": "0",
       "picture": "assets/images/potions/moonlit_mirage_elixir.png"
     },
     {
@@ -216,7 +201,6 @@
       "strength": "-3",
       "dexterity": "0",
       "agility": "1",
-      "vitality": "0",
       "picture": "assets/images/potions/elemental_harmony_elixir.png"
     },
     {
@@ -229,7 +213,6 @@
       "strength": "0",
       "dexterity": "-1",
       "agility": "0",
-      "vitality": "0",
       "picture": "assets/images/potions/leviathans_call_concoction.png"
     },
     {
@@ -243,7 +226,6 @@
       "strength": "0",
       "dexterity": "-2",
       "agility": "0",
-      "vitality": "0",
       "picture": "assets/images/potions/harpys_lullaby_elixir.png"
     },
     {
@@ -257,7 +239,6 @@
       "strength": "1",
       "dexterity": "-3",
       "agility": "0",
-      "vitality": "0",
       "picture": "assets/images/potions/mystic_serenity_elixir.png"
     },
     {
@@ -271,7 +252,6 @@
       "strength": "0",
       "dexterity": "-3",
       "agility": "1",
-      "vitality": "0",
       "picture": "assets/images/potions/naiads_aquatic_aura_brew.png"
     },
     {
@@ -284,7 +264,6 @@
       "strength": "0",
       "dexterity": "0",
       "agility": "-1",
-      "vitality": "0",
       "picture": "assets/images/potions/gryphons_quill_inkwell.png"
     },
     {
@@ -298,7 +277,6 @@
       "strength": "0",
       "dexterity": "0",
       "agility": "-2",
-      "vitality": "0",
       "picture": "assets/images/potions/djinns_desire_elixir.png"
     },
     {
@@ -312,7 +290,6 @@
       "strength": "1",
       "dexterity": "0",
       "agility": "-3",
-      "vitality": "0",
       "picture": "assets/images/potions/spectral_whisper_draught.png"
     },
     {
@@ -326,7 +303,6 @@
       "strength": "0",
       "dexterity": "1",
       "agility": "-3",
-      "vitality": "0",
       "picture": "assets/images/potions/thunderstrike_fury_elixir.png"
     },
     {
@@ -341,7 +317,6 @@
       "strength": "0",
       "dexterity": "0",
       "agility": "0",
-      "vitality": "5",
       "picture": "assets/images/potions/eclipsed_destiny_elixir.png"
     },
     {
@@ -357,7 +332,6 @@
       "strength": "0",
       "dexterity": "0",
       "agility": "0",
-      "vitality": "8",
       "picture": "assets/images/potions/eclipsed_destiny_elixir.png"
     }
   ],
@@ -440,204 +414,24 @@
   ],
   "villains": [
     {
-      "id": 0,
-      "name": "Little Pumpkin",
-      "Strength": 5,
-      "Agility": 3,
-      "Dexterity": 4,
-      "extraStr": 1,
-      "extraAgil": 1,
-      "extraDex": 2
+        "id": 0,
+        "name": "Tiny Vampire",
+        "picture": "path/to/image"
     },
     {
-      "id": 1,
-      "name": "Mini Witch",
-      "Strength": 4,
-      "Agility": 4,
-      "Dexterity": 4,
-      "extraStr": 1,
-      "extraAgil": 1,
-      "extraDex": 2
+        "id": 1,
+        "name": "Baby Bumblebee",
+        "picture": "path/to/image"
     },
     {
-      "id": 2,
-      "name": "Tiny Vampire",
-      "Strength": 3,
-      "Agility": 5,
-      "Dexterity": 4,
-      "extraStr": 1,
-      "extraAgil": 2,
-      "extraDex": 1
+        "id": 2,
+        "name": "Junior Ghostbuster",
+        "picture": "path/to/image"
     },
     {
-      "id": 3,
-      "name": "Baby Bumblebee",
-      "Strength": 3,
-      "Agility": 3,
-      "Dexterity": 6,
-      "extraStr": 1,
-      "extraAgil": 1,
-      "extraDex": 2
-    },
-    {
-      "id": 4,
-      "name": "Junior Ghostbuster",
-      "Strength": 4,
-      "Agility": 4,
-      "Dexterity": 4,
-      "extraStr": 1,
-      "extraAgil": 1,
-      "extraDex": 2
-    },
-    {
-      "id": 5,
-      "name": "Toddler Mummy",
-      "Strength": 4,
-      "Agility": 3,
-      "Dexterity": 5,
-      "extraStr": 1,
-      "extraAgil": 1,
-      "extraDex": 2
-    },
-    {
-      "id": 6,
-      "name": "Petite Pirate",
-      "Strength": 5,
-      "Agility": 4,
-      "Dexterity": 3,
-      "extraStr": 2,
-      "extraAgil": 1,
-      "extraDex": 1
-    },
-    {
-      "id": 7,
-      "name": "Adorable Alien",
-      "Strength": 3,
-      "Agility": 5,
-      "Dexterity": 4,
-      "extraStr": 1,
-      "extraAgil": 2,
-      "extraDex": 1
-    },
-    {
-      "id": 8,
-      "name": "Sweet Skeleton",
-      "Strength": 4,
-      "Agility": 3,
-      "Dexterity": 5,
-      "extraStr": 1,
-      "extraAgil": 1,
-      "extraDex": 2
-    },
-    {
-      "id": 9,
-      "name": "Baby Bat",
-      "Strength": 3,
-      "Agility": 4,
-      "Dexterity": 5,
-      "extraStr": 1,
-      "extraAgil": 2,
-      "extraDex": 1
-    },
-    {
-      "id": 10,
-      "name": "Mini Monster",
-      "Strength": 5,
-      "Agility": 4,
-      "Dexterity": 3,
-      "extraStr": 2,
-      "extraAgil": 1,
-      "extraDex": 1
-    },
-    {
-      "id": 11,
-      "name": "Lil' Fairy Princess",
-      "Strength": 3,
-      "Agility": 4,
-      "Dexterity": 5,
-      "extraStr": 1,
-      "extraAgil": 2,
-      "extraDex": 1
-    },
-    {
-      "id": 12,
-      "name": "Tiny Superhero",
-      "Strength": 5,
-      "Agility": 4,
-      "Dexterity": 3,
-      "extraStr": 2,
-      "extraAgil": 1,
-      "extraDex": 1
-    },
-    {
-      "id": 13,
-      "name": "Mini Mouse",
-      "Strength": 4,
-      "Agility": 5,
-      "Dexterity": 3,
-      "extraStr": 1,
-      "extraAgil": 2,
-      "extraDex": 1
-    },
-    {
-      "id": 14,
-      "name": "Little Dinosaur",
-      "Strength": 5,
-      "Agility": 3,
-      "Dexterity": 4,
-      "extraStr": 2,
-      "extraAgil": 1,
-      "extraDex": 1
-    },
-    {
-      "id": 15,
-      "name": "Junior Zombie",
-      "Strength": 4,
-      "Agility": 5,
-      "Dexterity": 3,
-      "extraStr": 1,
-      "extraAgil": 2,
-      "extraDex": 1
-    },
-    {
-      "id": 16,
-      "name": "Tiny Astronaut",
-      "Strength": 4,
-      "Agility": 4,
-      "Dexterity": 4,
-      "extraStr": 1,
-      "extraAgil": 1,
-      "extraDex": 2
-    },
-    {
-      "id": 17,
-      "name": "Little Red Riding Hood",
-      "Strength": 4,
-      "Agility": 4,
-      "Dexterity": 4,
-      "extraStr": 1,
-      "extraAgil": 1,
-      "extraDex": 2
-    },
-    {
-      "id": 18,
-      "name": "Little Wolf",
-      "Strength": 5,
-      "Agility": 3,
-      "Dexterity": 4,
-      "extraStr": 2,
-      "extraAgil": 1,
-      "extraDex": 1
-    },
-    {
-      "id": 19,
-      "name": "Baby Ladybug",
-      "Strength": 3,
-      "Agility": 4,
-      "Dexterity": 5,
-      "extraStr": 1,
-      "extraAgil": 2,
-      "extraDex": 1
+        "id": 3,
+        "name": "Toddler Mummy",
+        "picture": "path/to/image"
     }
   ]
 }
