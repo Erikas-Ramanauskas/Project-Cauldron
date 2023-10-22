@@ -2,6 +2,7 @@ let cauldronContents = [];
 let potions;
 let ingredients;
 
+
 const draggableConfig = {
     onstart: function (event) {
         event.target.classList.add('dragging');
@@ -333,3 +334,46 @@ function showPotion(index, discoveredPotions) {
         }
     }
 }
+
+let inventory = [
+    {
+      id: 0,
+      name: "Whispering Shadows Elixir",
+      strength: 1,
+      dexterity: 0,
+      agility: 0,
+      health: 0,
+    },
+    {
+      id: 1,
+      name: "Inferno Ignition Tonic",
+      strength: 6,
+      dexterity: -1,
+      agility: 0,
+    },
+    {
+      id: 2,
+      name: "Faerie Dreamweaver Elixir",
+      strength: 3,
+      dexterity: -1,
+      agility: 0,
+    },
+]
+
+console.log(calculateEnemyStats(playerStats, inventory, 1));
+
+// Output (High difficulty: 0.75):
+// health: 100
+// strength: 17.5
+// agility: 10
+// dexterity: 8.5
+
+// playerStats if he uses entire inventory on himself
+// health: 100,
+// strength: 20,
+// agility: 10,
+// dexterity: 8,
+
+// 1 attack would result in:
+// playerHealth: 99.5
+// enemyHealth: 97.5
