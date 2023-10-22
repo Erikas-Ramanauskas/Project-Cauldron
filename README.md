@@ -127,7 +127,7 @@ All aspects of the UX design flow directly from the fact that the goal is the cr
 See [TESTING.md](TESTING.md) for details.
 
 ## Deployment
-...
+This site has been deployed from a GitHub repository using GitHub technology to GitHub Pages. The site can be accessed <a href="https://erikas-ramanauskas.github.io/Project-Cauldron/" target="_blank">here</a>.
 
 ## Credits
 ...
