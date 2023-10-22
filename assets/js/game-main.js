@@ -181,6 +181,3 @@ function createPotionsInventory() {
     }
     addNewEventListeners("add")
 }
-
-
-console.log("script.js loaded");
