@@ -130,13 +130,12 @@ See [TESTING.md](TESTING.md) for details.
 This site has been deployed from a GitHub repository using GitHub technology to GitHub Pages. The site can be accessed <a href="https://erikas-ramanauskas.github.io/Project-Cauldron/" target="_blank">here</a>.
 
 ## Credits
-...
-
-## Credits
-...
+- ChatGPT was used to generate images used in this project.
+- Project and Readme templates were provided by Code Institute
 
 ## Acknowledgements
-...
+- Code Institute and the Hackathon team for running the Code Institute October 2023 Hackathon
+- Hackathon Facilitator Joy Zadan for guidance and encouragement.
 
 ## Team
 - Melody Shutt
