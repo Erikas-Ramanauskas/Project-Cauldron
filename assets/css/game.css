@@ -1,13 +1,12 @@
 /* Game board */
 
-/* @font-face {
+@font-face {
     font-family: funny_witches;
-    src: url(/assets/fonts/FunnyWitchesDemoRegular.ttf)
-    format('truetype');
-} */
+    src: url('/assets/fonts/witches_magic.ttf') format('truetype');
+}
 
-*{
-    font-family: 'withces_magic', sans-serif;
+* {
+    font-family: 'funny_witches', sans-serif;
 }
 
 body {
@@ -36,7 +35,18 @@ body {
 }
 
 .card-img-bottom {
-    width: 110%;
+    width: 100%;
+}
+
+.villain, .player {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
 }
 
 /* Stats */
@@ -61,12 +71,18 @@ body {
     border-radius: 10px;
 }
 
+.potion {
+    margin: 10px 3vw;
+}
+
 /* Potions */
 #inventory-potions-container {
     --bs-gutter-x: 0;
     min-height: 5rem;
     background: url('../images/general/frame_inventory.png') no-repeat center 0;
     background-size: cover;
+    position: absolute;
+    bottom: 0;
 }
 
 .potion-img {
