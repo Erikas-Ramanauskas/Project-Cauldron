@@ -47,10 +47,10 @@ const playerStats = {
     dexterity: 10,
 }
 
-export default function generateCharacters(difficulty) {
+export default function generateCharacters(difficulty, heroImagePath) {
     return fetchData().then(data => {
         componentsData = data;
-        return generateObjects(difficulty);
+        return generateObjects(difficulty, heroImagePath);
     });
 }
 
@@ -86,7 +86,7 @@ function calculateEnemyStats(playerStats, randomPotions, difficulty) {
     return enemyStats;
 }
 
-function generateObjects(difficulty) {
+function generateObjects(difficulty, heroImagePath) {
     let randomPotions = getPotions();
     let enemyStats = calculateEnemyStats(playerStats, randomPotions, difficulty);
     let villain = componentsData.villains[Math.floor(Math.random() * componentsData.villains.length)];
@@ -101,7 +101,7 @@ function generateObjects(difficulty) {
     let player = {
         name: 'Player',
         health: 50,
-        picture: 'assets/images/hero.png',
+        picture: heroImagePath,
         agility: playerStats.agility,
         strength: playerStats.strength,
         dexterity: playerStats.dexterity

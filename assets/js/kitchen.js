@@ -3,6 +3,7 @@ let potions;
 let ingredients;
 
 import showRecipeBook from "./recipe_book.js";
+import { createInventory, resetInventory, getInventory, addToInventory, removeFromInventory } from "./inventory.js";
 
 
 const draggableConfig = {
@@ -54,6 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.recipe-book').addEventListener('click', function () {
         showRecipeBook();
     });
+
+    // for (let i = 0; i < ingredientElements.length; i++) {
+    //     ingredientElements[i].addEventListener('mouseover', function () {
+    //         gsap.to(ingredientElements[i], {duration: 0.2, scale: 1.1});
+    //     });
+    //     ingredientElements[i].addEventListener('mouseout', function () {
+    //         gsap.to(ingredientElements[i], {duration: 0.2, scale: 1});
+    //     });
+    // }
 
     makeIngredientsDraggable();
 
@@ -147,18 +157,18 @@ const dropdownAlertText = document.querySelector('.dropdown-alert-text');
 
 function brewPotion(potions, cauldronContents) {
     // play 3 seconds of sound
-    const audio = new Audio('/assets/sounds/bubbling.wav');
+    const audio = new Audio('assets/sounds/bubbling.wav');
     makeIngredientsNotDraggable();
 
     // change the cauldron gif to cauldron-brew.gif
     const cauldron = document.querySelector('.cauldron');
-    cauldron.style.backgroundImage = "url('/assets/images/general/cauldron_brew.gif')";
+    cauldron.style.backgroundImage = "url('assets/images/general/cauldron_brew.gif')";
     audio.play();
     // wait 3 seconds
     setTimeout(function () {
         // change the cauldron gif to cauldron.gif
         audio.pause();
-        cauldron.style.backgroundImage = "url('/assets/images/general/cauldron.gif')";
+        cauldron.style.backgroundImage = "url('assets/images/general/cauldron.gif')";
     }, 2500);
 
     for(let potion of potions) {
@@ -178,7 +188,7 @@ function brewPotion(potions, cauldronContents) {
             , 1000);
 
             resetContentList(cauldronContents);
-            addDiscoveredPotion(potion.id);
+            addToInventory(potion);
             return;
         }
 
@@ -217,20 +227,4 @@ function resetContentList(cauldronContents) {
         ingredientsInventory[i].classList.remove('greyscaled-image');
     }
     makeIngredientsDraggable();
-}
-
-function addDiscoveredPotion(potionID) {
-// Get the array of potions from local storage
-    
-    const potions = JSON.parse(localStorage.getItem('potions')) || [];
-    console.log(potions);
-    if (potionID >= 0 && potionID < potions.length ) {
-        // If the potion is found, set its "discovered" attribute to true
-        potions[potionID].discovered = true;
-
-        // Update the potions array in local storage
-        localStorage.setItem('potions', JSON.stringify(potions));
-    } else {
-        console.log(`Potion with ID ${potionID} was not found.`);
-    }
 }
