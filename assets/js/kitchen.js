@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ingredientElements = document.querySelectorAll('.ingredient');
 
     document.querySelector('.back-btn').addEventListener('click', function () {
-        window.location.href = 'index.html';
+        window.location.href = 'game.html';
     });
 
     // parse json file
@@ -113,8 +113,7 @@ function checkLocalStorage() {
     // if local storage is empty, set all potions to undiscovered and save to local storage
     else {
         for (let i = 0; i < potions.length; i++) {
-            // FIXME: set all potions to undiscovered
-            potions[i].discovered = true;  // temporary, to display all potions on game board
+            potions[i].discovered = false;
         }
         localStorage.setItem("potions", JSON.stringify(potions));
     }
@@ -239,4 +238,20 @@ function resetContentList(cauldronContents) {
         ingredientsInventory[i].classList.remove('greyscaled-image');
     }
     makeIngredientsDraggable();
+}
+
+function addDiscoveredPotion(potionID) {
+// Get the array of potions from local storage
+
+    const potions = JSON.parse(localStorage.getItem('potions')) || [];
+    console.log(potions);
+    if (potionID >= 0 && potionID < potions.length ) {
+        // If the potion is found, set its "discovered" attribute to true
+        potions[potionID].discovered = true;
+
+        // Update the potions array in local storage
+        localStorage.setItem('potions', JSON.stringify(potions));
+    } else {
+        console.log(`Potion with ID ${potionID} was not found.`);
+    }
 }
