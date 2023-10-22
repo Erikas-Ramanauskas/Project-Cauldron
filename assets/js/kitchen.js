@@ -178,7 +178,7 @@ function brewPotion(potions, cauldronContents) {
             dropdownAlertText.innerHTML = ` (${potionsInInventory+1}/10) You brewed: `;
             const potionImg = document.createElement('div');
             potionImg.classList.add('dropdown-alert-img');
-            potionImg.style.backgroundImage = `url('${potion.picture}')`;
+            potionImg.style.backgroundImage = `url('Project-Cauldron/${potion.picture}')`;
             dropdownAlertText.appendChild(potionImg);
 
             // make the dropdown alert visible for 3 seconds, animate opacity using gsap
