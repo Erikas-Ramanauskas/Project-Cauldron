@@ -32,12 +32,12 @@
     <div class="col-4">
       <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
         <div class="card-header w-100 bg-transparent border-0">
-          <h5 class="card-title text-center">Villain Name</h5>
+          <h5 id="villainName" class="card-title text-center"></h5>
           <!-- Villain Stats -->
           <div class="row px-2 pt-3 pb-4 villain-stats-section">
             <div class="col">
               <div class="progress">
-                <div id="player-hp" class="progress-bar bg-warning" role="progressbar" aria-valuenow="85"
+                <div id="villain-hp" class="progress-bar bg-warning" role="progressbar" aria-valuenow="85"
                   aria-valuemin="0" aria-valuemax="100" style="width: 85%">
                   <span class="text-left pl-2 progress-item">HP</span>
                 </div>
@@ -66,7 +66,7 @@
         </div>
         <div class="card-body">
           <div class="villain">
-            <img src="assets/images/villains/Tiny_Vampire-removebg-preview.png" class="card-img-bottom"
+            <img id="villainImage" src="" class="card-img-bottom"
               alt="tiny-vampire">
           </div>
         </div>
@@ -114,7 +114,7 @@
         </div>
         <div class="card-body">
           <div class="player">
-            <img src="assets/images/player/player-removebg-preview.png" class="card-img-bottom" alt="character">
+            <img src="" class="card-img-bottom" alt="character">
           </div>
         </div>
       </div>

@@ -1,21 +1,25 @@
 // main variables
 import { getInventory, removeFromInventory, addToInventory } from "./inventory.js"
+import generateCharacters from './generate_characters.js';
 
-let villains
+let villain;
+let player;
 let gameturn = 0
 
-setPlayerCharacter();
-createPotionsInventory();
+generateCharacters(1, "assets/images/hero.png")
+    .then(characters => {
+        villain = characters.enemy;
+        player = characters.player;
+
+        displayVillain(villain);
+        displayPlayer(player);
+        displayPotions();
+    })
+
 
 // Initialize the tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-
-// global functions
-// random integer generator
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
 
 
 //  select random villain and display it's stats in html
@@ -47,18 +51,77 @@ function adjustVillainStats(strength, agility, dexterity) {
     */
 }
 
+function displayPlayerImg() {
+    const characterId = localStorage.getItem('selectedCharacterId');
+    const characterName = localStorage.getItem('selectedCharacterName');
+
+    const playerName = document.querySelector('.player-name');
+    const playerCharacter = document.querySelector('.player img');
+
+    playerName.innerHTML = characterName;
+
+    playerCharacter.setAttribute('src', 'assets/images/player/' + characterId + '.png');
+    playerCharacter.setAttribute('alt', characterName);
+};
+
+function displayPlayer(player) {
+    displayPlayerImg();
+
+    const playerHealth = document.querySelector('#player-hp');
+    const playerStrength = document.querySelector('#player-strength');
+    const playerAgility = document.querySelector('#player-agility');
+    const playerDexterity = document.querySelector('#player-dexterity');
+
+    playerHealth.setAttribute('aria-valuenow', player.health);
+    playerHealth.style.width = player.health + '%';
+
+    playerStrength.setAttribute('aria-valuenow', player.strength);
+    playerStrength.style.width = player.strength + '%';
+
+    playerAgility.setAttribute('aria-valuenow', player.agility);
+    playerAgility.style.width = player.agility + '%';
+
+    playerDexterity.setAttribute('aria-valuenow', player.dexterity);
+    playerDexterity.style.width = player.dexterity + '%';
+}
+
+function displayVillain(villain) {
+    const villainName = document.querySelector('#villainName');
+    const villainImage = document.querySelector('#villainImage');
+    const villainHealth = document.querySelector('#villain-hp');
+    const villainStrength = document.querySelector('#villain-strength');
+    const villainAgility = document.querySelector('#villain-agility');
+    const villainDexterity = document.querySelector('#villain-dexterity');
+
+    villainName.innerHTML = villain.name;
+    villainImage.setAttribute('src', villain.picture);
+
+    villainHealth.setAttribute('aria-valuenow', villain.health);
+    villainHealth.style.width = villain.health + '%';
+
+    villainStrength.setAttribute('aria-valuenow', villain.strength);
+    villainStrength.style.width = villain.strength + '%';
+
+    villainAgility.setAttribute('aria-valuenow', villain.agility);
+    villainAgility.style.width = villain.agility + '%';
+
+    villainDexterity.setAttribute('aria-valuenow', villain.dexterity);
+    villainDexterity.style.width = villain.dexterity + '%';
+
+}
+
+
 function adjustPlayerStats(potion) {
-   alert("test: adjusting player stats");
+
 }
 
 function adjustPotionAmount(potion) {
-    alert("test: adjusting potion amount");
 }
 
 /**
 * Adds brewed potions to the potions inventory
 */
-function createPotionsInventory() {
+function displayPotions() {
 
     let potions = getInventory();   // get potions from local storage
     let potionsInventory = document.getElementById("inventory-potions");
@@ -154,7 +217,7 @@ interact('.player').dropzone({
 
         adjustPlayerStats(potion);
         removeFromInventory(potionId);
-        createPotionsInventory();
+        displayPotions();
 
         resetElementPosition(potion);
     },
@@ -180,7 +243,7 @@ interact('.villain').dropzone({
 
         adjustVillainStats(potion);
         removeFromInventory(potionId);
-        createPotionsInventory();
+        displayPotions();
 
         resetElementPosition(potion);
     },
@@ -193,17 +256,3 @@ document.addEventListener('keydown', function (event) {
         menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
     }
 });
-
-// Set player character image and name
-function setPlayerCharacter() {
-    const characterId = localStorage.getItem('selectedCharacterId');
-    const characterName = localStorage.getItem('selectedCharacterName');
-
-    const playerName = document.querySelector('.player-name');
-    const playerCharacter = document.querySelector('.player img');
-
-    playerName.innerHTML = characterName;
-
-    playerCharacter.setAttribute('src', 'assets/images/player/' + characterId + '.png');
-    playerCharacter.setAttribute('alt', characterName);
-};
