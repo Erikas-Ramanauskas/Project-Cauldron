@@ -1,4 +1,5 @@
 // main variables
+import { getInventory } from "./inventory.js";
 
 let brewedPotions = [];
 let ingredients;
@@ -19,11 +20,10 @@ setPlayerCharacter();
 fetch('assets/json/components_data.json')
     .then((response) => response.json())
     .then((json) => {
+
         components_data = json;
         villains = components_data.villains;
 
-        // used as load function as variables are not loaded yet
-        getBrewedPotions()
         // selectvillain(0)
         createPotionsInventory();
 
@@ -98,9 +98,11 @@ function adjustPotionAmount(potion) {
 * Adds brewed potions to the potions inventory
 */
 function createPotionsInventory() {
-    let potionsInventory = document.getElementById("inventory-potions");
 
-    for (let potion of brewedPotions) {
+    let potions = getInventory();   // get potions from local storage
+    let potionsInventory = document.getElementById("inventory-potions");
+    console.log(potions);
+    for (let potion of potions) {
         const potionElement = document.createElement("li");
         const potionImg = document.createElement("img");
 
@@ -210,15 +212,6 @@ interact('.villain').dropzone({
 });
 
 // Keyboard event for menu open
-
-
-// document.addEventListener('keydown', function (event) {
-//     if (event.key === 'p' || event.key === 'P') {
-//         const menu = document.getElementById('menu');
-//         menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
-//     }
-// });
-
 document.addEventListener('keydown', function (event) {
     if (event.key === 'p' || event.key === 'P') {
         const menu = document.getElementById('menu');

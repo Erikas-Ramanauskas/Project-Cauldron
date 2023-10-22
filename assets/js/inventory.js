@@ -1,4 +1,4 @@
-/* 
+/*
 USAGE:
 
 import { createInventory, resetInventory, getInventory, addToInventory, removeFromInventory } from "./inventory.js";
@@ -17,7 +17,12 @@ export function createInventory() {
 }
 
 export function getInventory() {
-    return JSON.parse(localStorage.getItem("inventory"));
+    let inventory = JSON.parse(localStorage.getItem("inventory"));
+    if (!inventory) {
+        createInventory();
+        inventory = [];
+    }
+    return inventory;
 }
 
 export function resetInventory() {
