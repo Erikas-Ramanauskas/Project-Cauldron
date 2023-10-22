@@ -20,21 +20,33 @@
                <div class="row">
                 <div class="col-0 col-lg-3 side-stats">
                 </div>
-                <div class="col col-lg-9 villain-card">
+                <div class="col col-lg-9 villain-card ">
                     <h5 class="text-center">Enemy Name</h5>
                     <img src="assets/images/villains/Tiny_Vampire-removebg-preview.png" class="card-img-top" alt="grim-reaper" data-drop-target="villain">
                 </div>
                 <div class="col-12 enemy-bottom-stats">
                 <!-- Villain Stats -->
                 <div class="row">
-                    <div class="col-3 stats-image">
+                    <div class="col-3 stats-image position-relative">
                         <img src="assets/images/stats/divination.png" class="stats-img" alt="Divination"> 
+                        <span class="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger" id="villain-strength">
+                            4
+                            <span class="visually-hidden">unread messages</span>
+                        </span>   
                     </div>
-                    <div class="col-3 stats-image">
+                    <div class="col-3 stats-image position-relative">
                         <img src="assets/images/stats/spirit.png" class="stats-img" alt="Spirit"> 
+                        <span class="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger" id="villain-agility">
+                            4
+                            <span class="visually-hidden">unread messages</span>
+                        </span>   
                     </div>
-                    <div class="col-3 stats-image">
+                    <div class="col-3 stats-image position-relative">
                         <img src="assets/images/stats/Dreamwalking.png" class="stats-img" alt="Dreamwalking"> 
+                        <span class="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger" id="villain-dexterity">
+                            4
+                            <span class="visually-hidden">unread messages</span>
+                        </span>   
                     </div>
                 </div>
           </div>  
@@ -56,8 +68,12 @@
           <div class="col-3 side-stats">
                 <!-- Player Stats -->
                 <div class="row">
-                    <div class="col stats-image">
-                        <img src="assets/images/stats/health.png" class="stats-img" alt="Health"> 
+                    <div class="col stats-image position-relative">
+                        <img src="assets/images/stats/vitality.png" class="stats-img" alt="Vitality"> 
+                        <span class="position-absolute top-0 start-80 translate-middle badge rounded-pill bg-danger" id="player-vitality">
+                            20
+                            <span class="visually-hidden">vitality</span>
+                        </span> 
                     </div>
                 </div>
           </div>
@@ -65,14 +81,23 @@
           <div class="col-9 col-lg player-bottom-stats">
                 <!-- Player Stats -->
                 <div class="row">
-                    <div class="col-4 col-lg-3 stats-image">
-                        <img src="assets/images/stats/divination.png" class="stats-img" alt="Divination"> 
+                    <div class="col-4 col-lg-3 stats-image position-relative">
+                        <img src="assets/images/stats/divination.png" class="stats-img" alt="Divination">
+                        <span class="position-absolute top-0 start-80 translate-middle badge rounded-pill bg-danger" id="player-strength">
+                            3                         
+                        </span> 
                     </div>
-                    <div class="col-4 col-lg-3 stats-image">
-                        <img src="assets/images/stats/spirit.png" class="stats-img" alt="Spirit"> 
+                    <div class="col-4 col-lg-3 stats-image position-relative">
+                        <img src="assets/images/stats/spirit.png" class="stats-img" alt="Spirit">
+                        <span class="position-absolute top-0 start-80 translate-middle badge rounded-pill bg-danger" id="player-agility">
+                            3
+                        </span>   
                     </div>
-                    <div class="col-4 col-lg-3 stats-image">
-                        <img src="assets/images/stats/Dreamwalking.png" class="stats-img" alt="Dreamwalking"> 
+                    <div class="col-4 col-lg-3 stats-image position-relative">
+                        <img src="assets/images/stats/Dreamwalking.png" class="stats-img" alt="Dreamwalking">
+                        <span class="position-absolute top-0 start-80 translate-middle badge rounded-pill bg-danger" id="player-dexterity">
+                            3
+                        </span>    
                     </div>
                 </div>
           </div>  
@@ -83,8 +108,8 @@
       
             <!-- Cauldron -->
       <!-- <div class="col"> -->
-      <div class="col-12 col-lg-4 order-lg-2 cauldron">
-        <img src="assets/images/general/cauldron_brew.gif" alt="Cauldron" data-drop-target="cauldron">
+      <div class="col col-lg-4 order-lg-2 cauldron">
+        <img src="assets/images/general/cauldron_brew.gif" alt="Cauldron" git="cauldron">
       </div>
       <!-- </div> -->
       <!-- ./cauldron -->
@@ -185,6 +210,7 @@
   </script>
   <!-- Main script JS -->
   <script defer src="assets/js/game-main.js"></script>
+  <script defer src="assets/js/game-stats.js"></script>
   <script defer src="assets/js/game-drag.js"></script>
 
 </body>

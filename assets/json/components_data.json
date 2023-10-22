@@ -10,7 +10,7 @@
       "strength": "1",
       "dexterity": "0",
       "agility": "0",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/whispering_shadows_elixir.png"
     },
     {
@@ -24,7 +24,7 @@
       "strength": "2",
       "dexterity": "0",
       "agility": "0",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/inferno_ignition_tonic.png"
     },
     {
@@ -38,7 +38,7 @@
       "strength": "3",
       "dexterity": "-1",
       "agility": "0",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/faerie_dreamveaver_elixir.png"
     },
     {
@@ -52,7 +52,7 @@
       "strength": "3",
       "dexterity": "0",
       "agility": "-1",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/wispwood_whispers_elixir.png"
     },
     {
@@ -65,7 +65,7 @@
       "strength": "0",
       "dexterity": "1",
       "agility": "0",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/lunar_reverie_brew.png"
     },
     {
@@ -79,7 +79,7 @@
       "strength": "0",
       "dexterity": "2",
       "agility": "0",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/dragonic_resilience_elixir.png"
     },
     {
@@ -93,7 +93,7 @@
       "strength": "-1",
       "dexterity": "3",
       "agility": "0",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/shadowcloak_elixir.png"
     },
     {
@@ -107,7 +107,7 @@
       "strength": "0",
       "dexterity": "3",
       "agility": "-1",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/vipers_visions_draught.png"
     },
     {
@@ -120,7 +120,7 @@
       "strength": "0",
       "dexterity": "0",
       "agility": "1",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/sirens_lament_potion.png"
     },
     {
@@ -134,7 +134,7 @@
       "strength": "0",
       "dexterity": "0",
       "agility": "2",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/astral_sojourn_elixir.png"
     },
     {
@@ -148,7 +148,7 @@
       "strength": "-1",
       "dexterity": "0",
       "agility": "3",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/petrifying_euphoria_brew.png"
     },
     {
@@ -162,7 +162,7 @@
       "strength": "0",
       "dexterity": "-1",
       "agility": "3",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/eagles_insight_elixir.png"
     },
     {
@@ -175,7 +175,7 @@
       "strength": "-1",
       "dexterity": "0",
       "agility": "0",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/pixies_giggling_goblet.png"
     },
     {
@@ -188,7 +188,7 @@
       "strength": "-2",
       "dexterity": "0",
       "agility": "0",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/chimeras_chalice_mix.png"
     },
     {
@@ -202,7 +202,7 @@
       "strength": "-3",
       "dexterity": "1",
       "agility": "0",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/moonlit_mirage_elixir.png"
     },
     {
@@ -216,7 +216,7 @@
       "strength": "-3",
       "dexterity": "0",
       "agility": "1",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/elemental_harmony_elixir.png"
     },
     {
@@ -229,7 +229,7 @@
       "strength": "0",
       "dexterity": "-1",
       "agility": "0",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/leviathans_call_concoction.png"
     },
     {
@@ -243,7 +243,7 @@
       "strength": "0",
       "dexterity": "-2",
       "agility": "0",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/harpys_lullaby_elixir.png"
     },
     {
@@ -257,7 +257,7 @@
       "strength": "1",
       "dexterity": "-3",
       "agility": "0",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/mystic_serenity_elixir.png"
     },
     {
@@ -271,7 +271,7 @@
       "strength": "0",
       "dexterity": "-3",
       "agility": "1",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/naiads_aquatic_aura_brew.png"
     },
     {
@@ -284,7 +284,7 @@
       "strength": "0",
       "dexterity": "0",
       "agility": "-1",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/gryphons_quill_inkwell.png"
     },
     {
@@ -298,7 +298,7 @@
       "strength": "0",
       "dexterity": "0",
       "agility": "-2",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/djinns_desire_elixir.png"
     },
     {
@@ -312,7 +312,7 @@
       "strength": "1",
       "dexterity": "0",
       "agility": "-3",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/spectral_whisper_draught.png"
     },
     {
@@ -326,7 +326,7 @@
       "strength": "0",
       "dexterity": "1",
       "agility": "-3",
-      "health": "0",
+      "vitality": "0",
       "picture": "assets/images/potions/thunderstrike_fury_elixir.png"
     },
     {
@@ -338,10 +338,10 @@
         "Dragon's Tooth",
         "Ancient Celestial Sand"
       ],
-      "strength": "x",
+      "strength": "0",
       "dexterity": "0",
       "agility": "0",
-      "health": "5",
+      "vitality": "5",
       "picture": "assets/images/potions/eclipsed_destiny_elixir.png"
     },
     {
@@ -354,11 +354,11 @@
         "Phoenix Feather",
         "Bat Wing"
       ],
-      "strength": "24",
+      "strength": "0",
       "dexterity": "0",
       "agility": "0",
-      "health": "8",
-      "picture": "assets/images/potions/celestial_alchemy_conoction.png"
+      "vitality": "8",
+      "picture": "assets/images/potions/eclipsed_destiny_elixir.png"
     }
   ],
   "ingredients": [

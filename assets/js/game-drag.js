@@ -278,15 +278,14 @@ function pointerup(e) {
         } else if (target == `player`) {
             const potionID = dropedElement.getAttribute("data-potion-id")
             //    call function to add potion to player
-            console.log(potionID);
-            
-            
+            const p = findPotionStats(potionID);
+            playerStatsUpdate(p.strength, p.agility, p.dexterity, p.vitality)
             
         } else if (target == `villain`) {
             const potionID = dropedElement.getAttribute("data-potion-id")
             //    call function to add potion to villain
-            console.log(potionID);
-            
+            const p = findPotionStats(potionID);
+            villainStatsUpdate(p.strength, p.agility, p.dexterity)
             
             
         } else {

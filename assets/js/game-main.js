@@ -4,13 +4,20 @@ let potions;
 let ingredients;
 let cauldronIngredients = [];
 let playerStats = {
-    strenght: 0,
-    agility: 0,
-    dexterity: 0,
-    vitality: 0,
+    strength: 3,
+    agility: 3,
+    dexterity: 3,
+    vitality: 20,
 }
 
+// vilains array 
 let villains
+// current villain stats
+let villainStats = {
+    strength: 4,
+    agility: 4,
+    dexterity: 4
+}
 let gameturn = 0
 
 // takes jason data and updates variables
@@ -55,10 +62,9 @@ function checkLocalStorage() {
 }
 
 
-// global functions
 // random integer generator
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
 // update potions in local storage with new discovered potion passed in to function with potion id
@@ -81,31 +87,23 @@ function addDiscoveredPotion(potionID) {
 
 //  select random villain and display it's stats in html
 function selectvillain(gameturn) {
-    let villain = villains[getRandomInt(villains.length)];
+    let villain = villains[getRandomInt(0, villains.length)];
 
     /*
     document.getElementById("villain-name").innerHTML = villain.name;
     document.getElementById("villain-image").src = villain.image;
 
     // villain stats
-    strenght = villain.strenght + turn * villain.exraStrenght;
+    strength = villain.strength + turn * villain.exrastrength;
     agility = villain.agility + turn * villain.exraAgility;
     dexterity = villain.dexterity + turn * villain.exraDexterity;
 
-    document.getElementById("villain-strenght").innerHTML = strenght;
+    document.getElementById("villain-strength").innerHTML = strength;
     document.getElementById("villain-agility").innerHTML = agility;
     document.getElementById("villain-dexterity").innerHTML = dexterity;
     */
 }
 
-// adjust villain stats based on potion used
-function adjustvillainStats(strenght, agility, dexterity) {
-    /*
-    document.getElementById("villain-strenght").innerHTML += strenght;
-    document.getElementById("villain-agility").innerHTML += agility;
-    document.getElementById("villain-dexterity").innerHTML += dexterity;
-    */
-}
 
 
 // create ingredients inventory at the begining all items will have greyscaled-image class
@@ -181,6 +179,3 @@ function createPotionsInventory() {
     }
     addNewEventListeners("add")
 }
-
-
-console.log("script.js loaded");

@@ -145,6 +145,14 @@ body{
   width: 5rem; 
 }
 
+.col, .col-12 {
+    padding: 0;
+}
+ 
+.row {
+    margin: 0;
+} 
+
 @keyframes pulse {
     0% {
     box-shadow: 0 0 10px rgba(177, 1, 230, 0.5);
@@ -225,5 +233,4 @@ body{
         height: 9rem;
     }
     
-
 }
