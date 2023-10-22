@@ -1,65 +1,166 @@
 // main variables
 import { getInventory, removeFromInventory, addToInventory } from "./inventory.js"
-
-let villains
-let gameturn = 0
-
-setPlayerCharacter();
-createPotionsInventory();
+import generateCharacters from './generate_characters.js';
+import applyPotion from './apply_potion.js';
 
 // Initialize the tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
-// global functions
-// random integer generator
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+runGame();
+
+// save game round in local storage
+function setGameRound(turn) {
+    localStorage.setItem("turn", turn);
 }
 
-
-//  select random villain and display it's stats in html
-function selectvillain(gameturn) {
-    let villain = villains[getRandomInt(villains.length)];
-
-    /*
-    document.getElementById("villain-name").innerHTML = villain.name;
-    document.getElementById("villain-image").src = villain.image;
-
-    // villain stats
-    strength = villain.strength + turn * villain.exrastrength;
-    agility = villain.agility + turn * villain.exraAgility;
-    dexterity = villain.dexterity + turn * villain.exraDexterity;
-
-    document.getElementById("villain-strength").innerHTML = strength;
-    document.getElementById("villain-agility").innerHTML = agility;
-    document.getElementById("villain-dexterity").innerHTML = dexterity;
-    */
+// get game round from local storage
+function getGameRound() {
+    let turn = localStorage.getItem("turn");
+    return turn;
 }
 
-// adjust villain stats based on potion used
-function adjustVillainStats(strength, agility, dexterity) {
-    alert("test: adjusting Villain stats");
-    /*
-    document.getElementById("villain-strength").innerHTML += strength;
-    document.getElementById("villain-agility").innerHTML += agility;
-    document.getElementById("villain-dexterity").innerHTML += dexterity;
-    */
+// save character in local storage
+function setCurrentCharacter(character, characterName) {
+    localStorage.setItem(characterName, JSON.stringify(character));
 }
 
-function adjustPlayerStats(potion) {
-   alert("test: adjusting player stats");
+// get character from local storage
+function getCharacter(characterName) {
+    let character = localStorage.getItem(characterName);
+    if (!character) {
+        character = {};
+    } else {
+        character = JSON.parse(character);
+    }
+    return character;
 }
 
-function adjustPotionAmount(potion) {
-    alert("test: adjusting potion amount");
+// generate characters
+function runRound(difficulty = 0.1) {
+    return generateCharacters(0.1, "assets/images/hero.png")
+        .then(characters => {
+            let villain = characters.enemy;
+            let player = characters.player;
+
+            // save characters in local storage
+            setCurrentCharacter(villain, "villain");
+            setCurrentCharacter(player, "player");
+        })
+        .catch(err => {
+            console.error("Error generating characters:", err);
+        });
 }
 
+function runGame() {
+    let turn = getGameRound();
+    if (!turn || turn <= 0) {
+        setGameRound(1);
+        runRound()
+            .then(() => {
+                console.log('villain');
+                // get characters from local storage
+                let villain = getCharacter("villain");
+                let player = getCharacter("player");
+                // display characters
+                displayVillain(villain);
+                displayPlayer(player);
+                displayPotions();
+            })
+    } else {
+
+        // get characters from local storage
+        let villain = getCharacter("villain");
+        let player = getCharacter("player");
+
+        // display characters
+        displayVillain(villain);
+        displayPlayer(player);
+        displayPotions();
+    }
+}
+
+function displayPlayerImg() {
+    const characterId = localStorage.getItem('selectedCharacterId');
+    const characterName = localStorage.getItem('selectedCharacterName');
+
+    const playerName = document.querySelector('.player-name');
+    const playerCharacter = document.querySelector('.player img');
+
+    playerName.innerHTML = characterName;
+
+    playerCharacter.setAttribute('src', 'assets/images/player/' + characterId + '.png');
+    playerCharacter.setAttribute('alt', characterName);
+};
+
+function displayPlayer(player) {
+    displayPlayerImg();
+
+    const playerHealth = document.querySelector('#player-hp');
+    const playerStrength = document.querySelector('#player-strength');
+    const playerAgility = document.querySelector('#player-agility');
+    const playerDexterity = document.querySelector('#player-dexterity');
+
+    playerHealth.setAttribute('aria-valuenow', player.health);
+    playerHealth.style.width = player.health + '%';
+
+    playerStrength.setAttribute('aria-valuenow', player.strength);
+    playerStrength.style.width = player.strength + '%';
+
+    playerAgility.setAttribute('aria-valuenow', player.agility);
+    playerAgility.style.width = player.agility + '%';
+
+    playerDexterity.setAttribute('aria-valuenow', player.dexterity);
+    playerDexterity.style.width = player.dexterity + '%';
+}
+
+function displayVillain(villain) {
+    const villainName = document.querySelector('#villainName');
+    const villainImage = document.querySelector('#villainImage');
+    const villainHealth = document.querySelector('#villain-hp');
+    const villainStrength = document.querySelector('#villain-strength');
+    const villainAgility = document.querySelector('#villain-agility');
+    const villainDexterity = document.querySelector('#villain-dexterity');
+
+    villainName.innerHTML = villain.name;
+    villainImage.setAttribute('src', villain.picture);
+
+    villainHealth.setAttribute('aria-valuenow', villain.health);
+    villainHealth.style.width = villain.health + '%';
+
+    villainStrength.setAttribute('aria-valuenow', villain.strength);
+    villainStrength.style.width = villain.strength + '%';
+
+    villainAgility.setAttribute('aria-valuenow', villain.agility);
+    villainAgility.style.width = villain.agility + '%';
+
+    villainDexterity.setAttribute('aria-valuenow', villain.dexterity);
+    villainDexterity.style.width = villain.dexterity + '%';
+
+}
+
+// adjust stats based on potion used
+function adjustStats(potionId, characterName) {
+    console.log(characterName);
+    let inventory = getInventory();
+    let potion = inventory.find(item => item.id === potionId);
+    let character = getCharacter(characterName);
+    character = applyPotion(character, potion);
+    setCurrentCharacter(character, characterName);
+
+    if (characterName === "player") {
+        displayPlayer(character);
+    } else {
+        displayVillain(character);
+    }
+
+    // remove potion from inventory
+    removeFromInventory(potionId);
+}
 /**
 * Adds brewed potions to the potions inventory
 */
-function createPotionsInventory() {
-
+function displayPotions() {
     let potions = getInventory();   // get potions from local storage
     let potionsInventory = document.getElementById("inventory-potions");
     potionsInventory.innerHTML = "";
@@ -152,9 +253,8 @@ interact('.player').dropzone({
         // get data porion-id from potion
         const potionId = potion.getAttribute("data-potion-id");
 
-        adjustPlayerStats(potion);
-        removeFromInventory(potionId);
-        createPotionsInventory();
+        adjustStats(potionId, "player");
+        displayPotions();
 
         resetElementPosition(potion);
     },
@@ -178,9 +278,8 @@ interact('.villain').dropzone({
         // get data porion-id from potion
         const potionId = potion.getAttribute("data-potion-id");
 
-        adjustVillainStats(potion);
-        removeFromInventory(potionId);
-        createPotionsInventory();
+        adjustStats(potionId, "villain");
+        displayPotions();
 
         resetElementPosition(potion);
     },
@@ -193,17 +292,3 @@ document.addEventListener('keydown', function (event) {
         menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
     }
 });
-
-// Set player character image and name
-function setPlayerCharacter() {
-    const characterId = localStorage.getItem('selectedCharacterId');
-    const characterName = localStorage.getItem('selectedCharacterName');
-
-    const playerName = document.querySelector('.player-name');
-    const playerCharacter = document.querySelector('.player img');
-
-    playerName.innerHTML = characterName;
-
-    playerCharacter.setAttribute('src', 'assets/images/player/' + characterId + '.png');
-    playerCharacter.setAttribute('alt', characterName);
-};
