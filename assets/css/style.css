@@ -1,28 +1,30 @@
 /* Global */
+
+@font-face {
+    font-family: withces_magic;
+    src: url(/assets/fonts/withces_magic.ttf)
+    format('truetype');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box !important;
-    font-family: 'UnifrakturMaguntia', sans-serif;
+    font-family: 'withces_magic', sans-serif;
     letter-spacing: 1px;
 }
 
-:root {
-    --text: #eca72c;
-    --background: #504069;
-    --primary: #ee5622;
-    --secondary: #31263e;
-    --accent: #221E22;
-
+:root{
     --orange-color: #eca72c;
-    --dark-orange-color: #ee5622;
-    --black-color: #504069;
+    --ligth-orange-color: #f0c478;
+    --purple-color: #504069;
     --white-color: #fff;
 }
 
 body {
     overflow-x: hidden;
 }
+
 
 /* used for potions and ingredients that has current 0 value */
 .greyscaled-image {
@@ -35,7 +37,7 @@ body {
 }
 
 .black-color-text {
-    color: var(--black-color);
+    color: var(--purple-color);
 }
 
 .btn-custom-orange {
@@ -44,7 +46,7 @@ body {
 }
 
 .btn-custom-orange:hover {
-    background-color: var(--dark-orange-color);
+    background-color: var(--ligth-orange-color);
 }
 
 .white-color-text {
@@ -56,7 +58,7 @@ body {
 .main-heading {
     font-size: 65px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 70px;
     padding-bottom: 20px;
 }
 
@@ -82,6 +84,7 @@ body {
 
 .button-custom {
     width: 70%;
+    /* padding-top: 16px; */
 }
 
 .footer-links {
