@@ -12,6 +12,7 @@ let playerStats = {
 let villains
 let gameturn = 0
 
+setPlayerCharacter();
 
 // takes jason data and updates variables
 
@@ -216,3 +217,18 @@ document.addEventListener('keydown', function (event) {
         menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
     }
 });
+
+// Set player character image and name
+function setPlayerCharacter() {
+    const characterId = localStorage.getItem('selectedCharacterId');
+    const characterName = localStorage.getItem('selectedCharacterName');
+
+    const playerName = document.querySelector('.player-name');
+    const playerCharacter = document.querySelector('.player img');
+
+    playerName.innerHTML = characterName;
+
+    playerCharacter.setAttribute('src', 'assets/images/player/' + characterId + '.png');
+    playerCharacter.setAttribute('alt', characterName);
+};
+
