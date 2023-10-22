@@ -162,8 +162,19 @@ See [TESTING.md](TESTING.md) for details.
 This site has been deployed from a GitHub repository using GitHub technology to GitHub Pages. The site can be accessed <a href="https://erikas-ramanauskas.github.io/Project-Cauldron/" target="_blank">here</a>.
 
 ## Credits
-- ChatGPT was used to generate images used in this project.
-- Project and Readme templates were provided by Code Institute
+- ChatGPT was used to generate some of the images used in this project.
+- Project and Readme templates were provided by Code Institute.
+- "Shadows Into Light" font is taken from Google Fonts.
+- Image for recipe book:
+<a href="https://www.freepik.com/free-vector/old-mystic-books-magic-spells_32591266.htm#query=book%20game%20art&position=1&from_view=search&track=ais">Image by upklyak</a> on Freepik
+- Image for open recipe book:
+<a href="https://www.freepik.com/free-vector/blank-open-book_4228214.htm#page=3&query=game%20art%20open%20book&position=31&from_view=search&track=ais">Image by brgfx</a> on Freepik
+- Image for background image:
+<a href="https://www.freepik.com/free-vector/dark-forest-with-witch-cauldron-trees-silhouettes-purple-light-moon-night-halloween-background-with-gold-cooking-boiler-with-magic-potion-vector-cartoon-illustration-with-cauldron-wood_21329622.htm#query=halloween%20game%20background&position=0&from_view=search&track=ais">Image by upklyak</a> on Freepik
+- Image for witches kitchen background
+<a href="https://www.freepik.com/free-vector/alchemical-laboratory-with-magic-books-potions_37205185.htm#query=kitchen%20halloween%20game%20background&position=5&from_view=search&track=ais">Image by upklyak</a> on Freepik
+- Image for ripped paper images:
+<a href="https://www.freepik.com/free-vector/set-ripped-paper-cardboard-pieces-black_37340853.htm#query=ripped%20paper%20game%20art&position=48&from_view=search&track=ais">Image by upklyak</a> on Freepik
 
 ## Acknowledgements
 - Code Institute and the Hackathon team for running the Code Institute October 2023 Hackathon
