@@ -148,8 +148,13 @@
       "strength": "-1",
       "dexterity": "0",
       "agility": "3",
+<<<<<<< HEAD
+      "health": "0",
+      "picture": "../images/potions/petrifying_euphoria_brew.png"
+=======
       "vitality": "0",
       "picture": "assets/images/potions/petrifying_euphoria_brew.png"
+>>>>>>> b5743c8a646683176d2bbc4595699a75b8dbcc01
     },
     {
       "id": "11",
@@ -440,6 +445,26 @@
   ],
   "villains": [
     {
+<<<<<<< HEAD
+        "id": 0,
+        "name": "Tiny Vampire",
+        "picture": "path/to/image"
+    },
+    {
+        "id": 1,
+        "name": "Baby Bumblebee",
+        "picture": "path/to/image"
+    },
+    {
+        "id": 2,
+        "name": "Junior Ghostbuster",
+        "picture": "path/to/image"
+    },
+    {
+        "id": 3,
+        "name": "Toddler Mummy",
+        "picture": "path/to/image"
+=======
       "id": 0,
       "name": "Little Pumpkin",
       "Strength": 5,
@@ -638,6 +663,7 @@
       "extraStr": 1,
       "extraAgil": 2,
       "extraDex": 1
+>>>>>>> b5743c8a646683176d2bbc4595699a75b8dbcc01
     }
   ]
 }
