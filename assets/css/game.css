@@ -85,3 +85,25 @@ body {
     font-size: 16px;
     border: 1px solid black;
   }
+
+/* Navigation menu */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/general/frame_cauldron_content.png);
+    background-size: 150px;
+    width: 150px;
+    height: 150px;
+}
+
+.icon {
+    list-style-image: url(../images/general/spooky-meme.gif);
+}
+
+.menu_icon {
+    color: var(--black-color);
+    text-decoration: none;
+}
+
