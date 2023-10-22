@@ -117,35 +117,35 @@ function adjustvillainStats(strenght, agility, dexterity) {
 
 
 // create ingredients inventory at the begining all items will have greyscaled-image class
-function createIngredientsInventory() {
-    let ingredientsInventory = document.getElementById("inventory-ingredients");
-    const grid = document.createElement("div");
-    grid.classList.add("row", "row-cols-4", "g-2");
+// function createIngredientsInventory() {
+//     let ingredientsInventory = document.getElementById("inventory-ingredients");
+//     const grid = document.createElement("div");
+//     grid.classList.add("row", "row-cols-4", "g-2");
 
-    for (let i = 0; i < ingredients.length; i++) {
-        let parent = document.createElement("div");
-        let ingredient = document.createElement("img");
+//     for (let i = 0; i < ingredients.length; i++) {
+//         let parent = document.createElement("div");
+//         let ingredient = document.createElement("img");
 
-        ingredient.setAttribute("src", ingredients[i].picture);
-        ingredient.setAttribute("alt", ingredients[i].name);
-        ingredient.classList.add("greyscaled-image", "ingredient-img");
+//         ingredient.setAttribute("src", ingredients[i].picture);
+//         ingredient.setAttribute("alt", ingredients[i].name);
+//         ingredient.classList.add("greyscaled-image", "ingredient-img");
 
-        parent.setAttribute("id", "ingredient-" + i);
-        parent.classList.add("ingredient-container");
-        parent.setAttribute("data-ingredient-id", i);
-        parent.setAttribute("data-ingredient-ammount", 0);
+//         parent.setAttribute("id", "ingredient-" + i);
+//         parent.classList.add("ingredient-container");
+//         parent.setAttribute("data-ingredient-id", i);
+//         parent.setAttribute("data-ingredient-ammount", 0);
 
-        // tooltip
-        parent.setAttribute("data-bs-toggle", "tooltip");
-        parent.setAttribute("data-bs-placement", "top");
-        parent.setAttribute("data-bs-title", ingredients[i].name);
+//         // tooltip
+//         parent.setAttribute("data-bs-toggle", "tooltip");
+//         parent.setAttribute("data-bs-placement", "top");
+//         parent.setAttribute("data-bs-title", ingredients[i].name);
 
-        parent.appendChild(ingredient);
+//         parent.appendChild(ingredient);
 
-        grid.appendChild(parent);
-    }
-    ingredientsInventory.appendChild(grid);
-}
+//         grid.appendChild(parent);
+//     }
+//     ingredientsInventory.appendChild(grid);
+// }
 
 // create potions inventory at the begining all items will have greyscaled-image class
 function createPotionsInventory() {
