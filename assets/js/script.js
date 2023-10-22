@@ -139,7 +139,24 @@ function displayVillain(villain) {
 
 }
 
+// adjust stats based on potion used
+function adjustStats(potionId, characterName) {
+    console.log(characterName);
+    let inventory = getInventory();
+    let potion = inventory.find(item => item.id === potionId);
+    let character = getCharacter(characterName);
+    character = applyPotion(character, potion);
+    setCurrentCharacter(character, characterName);
 
+    if (characterName === "player") {
+        displayPlayer(character);
+    } else {
+        displayVillain(character);
+    }
+
+    // remove potion from inventory
+    removeFromInventory(potionId);
+}
 /**
 * Adds brewed potions to the potions inventory
 */
@@ -236,6 +253,7 @@ interact('.player').dropzone({
         // get data porion-id from potion
         const potionId = potion.getAttribute("data-potion-id");
 
+        adjustStats(potionId, "player");
         displayPotions();
 
         resetElementPosition(potion);
@@ -260,6 +278,7 @@ interact('.villain').dropzone({
         // get data porion-id from potion
         const potionId = potion.getAttribute("data-potion-id");
 
+        adjustStats(potionId, "villain");
         displayPotions();
 
         resetElementPosition(potion);
