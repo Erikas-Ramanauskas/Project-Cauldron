@@ -36,7 +36,7 @@
       "strength": "3",
       "dexterity": "-1",
       "agility": "0",
-      "picture": "assets/images/potions/faerie_dreamveaver_elixir.png"
+      "picture": "assets/images/potions/faerie_dreamweaver_elixir.png"
     },
     {
       "id": "3",
@@ -125,7 +125,7 @@
       "strength": "0",
       "dexterity": "0",
       "agility": "2",
-      "picture": "assets/images/potions/astral_sojourn_elixir.png"
+      "picture": "assets/images/potions/astral_sojourn_serum.png"
     },
     {
       "id": "10",
