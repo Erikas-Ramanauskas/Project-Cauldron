@@ -1,0 +1,87 @@
+/* Game board */
+body {
+    overflow-x: hidden;
+    touch-action: none;
+    background: url('../images/background_720.webp') no-repeat center center;
+    background-size: cover;
+}
+#game-board {
+    --bs-gutter-x: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+.card-title {
+    color: #eca72c;
+}
+
+.card-img-bottom {
+    width: 110%;
+}
+
+/* Stats */
+.card-header {
+    max-width: 15rem;
+}
+.player-stats-section, .villain-stats-section {
+    background: url('../images/general/frame_stats.png') no-repeat center center;
+    background-size: cover;
+}
+
+.progress {
+    --bs-progress-bg: transparent;
+    --bs-progress-height: 0.8rem;
+    --bs-progress-font-size: 0.55rem;
+    border: 0.5px solid rgba(137, 133, 133, 0.311);
+}
+.progress-bar {
+    border-radius: 10px;
+}
+
+/* Potions */
+#inventory-potions-container {
+    --bs-gutter-x: 0;
+    min-height: 5rem;
+    background: url('../images/general/frame_inventory.png') no-repeat center 0;
+    background-size: cover;
+}
+
+.potion-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.grabbable, .potion-img:hover {
+    cursor: grab;
+}
+
+.grabbing {
+    cursor: grabbing;
+}
+
+.potion-img {
+    width: 2.5rem;
+}
+
+.character-hover::before {
+    content: "+";
+    position: absolute;
+    right: -1px;
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 50%;
+    font-size: 16px;
+    border: 1px solid black;
+  }

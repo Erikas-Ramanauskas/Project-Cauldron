@@ -29,8 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // parse json file
-
-    fetch("https://erikas-ramanauskas.github.io/Project-Cauldron/assets/json/components_data.json")
+    fetch('assets/json/components_data.json')
         .then((response) => response.json())
         .then((json) => {
 
@@ -55,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     makeIngredientsDraggable();
-    
+
     interact('.cauldron').dropzone({
         accept: '.ingredient',
         ondragenter: function (event) {
@@ -102,7 +101,8 @@ function checkLocalStorage() {
     // if local storage is empty, set all potions to undiscovered and save to local storage
     else {
         for (let i = 0; i < potions.length; i++) {
-            potions[i].discovered = false;
+            // FIXME: set all potions to undiscovered
+            potions[i].discovered = true;  // temporary, to display all potions on game board
         }
         localStorage.setItem("potions", JSON.stringify(potions));
     }
@@ -115,7 +115,7 @@ function makeIngredientsDraggable() {
 function makeIngredientsNotDraggable() {
     interact('.ingredient').unset();
 }
-    
+
 function resetElementPosition(element) {
     element.style.transform = 'translate(0px, 0px)';
     element.setAttribute('data-x', 0);
@@ -126,17 +126,17 @@ function arraysEqual(arr1, arr2) {
     if (arr1.length !== arr2.length) {
       return false;
     }
-  
+
     // Sort the arrays
     const sortedArr1 = arr1.slice().sort();
     const sortedArr2 = arr2.slice().sort();
-  
+
     for (let i = 0; i < sortedArr1.length; i++) {
       if (sortedArr1[i] !== sortedArr2[i]) {
         return false;
       }
     }
-  
+
     return true;
   }
 
@@ -196,7 +196,7 @@ function updateContentList(ingredientName, ingredientImage) {
     ingredientNameElement.classList.add('ingredient-name');
     ingredientNameElement.innerHTML = ingredientName;
     contentItem.appendChild(ingredientNameElement);
-    
+
     contentItem.style.backgroundImage = ingredientImage;
     contentList.appendChild(contentItem);
 }
@@ -215,8 +215,9 @@ function resetContentList(cauldronContents) {
 
 function addDiscoveredPotion(potionID) {
 // Get the array of potions from local storage
-    console.log(potionID);
+    
     const potions = JSON.parse(localStorage.getItem('potions')) || [];
+    console.log(potions);
     if (potionID >= 0 && potionID < potions.length ) {
         // If the potion is found, set its "discovered" attribute to true
         potions[potionID].discovered = true;
@@ -271,7 +272,7 @@ function showRecipeBook() {
             previousPageButton.classList.remove('greyscaled-image');
         }
     });
-    
+
     previousPageButton.addEventListener('click', function () {
         if (!previousPageButton.disabled) {
             if (page === 0) {

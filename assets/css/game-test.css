@@ -1,0 +1,236 @@
+body{
+    overflow-x: hidden;
+    touch-action: none;
+    background: url('../images/background_720.webp') no-repeat center center;
+    background-size: cover;
+}
+
+
+#game-board {
+ --bs-gutter-x: 0;
+    background-size: contain;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media only screen and (orientation: landscape) {
+  .game-buttons p {
+    font-size: 0.8rem;
+  }
+}
+
+
+.card {
+    background: transparent;
+    border: none;
+}
+
+.card-footer{
+    background: transparent;
+    border: none;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items: center;
+    border: none;
+}
+.card-title {
+    color: #eca72c;
+}
+
+.card-img-top {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+}
+
+
+
+.cauldron {
+    display: contents;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cauldron>img {
+    width: 14rem;
+    height: 14rem;
+    border-radius: 40%;
+}
+
+
+.character-card{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    flex-direction: column;
+}
+
+
+.side-stats {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+}
+
+.side-stats > div{
+    width: 100%;
+    display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+}
+
+.side-stats-image{
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.player-bottom-stats > div{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.villain-bottom-stats > div{
+    display: flex;
+    justify-content: start;
+}
+
+.stats-img{
+    width: 5rem;
+    height: 5rem;
+}
+
+.recipes-btn,
+.rules-btn {
+    width: 120px;
+}
+
+.ingredient-img,
+.potion-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ingredients-img:hover,
+.potions-img:hover {
+    cursor: grab;
+}
+
+.ingredients-img:active,
+.potions-img:active {
+    cursor: grabbing;
+}
+
+
+#inventory-potions, #inventory-ingredients{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.potion-container {
+  padding: 3px;
+  width: 4rem; 
+}
+
+.ingredient-container {
+  padding: 3px;
+  width: 5rem; 
+}
+
+.col, .col-12 {
+    padding: 0;
+}
+ 
+.row {
+    margin: 0;
+} 
+
+@keyframes pulse {
+    0% {
+    box-shadow: 0 0 10px rgba(177, 1, 230, 0.5);
+    }
+    50% {
+    box-shadow: 0 0 20px rgba(177, 1, 230, 1);
+    }
+    100% {
+    box-shadow: 0 0 10px rgba(177, 1, 230, 0.5);
+    }
+}
+
+.card-img-top.highlight, .cauldron>.highlight{
+    animation: pulse 1.5s infinite;
+}
+
+
+
+/* media adjustments */
+
+@media screen and (max-width: 1024px) {
+    .stats-img {
+        width: 4rem;
+        height: 4rem;
+    } 
+     .cauldron > img {
+        width: 11rem;
+        height: 11rem;
+    } 
+    
+    .card-img-top {
+        width: 15rem;
+        height: 15rem;
+    } 
+    .potion-container {
+        padding: 1px;
+        width: 3rem; 
+    }
+    .ingredient-container {
+        padding: 2px;
+        width: 4rem; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .stats-img {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+      .cauldron > img {
+        width: 8rem;
+        height: 8rem;
+    }
+      .card-img-top {
+        width: 12rem;
+        height: 12rem;
+    }
+    .potion-container {
+        padding: 0.5px;
+        width: 2rem; 
+    }
+    .ingredient-container {
+        padding: 1px;
+        width: 3rem; 
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+     .stats-img {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    .card-img-top {
+        width: 9rem;
+        height: 9rem;
+    }
+    
+}
