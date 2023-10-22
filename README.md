@@ -4,7 +4,7 @@
 ![mockup](docs/images/mockup.png)
 
 ## Overview
-Witches Brew is a one player game against the computer. It combines elements of strategy and computer generated randomness – or good and bad luck from a player perspective! The player commences with base levels of strength, agility and dexterity. As the game proceeds the player must fight off enemies. This will reduce the strength, agility and dexterity levels of the player depending on the nature of the enemy. However the player also starts with ingredients for potions and continues to gather them throughout the game. Different potions will affect the strength, agility and dexterity of the player or of the enemy. Brew the right potions to stay alive, stay in the game and continue to beat your enemies!!
+Witches Brew is a one player game against the computer. It combines elements of strategy and computer generated randomness – or good and bad luck from a player perspective! The player commences with a vitality level and levels of strength, agility and dexterity. As the game proceeds the player must fight off enemies that also have strength, agility and dexterity levels. Losing to enemies will reduce the players vitality level. However the player also starts with ingredients for potions and continues to gather them throughout the game. Different potions will affect the strength, agility and dexterity of the player or of the enemy thus affecting the players ability to win. Brew the right potions to stay alive, stay in the game and continue to beat your enemies!!
 
 
 Live demo: https://Erikas-Ramanauskas.github.io/Project-Cauldron
@@ -94,16 +94,24 @@ All aspects of the UX design flow directly from the fact that the goal is the cr
 ...
 
 ### Fonts
-...
+The font used is "Shadows Into Light" from Google Fonts and was chosen to reflect the spooky, Halloween, witches theme while maintaining readability. Other somewhat more stylised and potentially suitable fonts were also trialled but it was considered that readability was compromised.
 
 ### Colours
-...
+Much of the colour on the site is generated using a careful choice of background images. These images have been chosen to provide consistency across the site and consist largely of blacks, purples, reds, oranges and browns that were considered to have an autumnal/Halloween feel.
+Where colours are applied to fonts and backgrounds these have been chosen to remain consistent with the chosen images and the overall theme.
+In particular:
+- The Witches Brew title is in white (#ffffff) to provide contrast with the colourful background.
+- #eca72c, an orange colour has been used for card and button backgrounds.
+- #f0c478, a lighter orange colour has been used for hover over buttons.
+- #504069, a purple colour has been used for some text including the creator’s cards.
+- #212529, a black colour has been used for some text including button texts.
+
 
 ### Sounds
 ...
 
 ### Images and Animations
-...
+Images have been used to provide much of the colour for the site as outlined above. They are also used to create specific components of the game play. ChatGPT has been used to create some images and others have been sourced from freepik.com and attributed in the credits below.
 
 ### Wireframes
 ...
@@ -154,8 +162,19 @@ See [TESTING.md](TESTING.md) for details.
 This site has been deployed from a GitHub repository using GitHub technology to GitHub Pages. The site can be accessed <a href="https://erikas-ramanauskas.github.io/Project-Cauldron/" target="_blank">here</a>.
 
 ## Credits
-- ChatGPT was used to generate images used in this project.
-- Project and Readme templates were provided by Code Institute
+- ChatGPT was used to generate some of the images used in this project.
+- Project and Readme templates were provided by Code Institute.
+- "Shadows Into Light" font is taken from Google Fonts.
+- Image for recipe book:
+<a href="https://www.freepik.com/free-vector/old-mystic-books-magic-spells_32591266.htm#query=book%20game%20art&position=1&from_view=search&track=ais">Image by upklyak</a> on Freepik
+- Image for open recipe book:
+<a href="https://www.freepik.com/free-vector/blank-open-book_4228214.htm#page=3&query=game%20art%20open%20book&position=31&from_view=search&track=ais">Image by brgfx</a> on Freepik
+- Image for background image:
+<a href="https://www.freepik.com/free-vector/dark-forest-with-witch-cauldron-trees-silhouettes-purple-light-moon-night-halloween-background-with-gold-cooking-boiler-with-magic-potion-vector-cartoon-illustration-with-cauldron-wood_21329622.htm#query=halloween%20game%20background&position=0&from_view=search&track=ais">Image by upklyak</a> on Freepik
+- Image for witches kitchen background
+<a href="https://www.freepik.com/free-vector/alchemical-laboratory-with-magic-books-potions_37205185.htm#query=kitchen%20halloween%20game%20background&position=5&from_view=search&track=ais">Image by upklyak</a> on Freepik
+- Image for ripped paper images:
+<a href="https://www.freepik.com/free-vector/set-ripped-paper-cardboard-pieces-black_37340853.htm#query=ripped%20paper%20game%20art&position=48&from_view=search&track=ais">Image by upklyak</a> on Freepik
 
 ## Acknowledgements
 - Code Institute and the Hackathon team for running the Code Institute October 2023 Hackathon
