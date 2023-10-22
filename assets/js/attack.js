@@ -5,6 +5,8 @@ import attack from './attack.js';
 
 characters = attack(player, enemy);
 
+returns true if game won, false if game lost, else returns new character data
+
 */
 
 export default function attack(player, enemy) {
@@ -18,5 +20,11 @@ export default function attack(player, enemy) {
         player.health -= enemyAttack;
     }
 
-    return { player, enemy };
+    if (enemy.health <= 0) {
+        return true;
+    } else if (player.health <= 0) {
+        return false;
+    } else {
+        return { player, enemy };
+    }
 }
