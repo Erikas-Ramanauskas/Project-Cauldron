@@ -3,7 +3,7 @@
 let brewedPotions = [];
 let ingredients;
 let playerStats = {
-    strenght: 0,
+    strength: 0,
     agility: 0,
     dexterity: 0,
     vitality: 0,
@@ -64,21 +64,21 @@ function selectvillain(gameturn) {
     document.getElementById("villain-image").src = villain.image;
 
     // villain stats
-    strenght = villain.strenght + turn * villain.exraStrenght;
+    strength = villain.strength + turn * villain.exrastrength;
     agility = villain.agility + turn * villain.exraAgility;
     dexterity = villain.dexterity + turn * villain.exraDexterity;
 
-    document.getElementById("villain-strenght").innerHTML = strenght;
+    document.getElementById("villain-strength").innerHTML = strength;
     document.getElementById("villain-agility").innerHTML = agility;
     document.getElementById("villain-dexterity").innerHTML = dexterity;
     */
 }
 
 // adjust villain stats based on potion used
-function adjustVillainStats(strenght, agility, dexterity) {
+function adjustVillainStats(strength, agility, dexterity) {
     alert("test: adjusting Villain stats");
     /*
-    document.getElementById("villain-strenght").innerHTML += strenght;
+    document.getElementById("villain-strength").innerHTML += strength;
     document.getElementById("villain-agility").innerHTML += agility;
     document.getElementById("villain-dexterity").innerHTML += dexterity;
     */
