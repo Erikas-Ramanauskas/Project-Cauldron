@@ -113,7 +113,15 @@ All aspects of the UX design flow directly from the fact that the goal is the cr
 ...
 
 ## Technologies Used
-...
+- HTML
+- CSS
+- Javascript
+- Figma (For Wireframes)
+- Bootstrap (for styling and grid)
+- Font Awesome (for icons)
+- Favicon (for favicon generation)
+- Github Pages (for deployment)
+
 
 ## Testing
 See [TESTING.md](TESTING.md) for details.
