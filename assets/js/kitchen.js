@@ -101,7 +101,8 @@ function checkLocalStorage() {
     // if local storage is empty, set all potions to undiscovered and save to local storage
     else {
         for (let i = 0; i < potions.length; i++) {
-            potions[i].discovered = false;
+            // FIXME: set all potions to undiscovered
+            potions[i].discovered = true;  // temporary, to display all potions on game board
         }
         localStorage.setItem("potions", JSON.stringify(potions));
     }
@@ -271,7 +272,7 @@ function showRecipeBook() {
             previousPageButton.classList.remove('greyscaled-image');
         }
     });
-    
+
     previousPageButton.addEventListener('click', function () {
         if (!previousPageButton.disabled) {
             if (page === 0) {

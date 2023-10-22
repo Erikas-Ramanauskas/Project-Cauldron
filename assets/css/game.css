@@ -1,21 +1,15 @@
 /* Game board */
-#game-board-navbar {
-    height: 15vh;
-    background: url('../images/general/game-board-header.png') no-repeat center center;
-    background-size: contain;
-}
-
-#game-board {
+body {
+    overflow-x: hidden;
     touch-action: none;
-    background-image: url('../images/background_720.webp');
-    background-size: contain;
+    background: url('../images/background_720.webp') no-repeat center center;
+    background-size: cover;
+}
+#game-board {
+    --bs-gutter-x: 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
-
-.cauldron {
-    display: contents;
 }
 
 .card {
@@ -28,36 +22,66 @@
     color: #eca72c;
 }
 
-.card-img-top {
-    width: 300px;
+.card-img-bottom {
+    width: 110%;
 }
 
-.cauldron-card {
-    width: 150px;
+/* Stats */
+.card-header {
+    max-width: 15rem;
+}
+.player-stats-section, .villain-stats-section {
+    background: url('../images/general/frame_stats.png') no-repeat center center;
+    background-size: cover;
 }
 
-.recipes-btn,
-.rules-btn {
-    width: 120px;
+.progress {
+    --bs-progress-bg: transparent;
+    --bs-progress-height: 0.8rem;
+    --bs-progress-font-size: 0.55rem;
+    border: 0.5px solid rgba(137, 133, 133, 0.311);
+}
+.progress-bar {
+    border-radius: 10px;
 }
 
-.ingredient-img,
+/* Potions */
+#inventory-potions-container {
+    --bs-gutter-x: 0;
+    min-height: 5rem;
+    background: url('../images/general/frame_inventory.png') no-repeat center 0;
+    background-size: cover;
+}
+
 .potion-img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.ingredients-img:hover,
-.potions-img:hover {
+.grabbable, .potion-img:hover {
     cursor: grab;
 }
 
-.ingredients-img:active,
-.potions-img:active {
+.grabbing {
     cursor: grabbing;
 }
 
-.potions-img {
-    width: 40px !important;
+.potion-img {
+    width: 2.5rem;
 }
+
+.character-hover::before {
+    content: "+";
+    position: absolute;
+    right: -1px;
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 50%;
+    font-size: 16px;
+    border: 1px solid black;
+  }
