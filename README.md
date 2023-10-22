@@ -94,16 +94,24 @@ All aspects of the UX design flow directly from the fact that the goal is the cr
 ...
 
 ### Fonts
-...
+The font used is "Shadows Into Light" from Google Fonts and was chosen to reflect the spooky, Halloween, witches theme while maintaining readability. Other somewhat more stylised and potentially suitable fonts were also trialled but it was considered that readability was compromised.
 
 ### Colours
-...
+Much of the colour on the site is generated using a careful choice of background images. These images have been chosen to provide consistency across the site and consist largely of blacks, purples, reds, oranges and browns that were considered to have an autumnal/Halloween feel.
+Where colours are applied to fonts and backgrounds these have been chosen to remain consistent with the chosen images and the overall theme.
+In particular:
+- The Witches Brew title is in white (#ffffff) to provide contrast with the colourful background.
+- #eca72c, an orange colour has been used for card and button backgrounds.
+- #f0c478, a lighter orange colour has been used for hover over buttons.
+- #504069, a purple colour has been used for some text including the creator’s cards.
+- #212529, a black colour has been used for some text including button texts.
+
 
 ### Sounds
 ...
 
 ### Images and Animations
-...
+Images have been used to provide much of the colour for the site as outlined above. They are also used to create specific components of the game play. ChatGPT has been used to create some images and others have been sourced from freepik.com and attributed in the credits below.
 
 ### Wireframes
 ...
