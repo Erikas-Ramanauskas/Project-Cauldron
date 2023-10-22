@@ -3,7 +3,8 @@ let potions;
 let ingredients;
 
 import showRecipeBook from "./recipe_book.js";
-import { addToInventory } from "./inventory.js";
+import { createInventory, resetInventory, getInventory, addToInventory, removeFromInventory } from "./inventory.js";
+
 
 const draggableConfig = {
     onstart: function (event) {
@@ -54,6 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.recipe-book').addEventListener('click', function () {
         showRecipeBook();
     });
+
+    // for (let i = 0; i < ingredientElements.length; i++) {
+    //     ingredientElements[i].addEventListener('mouseover', function () {
+    //         gsap.to(ingredientElements[i], {duration: 0.2, scale: 1.1});
+    //     });
+    //     ingredientElements[i].addEventListener('mouseout', function () {
+    //         gsap.to(ingredientElements[i], {duration: 0.2, scale: 1});
+    //     });
+    // }
 
     makeIngredientsDraggable();
 
@@ -146,27 +156,28 @@ const dropdownAlertText = document.querySelector('.dropdown-alert-text');
 
 function brewPotion(potions, cauldronContents) {
     // play 3 seconds of sound
-    const audio = new Audio('/assets/sounds/bubbling.wav');
+    const audio = new Audio('assets/sounds/bubbling.wav');
     makeIngredientsNotDraggable();
 
     // change the cauldron gif to cauldron-brew.gif
     const cauldron = document.querySelector('.cauldron');
-    cauldron.style.backgroundImage = "url('/assets/images/general/cauldron_brew.gif')";
+    cauldron.style.backgroundImage = "url('assets/images/general/cauldron_brew.gif')";
     audio.play();
     // wait 3 seconds
     setTimeout(function () {
         // change the cauldron gif to cauldron.gif
         audio.pause();
-        cauldron.style.backgroundImage = "url('/assets/images/general/cauldron.gif')";
+        cauldron.style.backgroundImage = "url('assets/images/general/cauldron.gif')";
     }, 2500);
 
     for(let potion of potions) {
 
         if(arraysEqual(potion.ingredients, cauldronContents)) {
-            dropdownAlertText.innerHTML = 'You brewed: ';
+            const potionsInInventory = getInventory().length;
+            dropdownAlertText.innerHTML = ` (${potionsInInventory+1}/10) You brewed: `;
             const potionImg = document.createElement('div');
             potionImg.classList.add('dropdown-alert-img');
-            potionImg.style.backgroundImage = `url('${potion.picture}')`;
+            potionImg.style.backgroundImage = `url('Project-Cauldron/${potion.picture}')`;
             dropdownAlertText.appendChild(potionImg);
 
             // make the dropdown alert visible for 3 seconds, animate opacity using gsap
@@ -177,7 +188,18 @@ function brewPotion(potions, cauldronContents) {
             , 1000);
 
             resetContentList(cauldronContents);
-            addToInventory(potion);
+
+            console.log(potionsInInventory);
+            if (potionsInInventory < 10) {
+                addToInventory(potion);
+            } else {
+                dropdownAlertText.innerHTML = 'Inventory full';
+                gsap.to(dropdownAlert, {duration: 0.5, opacity: 1});
+                setTimeout(function () {
+                    gsap.to(dropdownAlert, {duration: 0.5, opacity: 0});
+                }
+                , 1000);
+            }
             return;
         }
 
@@ -218,45 +240,18 @@ function resetContentList(cauldronContents) {
     makeIngredientsDraggable();
 }
 
-let inventory = [
-    {
-      id: 0,
-      name: "Whispering Shadows Elixir",
-      strength: 1,
-      dexterity: 0,
-      agility: 0,
-      health: 0,
-    },
-    {
-      id: 1,
-      name: "Inferno Ignition Tonic",
-      strength: 6,
-      dexterity: -1,
-      agility: 0,
-    },
-    {
-      id: 2,
-      name: "Faerie Dreamweaver Elixir",
-      strength: 3,
-      dexterity: -1,
-      agility: 0,
-    },
-]
+function addDiscoveredPotion(potionID) {
+// Get the array of potions from local storage
 
-console.log(calculateEnemyStats(playerStats, inventory, 1));
+    const potions = JSON.parse(localStorage.getItem('potions')) || [];
+    console.log(potions);
+    if (potionID >= 0 && potionID < potions.length ) {
+        // If the potion is found, set its "discovered" attribute to true
+        potions[potionID].discovered = true;
 
-// Output (High difficulty: 0.75):
-// health: 100
-// strength: 17.5
-// agility: 10
-// dexterity: 8.5
-
-// playerStats if he uses entire inventory on himself
-// health: 100,
-// strength: 20,
-// agility: 10,
-// dexterity: 8,
-
-// 1 attack would result in:
-// playerHealth: 99.5
-// enemyHealth: 97.5
+        // Update the potions array in local storage
+        localStorage.setItem('potions', JSON.stringify(potions));
+    } else {
+        console.log(`Potion with ID ${potionID} was not found.`);
+    }
+}
