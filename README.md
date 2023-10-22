@@ -4,7 +4,7 @@
 ![mockup](docs/images/mockup.png)
 
 ## Overview
-Witches Brew is a one player game against the computer. It combines elements of strategy and computer generated randomness – or good and bad luck from a player perspective! The player commences with base levels of strength, agility and dexterity. As the game proceeds the player must fight off enemies. This will reduce the strength, agility and dexterity levels of the player depending on the nature of the enemy. However the player also starts with ingredients for potions and continues to gather them throughout the game. Different potions will affect the strength, agility and dexterity of the player or of the enemy. Brew the right potions to stay alive, stay in the game and continue to beat your enemies!!
+Witches Brew is a one player game against the computer. It combines elements of strategy and computer generated randomness – or good and bad luck from a player perspective! The player commences with a vitality level and levels of strength, agility and dexterity. As the game proceeds the player must fight off enemies that also have strength, agility and dexterity levels. Losing to enemies will reduce the players vitality level. However the player also starts with ingredients for potions and continues to gather them throughout the game. Different potions will affect the strength, agility and dexterity of the player or of the enemy thus affecting the players ability to win. Brew the right potions to stay alive, stay in the game and continue to beat your enemies!!
 
 
 Live demo: https://Erikas-Ramanauskas.github.io/Project-Cauldron
