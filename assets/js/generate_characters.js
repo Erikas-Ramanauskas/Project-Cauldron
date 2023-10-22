@@ -9,7 +9,7 @@ USAGE:
 
 import generateCharacters from './generate_characters.js';
 
-generateCharacters(1)
+generateCharacters(difficulty)
     .then(characters => {
         [ APPLY LOGIC HERE ]
     })
@@ -20,12 +20,15 @@ RETURNS:
     "player": {
         "name": "Player",
         "picture": "assets/images/hero.png",
+        "health": 50, // default health is 50
         "agility": 10,
         "strength": 10,
         "dexterity": 10
     },
     "enemy": {
         "name": "Tiny Superhero",
+        "picture": villain.picture,
+        "health": 50, // default health is 50
         "agility": 15,
         "strength": 8,
         "dexterity": 10
@@ -90,12 +93,14 @@ function generateObjects(difficulty) {
     let enemy = {
         name: villain.name,
         picture: villain.picture,
+        health: 50,
         agility: enemyStats.agility,
         strength: enemyStats.strength,
         dexterity: enemyStats.dexterity
     }
     let player = {
         name: 'Player',
+        health: 50,
         picture: 'assets/images/hero.png',
         agility: playerStats.agility,
         strength: playerStats.strength,
