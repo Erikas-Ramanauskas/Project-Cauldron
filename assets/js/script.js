@@ -12,6 +12,7 @@ let playerStats = {
 let villains
 let gameturn = 0
 
+
 // takes jason data and updates variables
 
 fetch('assets/json/components_data.json')
@@ -205,4 +206,13 @@ interact('.villain').dropzone({
 
         resetElementPosition(potion);
     },
+});
+
+// Keyboard event for menu open
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'p' || event.key === 'P') {
+        const menu = document.getElementById('menu');
+        menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
+    }
 });
