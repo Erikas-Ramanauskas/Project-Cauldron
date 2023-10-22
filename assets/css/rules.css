@@ -45,6 +45,10 @@
         width: 70%;
     }
     
+    .rules-card {
+        font-size: 22px;
+    }
+
 }
 
 @media screen and (max-width: 480px)  {
@@ -58,8 +62,8 @@
         width: 70%;
     }
     
-    .rules-background {
-        height: 70vw;
+    .rules-card {
+        font-size: 22px;
     }
 
 }

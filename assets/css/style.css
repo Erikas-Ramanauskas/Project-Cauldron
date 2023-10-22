@@ -1,16 +1,10 @@
 /* Global */
 
-@font-face {
-    font-family: withces_magic;
-    src: url(/assets/fonts/withces_magic.ttf)
-    format('truetype');
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box !important;
-    font-family: 'withces_magic', sans-serif;
+    font-family: 'Shadows Into Light', cursive;
     letter-spacing: 1px;
 }
 
