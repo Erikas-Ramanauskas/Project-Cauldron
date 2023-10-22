@@ -87,7 +87,7 @@ function displayPlayerImg() {
     const playerName = document.querySelector('.player-name');
     const playerCharacter = document.querySelector('.player img');
 
-    playerName.innerHTML = characterName;
+    playerName.innerHTML = 'Player';
 
     playerCharacter.setAttribute('src', 'assets/images/player/' + characterId + '.png');
     playerCharacter.setAttribute('alt', characterName);
