@@ -21,3 +21,25 @@
     width: 220px;
     height: 270px;
 }
+
+.return_btn {
+    background-image: url('../images/general/frame_cauldron_content.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 10%;
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.btn {
+    border: none;
+    color: #fff;
+} 
+.btn:hover {
+    color: #eca72c;
+    background: none;
+    border: none;
+}
