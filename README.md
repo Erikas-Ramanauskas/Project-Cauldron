@@ -19,10 +19,17 @@ Live demo: https://Erikas-Ramanauskas.github.io/Project-Cauldron
 
 ## Agile Methodology
 ### Project Goals
-...
+- Provide the user with a fun to play Halloween themed game.
+- The game can be played in a standard web browser.
+- The game combines elements of strategy with luck.
+- The game contains elements that users can choose to explore.
+
 
 ### Target Audience
-...
+- The game is aimed at people of all ages with an interest in gaming.
+- In particular the game is aimed towards those with an interest in fiction and fantasy with its inclusion of witches, potions and otherworldly enemies.
+- The game is aimed at those who like elements of strategy as well as luck to progress through the game rounds. It is not about speed of execution.
+
 
 ### User Stories
 #### First time user
