@@ -12,6 +12,18 @@
 
 <body class="d-flex flex-column vh-100">
 
+  <!-- Navigation menu -->
+
+  <div class="dropdown">
+    <button class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      <i class="fa-solid fa-angles-down"></i>
+    </button>
+    <ul class="dropdown-menu menu" aria-labelledby="dropdownMenuButton1">
+      <a class="menu_icon" href="/">Home</a>
+      <a class="menu_icon" href="kitchen.html">Kitchen</a>
+    </ul>
+  </div>
 
   <!-- Characters -->
   <div class="row w-100 flex-grow-1" id="game-board">
@@ -61,15 +73,6 @@
       </div>
     </div>
     <!-- ./villain card -->
-
-    <!-- Navigation menu -->
-
-    <div class="menu" id="menu">
-      <ul>
-        <li class="icon"><a class="menu_icon" href="/">Home</a></li>
-        <li class="icon"><a class="menu_icon" href="kitchen.html">Kitchen</a></li>
-      </ul>
-    </div>
 
 
 
@@ -158,6 +161,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <!-- Main script JS -->
   <script defer src="assets/js/script.js"></script>
+  <!-- Fontawesome Script -->
+  <script src="https://kit.fontawesome.com/4e8d2c2bb0.js" crossorigin="anonymous"></script>
+
 
 </body>
 
