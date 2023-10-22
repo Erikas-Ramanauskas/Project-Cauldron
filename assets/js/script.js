@@ -3,10 +3,6 @@ import { getInventory, removeFromInventory, addToInventory } from "./inventory.j
 import generateCharacters from './generate_characters.js';
 import applyPotion from './apply_potion.js';
 
-// Initialize the tooltips
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-
 runGame();
 
 // save game round in local storage
@@ -38,7 +34,7 @@ function getCharacter(characterName) {
 
 // generate characters
 function runRound(difficulty = 0.1) {
-    return generateCharacters(0.1, "assets/images/hero.png")
+    return generateCharacters(difficulty, "assets/images/hero.png")
         .then(characters => {
             let villain = characters.enemy;
             let player = characters.player;
@@ -198,6 +194,8 @@ function displayPotions() {
         potionElement.appendChild(badge);
 
         potionsInventory.appendChild(potionElement);
+
+        initializeTooltips();
     }
 }
 
@@ -214,6 +212,13 @@ const draggableConfig = {
         target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
+
+        // hide tooltip on drag
+        let tooltipInstance = bootstrap.Tooltip.getInstance(event.target);
+        if (tooltipInstance) {
+          tooltipInstance.hide();
+        }
+
     },
     onend: function (event) {
         const potion = event.target;
@@ -292,3 +297,9 @@ document.addEventListener('keydown', function (event) {
         menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
     }
 });
+
+function initializeTooltips() {
+    // Initialize the tooltips
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+}
