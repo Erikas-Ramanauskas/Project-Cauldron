@@ -1,54 +1,15 @@
 // main variables
-import { getInventory } from "./inventory.js";
-
-let brewedPotions = [];
-let ingredients;
-let playerStats = {
-    strength: 0,
-    agility: 0,
-    dexterity: 0,
-    vitality: 0,
-}
+import { getInventory, removeFromInventory, addToInventory } from "./inventory.js"
 
 let villains
 let gameturn = 0
 
 setPlayerCharacter();
+createPotionsInventory();
 
-// takes jason data and updates variables
-
-fetch('assets/json/components_data.json')
-    .then((response) => response.json())
-    .then((json) => {
-
-        components_data = json;
-        villains = components_data.villains;
-
-        // selectvillain(0)
-        createPotionsInventory();
-
-    })
-    .then(() => {
-        // Initialize the tooltips
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-    });
-
-
-// Get brewed potions from local storage and update the potions inventory
-function getBrewedPotions() {
-    const potions = JSON.parse(localStorage.getItem("potions"));
-
-    if (potions) {
-        // add discovered potions to brewedPotions array
-        for (let potion of potions) {
-            if (potion.discovered) {
-                brewedPotions.push(potion);
-            }
-        }
-    }
-}
-
+// Initialize the tooltips
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
 // global functions
 // random integer generator
@@ -101,10 +62,11 @@ function createPotionsInventory() {
 
     let potions = getInventory();   // get potions from local storage
     let potionsInventory = document.getElementById("inventory-potions");
-    console.log(potions);
+    potionsInventory.innerHTML = "";
     for (let potion of potions) {
         const potionElement = document.createElement("li");
         const potionImg = document.createElement("img");
+        const badge = document.createElement("span");
 
         potionImg.setAttribute("src", potion.picture);
         potionImg.setAttribute("alt", potion.name);
@@ -122,12 +84,17 @@ function createPotionsInventory() {
         `
         potionElement.setAttribute("data-bs-title", tooltip);
 
-        potionElement.classList.add("potion", "list-inline-item", "grabbable");
+        potionElement.classList.add("potion", "position-relative", "list-inline-item", "grabbable");
         potionElement.setAttribute("id", "potion-" + potion.id);
         potionElement.setAttribute("data-potion-id", potion.id);
         potionElement.setAttribute("data-potion-ammount", 0);
 
+        // badge with potion amount
+        badge.classList.add("position-absolute", "top-0", "start-100", "translate-middle", "badge", "bg-secondary", "rounded-pill");
+        badge.innerHTML = potion.amount;
+
         potionElement.appendChild(potionImg);
+        potionElement.appendChild(badge);
 
         potionsInventory.appendChild(potionElement);
     }
@@ -182,8 +149,12 @@ interact('.player').dropzone({
         const potion = event.relatedTarget;
         potion.classList.remove('character-hover');
 
+        // get data porion-id from potion
+        const potionId = potion.getAttribute("data-potion-id");
+
         adjustPlayerStats(potion);
-        adjustPotionAmount(potion);
+        removeFromInventory(potionId);
+        createPotionsInventory();
 
         resetElementPosition(potion);
     },
@@ -204,8 +175,12 @@ interact('.villain').dropzone({
         const potion = event.relatedTarget;
         potion.classList.remove('character-hover');
 
+        // get data porion-id from potion
+        const potionId = potion.getAttribute("data-potion-id");
+
         adjustVillainStats(potion);
-        adjustPotionAmount(potion);
+        removeFromInventory(potionId);
+        createPotionsInventory();
 
         resetElementPosition(potion);
     },
