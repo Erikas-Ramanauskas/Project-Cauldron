@@ -153,7 +153,6 @@ function showPotion(index, discoveredPotions) {
 
     if (discoveredPotions.length > 0) {
         const potion = discoveredPotions[index];
-        console.log(potion);
         potionTitleElement.innerHTML = potion.name;
         potionImageElement.style.backgroundImage = `url('${potion.picture}')`;
         potionStatsElements[0].innerHTML = potion.strength + ' Strength';

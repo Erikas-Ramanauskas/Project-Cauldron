@@ -3,6 +3,7 @@ let potions;
 let ingredients;
 
 import showRecipeBook from "./recipe_book.js";
+import { createInventory, resetInventory, getInventory, addToInventory, removeFromInventory } from "./inventory.js";
 
 
 const draggableConfig = {
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ingredientElements = document.querySelectorAll('.ingredient');
 
     document.querySelector('.back-btn').addEventListener('click', function () {
-        window.location.href = 'index.html';
+        window.location.href = 'game.html';
     });
 
     // parse json file
@@ -54,6 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.recipe-book').addEventListener('click', function () {
         showRecipeBook();
     });
+
+    // for (let i = 0; i < ingredientElements.length; i++) {
+    //     ingredientElements[i].addEventListener('mouseover', function () {
+    //         gsap.to(ingredientElements[i], {duration: 0.2, scale: 1.1});
+    //     });
+    //     ingredientElements[i].addEventListener('mouseout', function () {
+    //         gsap.to(ingredientElements[i], {duration: 0.2, scale: 1});
+    //     });
+    // }
 
     makeIngredientsDraggable();
 
@@ -103,8 +113,7 @@ function checkLocalStorage() {
     // if local storage is empty, set all potions to undiscovered and save to local storage
     else {
         for (let i = 0; i < potions.length; i++) {
-            // FIXME: set all potions to undiscovered
-            potions[i].discovered = true;  // temporary, to display all potions on game board
+            potions[i].discovered = false;
         }
         localStorage.setItem("potions", JSON.stringify(potions));
     }
@@ -147,27 +156,28 @@ const dropdownAlertText = document.querySelector('.dropdown-alert-text');
 
 function brewPotion(potions, cauldronContents) {
     // play 3 seconds of sound
-    const audio = new Audio('/assets/sounds/bubbling.wav');
+    const audio = new Audio('assets/sounds/bubbling.wav');
     makeIngredientsNotDraggable();
 
     // change the cauldron gif to cauldron-brew.gif
     const cauldron = document.querySelector('.cauldron');
-    cauldron.style.backgroundImage = "url('/assets/images/general/cauldron_brew.gif')";
+    cauldron.style.backgroundImage = "url('assets/images/general/cauldron_brew.gif')";
     audio.play();
     // wait 3 seconds
     setTimeout(function () {
         // change the cauldron gif to cauldron.gif
         audio.pause();
-        cauldron.style.backgroundImage = "url('/assets/images/general/cauldron.gif')";
+        cauldron.style.backgroundImage = "url('assets/images/general/cauldron.gif')";
     }, 2500);
 
     for(let potion of potions) {
 
         if(arraysEqual(potion.ingredients, cauldronContents)) {
-            dropdownAlertText.innerHTML = 'You brewed: ';
+            const potionsInInventory = getInventory().length;
+            dropdownAlertText.innerHTML = ` (${potionsInInventory+1}/10) You brewed: `;
             const potionImg = document.createElement('div');
             potionImg.classList.add('dropdown-alert-img');
-            potionImg.style.backgroundImage = `url('${potion.picture}')`;
+            potionImg.style.backgroundImage = `url('Project-Cauldron/${potion.picture}')`;
             dropdownAlertText.appendChild(potionImg);
 
             // make the dropdown alert visible for 3 seconds, animate opacity using gsap
@@ -178,7 +188,18 @@ function brewPotion(potions, cauldronContents) {
             , 1000);
 
             resetContentList(cauldronContents);
-            addDiscoveredPotion(potion.id);
+
+            console.log(potionsInInventory);
+            if (potionsInInventory < 10) {
+                addToInventory(potion);
+            } else {
+                dropdownAlertText.innerHTML = 'Inventory full';
+                gsap.to(dropdownAlert, {duration: 0.5, opacity: 1});
+                setTimeout(function () {
+                    gsap.to(dropdownAlert, {duration: 0.5, opacity: 0});
+                }
+                , 1000);
+            }
             return;
         }
 
@@ -221,7 +242,7 @@ function resetContentList(cauldronContents) {
 
 function addDiscoveredPotion(potionID) {
 // Get the array of potions from local storage
-    
+
     const potions = JSON.parse(localStorage.getItem('potions')) || [];
     console.log(potions);
     if (potionID >= 0 && potionID < potions.length ) {
