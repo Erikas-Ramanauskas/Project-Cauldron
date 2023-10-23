@@ -38,11 +38,6 @@ body {
     width: 100%;
 }
 
-.villain, .player {
-    width: 50%;
-    height: auto;
-    display: block;
-}
 
 .card-body {
     display: flex;
@@ -167,14 +162,34 @@ body {
     align-items: center;
 }
 
-/* media query for medium screen size and smaller */
+.card-img-bottom {
+    width: 100%;
+    object-fit: contain;
+}
 
-@media (max-width: 768px) {
-    .card-body {
-        width: 200%;
+@media (min-width: 1200px) {
+    .card-img-bottom {
+        height: 400px;
     }
 }
 
+@media (max-width: 1200px) {
+    .card-img-bottom {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-img-bottom {
+        height: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .card-img-bottom {
+        height: 150px;
+    }
+}
 
 .toast {
     background: rgb(49,38,62);
