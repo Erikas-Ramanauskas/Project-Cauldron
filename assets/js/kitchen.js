@@ -8,6 +8,8 @@ import { createInventory, resetInventory, getInventory, addToInventory, removeFr
 
 const draggableConfig = {
     onstart: function (event) {
+
+
         
     },
     onmove: function (event) {
@@ -18,6 +20,7 @@ const draggableConfig = {
         target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
+        
     },
     onend: function (event) {
         resetElementPosition(event.target);
