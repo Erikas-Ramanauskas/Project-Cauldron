@@ -35,6 +35,16 @@
     </ul>
   </div>
 
+  <!-- Toast msg -->
+  <div class="toast-container position-fixed top-0 end-0 p-3">
+    <div class="toast align-items-center" role="alert" aria-live="polite" aria-atomic="true" data-bs-delay="2000">
+      <div class="d-flex">
+        <div class="toast-body">
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Characters -->
   <div class="row w-100 flex-grow-1" id="game-board">
 
@@ -166,6 +176,65 @@
     </div>
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="playerSelect" data-bs-backdrop="static"
+  data-bs-keyboard="false" tabindex="-1" aria-labelledby="playerSelectLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+      <div class="modal-header">
+      <h1 class="modal-title fs-5" id="staticBackdropLabel">Choose your Character</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-character-id="1" data-character-name="Whitch-1">
+                  <img src="assets/images/player/1.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Whitch-1</h5>
+                  </div>
+                </div>
+                <div class="carousel-item" data-character-id="2" data-character-name="Whitch-2">
+                  <img src="assets/images/player/2.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Whitch-2</h5>
+                  </div>
+                </div>
+                <div class="carousel-item" data-character-id="3" data-character-name="Whitch-3">
+                  <img src="assets/images/player/3.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Whitch-3</h5>
+                  </div>
+                </div>
+                <div class="carousel-item" data-character-id="4" data-character-name="Whitch-4">
+                  <img src="assets/images/player/4.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Whitch-4</h5>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center border-0">
+          <button id="select-player-btn" type="button" class="btn btn-custom-orange button-custom">Confirm</button>
+      </div>
+  </div>
+  </div>
+</div>
 
   <!-- Bootstrap Script -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -175,6 +244,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <!-- Main script JS -->
   <script src="assets/js/script.js"></script>
+  <script type="module" defer src="assets/js/select_player.js"></script>
   <script defer type="module" src="assets/js/game_board.js"></script>
   <script defer type="module" src="assets/js/potions_draggability.js"></script>
   <!-- Fontawesome Script -->
