@@ -155,15 +155,6 @@ const dropdownAlert = document.querySelector('.dropdown-alert');
 const dropdownAlertText = document.querySelector('.dropdown-alert-text');
 
 function brewPotion(potions, cauldronContents) {
-    let potionsBrewed = JSON.parse(localStorage.getItem("potionsBrewed"));
-    if (!potionsBrewed) {
-        console.log('true')
-        localStorage.setItem("potionsBrewed", JSON.stringify(0))
-        potionsBrewed = 0;
-    }
-    console.log(potionsBrewed)
-    potionsBrewed += 1;
-    localStorage.setItem("potionsBrewed", JSON.stringify(potionsBrewed))
     // play 3 seconds of sound
     const audio = new Audio('assets/sounds/bubbling.wav');
     makeIngredientsNotDraggable();
@@ -182,6 +173,16 @@ function brewPotion(potions, cauldronContents) {
     for(let potion of potions) {
 
         if(arraysEqual(potion.ingredients, cauldronContents)) {
+            let potionsBrewed = JSON.parse(localStorage.getItem("potionsBrewed"));
+            if (!potionsBrewed) {
+                console.log('true')
+                localStorage.setItem("potionsBrewed", JSON.stringify(0))
+                potionsBrewed = 0;
+            }
+            console.log(potionsBrewed)
+            potionsBrewed += 1;
+            localStorage.setItem("potionsBrewed", JSON.stringify(potionsBrewed))
+            
             let potionsInInventory = 0;
             for (potion of getInventory()) {
                 potionsInInventory += potion.amount;

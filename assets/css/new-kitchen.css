@@ -227,11 +227,48 @@ body{
 }
 .ingredient{
      background-repeat: no-repeat;
-    z-index: 10000;
+    z-index: 90;
     position: relative;
 }
 
 
+#recipie-ingredients > div {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-alert {
+    opacity: 0;
+    background-image: url('../images/general/frame_page_flip.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 13%;
+    width: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .dropdown-alert-text {
+    /* make text sit in center of container, slightly to the left with responsive font size based on parent container */
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1vw;
+    font-weight: bold;
+    color: black;
+    white-space: nowrap;
+    height: 3rem;
+  }
+
+  .dropdown-alert-img {
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
+  }
 
 
 @media screen and (max-width: 1024px) {
