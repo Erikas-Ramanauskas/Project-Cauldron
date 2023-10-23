@@ -57,18 +57,34 @@ export default function showRecipeBook() {
     });
 }
 
-function checkLocalStorage() {
-    if (localStorage.getItem("potions") !== null) {
-        let discoveredPotions = JSON.parse(localStorage.getItem("potions"));
-        let potions = discoveredPotions;
-    }
-    // if local storage is empty, set all potions to undiscovered and save to local storage
-    else {
-        for (let i = 0; i < potions.length; i++) {
-            // FIXME: set all potions to undiscovered
-            potions[i].discovered = true;  // temporary, to display all potions on game board
-        }
-        localStorage.setItem("potions", JSON.stringify(potions));
+function createIngredientInventory() {
+    const ingredientsInventory = document.getElementById("ingredients-list");
+    ingredientsInventory.innerHTML = "";
+
+    // loop through brewed potions and add them to the potions inventory
+    for (let i = 0; i < ingredients.length; i++) {
+        let parent = document.createElement("div");
+        parent.classList.add("ingredient");
+        let ingredient = document.createElement("img");
+
+        ingredient.setAttribute("src", ingredients[i].picture);
+        ingredient.setAttribute("alt", ingredients[i].name);
+        ingredient.classList.add("ingredient-img", "dragable");
+
+        parent.setAttribute("id", "ingredient-" + i);
+        parent.classList.add("ingredient-container");
+        parent.setAttribute("data-ingredient-id", i);
+        parent.setAttribute("data-item", "ingredient");
+        parent.setAttribute("data-ingredient-ammount", 0);
+
+        // tooltip
+        parent.setAttribute("data-bs-toggle", "tooltip");
+        parent.setAttribute("data-bs-placement", "top");
+        parent.setAttribute("data-bs-title", ingredients[i].name);
+
+        parent.appendChild(ingredient);
+
+        ingredientsInventory.appendChild(parent);
     }
 }
 

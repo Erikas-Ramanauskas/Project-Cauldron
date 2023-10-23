@@ -48,6 +48,7 @@ body{
     align-items: center;
     flex-wrap: wrap;
     padding: 3rem;
+    position: relative;
 }
 
 #recipie-ingredients-container{

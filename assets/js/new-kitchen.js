@@ -28,6 +28,7 @@ function createIngredientInventory() {
     // loop through brewed potions and add them to the potions inventory
     for (let i = 0; i < ingredients.length; i++) {
         let parent = document.createElement("div");
+        parent.classList.add("ingredient");
         let ingredient = document.createElement("img");
 
         ingredient.setAttribute("src", ingredients[i].picture);
