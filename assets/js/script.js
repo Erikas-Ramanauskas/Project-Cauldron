@@ -1,7 +1,7 @@
 // main variables
 import { getInventory, removeFromInventory, resetInventory } from "./inventory.js"
 import { getCharacter, setCurrentCharacter, getGameRound, setGameRound } from "./game_storage.js"
-import { displayPlayer, displayVillain, displayPotions } from "./game_board_display.js"
+import { displayRound, displayPlayer, displayVillain, displayPotions } from "./game_board_display.js"
 import generateCharacters from './generate_characters.js';
 import applyPotion from './apply_potion.js';
 import attack from './attack.js';
@@ -13,6 +13,7 @@ document.getElementById('attack-btn').addEventListener('click', attackBtnHandler
 function runGame() {
     let turn = getGameRound();
     if (!turn || turn <= 0) {
+        // if no turn or turn is 0, start new game
         setGameRound(1);
         runRound()
             .then(() => {
@@ -23,17 +24,18 @@ function runGame() {
                 displayVillain(villain);
                 displayPlayer(player);
                 displayPotions();
+                displayRound();
             })
     } else {
-
         // get characters from local storage
         let villain = getCharacter("villain");
         let player = getCharacter("player");
 
-        // display characters
+        // display characters, potions and round
         displayVillain(villain);
         displayPlayer(player);
         displayPotions();
+        displayRound();
     }
 }
 
@@ -97,6 +99,7 @@ function attackBtnHandler () {
                 displayPlayer(player);
                 resetInventory();
                 displayPotions();
+                displayRound();
             })
     } else if (gameResult === false) {
         // player lost
@@ -105,6 +108,7 @@ function attackBtnHandler () {
         setGameRound(0);
         resetInventory();
         displayPotions();
+        displayRound();
         // TODO: ask if player wants to play again using a modal
     } else {
         // game continues
@@ -219,9 +223,3 @@ document.addEventListener('keydown', function (event) {
         menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
     }
 });
-
-function initializeTooltips() {
-    // Initialize the tooltips
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-}

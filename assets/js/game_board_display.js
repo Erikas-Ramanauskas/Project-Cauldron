@@ -4,6 +4,12 @@ import { getInventory } from "./inventory.js"
 import { getGameRound } from "./game_storage.js"
 
 
+export function displayRound() {
+    let turn = getGameRound();
+    const round = document.getElementById('round');
+    round.innerHTML = `Round ${turn}`;
+}
+
 function displayPlayerImg() {
     const characterId = localStorage.getItem('selectedCharacterId');
     const characterName = localStorage.getItem('selectedCharacterName');
@@ -107,4 +113,10 @@ export function displayPotions() {
 
         initializeTooltips();
     }
+}
+
+function initializeTooltips() {
+    // Initialize the tooltips
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 }
