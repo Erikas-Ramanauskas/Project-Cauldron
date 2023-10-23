@@ -1,6 +1,6 @@
 import { getInventory, removeFromInventory, resetInventory } from "./inventory.js"
 import {
-    getCharacter, setCurrentCharacter, getGameRound, setGameRound, setPotionApplied, isPotionApplied, resetPotionApplied
+    getCharacter, setCurrentCharacter, getGameRound, setGameRound, setPotionApplied, isPotionApplied, resetPotionApplied, isCharacterSelected
 } from "./game_storage.js"
 import { displayRound, displayPlayer, displayVillain, displayPotions, displayToastMsg } from "./game_board_display.js"
 import generateCharacters from './generate_characters.js';
@@ -58,11 +58,18 @@ function runRound(difficulty = 0.1) {
 
 // attack handler
 function attackBtnHandler() {
-    // check if the potion is applied
-    if (!isPotionApplied()) {
-        displayToastMsg('You must apply a potion before attacking!');
+
+    if (!isCharacterSelected()) {
+        displayToastMsg('Select a character before playing!');
         return;
     }
+
+    // check if the potion is applied
+    if (!isPotionApplied()) {
+        displayToastMsg('Apply a potion before attacking!');
+        return;
+    }
+
     // reset potion applied
     resetPotionApplied();
 
