@@ -34,6 +34,12 @@
     font-family: sans-serif;
 }
 
+.rules-card ul li {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    font-family: 'Fontdiner Swanky', serif;
+}
+
 
 @media screen and (max-width: 768px)  {
     .menu {
@@ -48,6 +54,15 @@
     
     .rules-card {
         font-size: 22px;
+    }
+    
+    .rules-card ul {
+    list-style-type: none;
+    padding: 0;
+    }
+    
+    .rules-card ul li {
+    font-size: 0.8rem;
     }
 
 }
