@@ -100,10 +100,21 @@ function attackBtnHandler() {
         alert('You lost!');
         // reset round and inventory
         setGameRound(0);
-        resetInventory();
-        displayPotions();
-        displayRound();
+
+        runRound()
+            .then(() => {
+                // get characters from local storage
+                let villain = getCharacter("villain");
+                let player = getCharacter("player");
+                // display characters
+                displayVillain(villain);
+                displayPlayer(player);
+                resetInventory();
+                displayPotions();
+                displayRound();
+            })
         // TODO: ask if player wants to play again using a modal
+
     } else {
         // game continues
         console.log('game continues');
