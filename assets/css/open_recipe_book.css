@@ -1,3 +1,30 @@
+/* .open-recipe-book-container {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 99;
+}
+.open-recipe-book {
+    background-image: url('../images/general/open_recipe_book.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+} */
+
 .open-recipe-book-container {
     display: none;
     height: 100vh;
@@ -23,12 +50,13 @@
     margin: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .left-page, .right-page {
-    margin-top: 5%;
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-bottom: 15vw;
+    margin-left: 7%;
+    margin-right: 7%;
 }
 
 .left-page, .right-page {
@@ -149,7 +177,7 @@
     display: flex;
     padding-top: 15px;
     justify-content: center;
-    font-size: large;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 .next {
@@ -164,7 +192,7 @@
     display: flex;
     padding-top: 15px;
     justify-content: center;
-    font-size: large;
+    font-size: 1.rem;
     font-weight: bold;
 }
 

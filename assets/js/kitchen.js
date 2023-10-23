@@ -154,39 +154,42 @@ const dropdownAlertText = document.querySelector('.dropdown-alert-text');
 
 
 function brewPotion(potions, cauldronContents) {
-    let potionsBrewed = JSON.parse(localStorage.getItem("potionsBrewed"));
-    if (!potionsBrewed) {
-        console.log('true')
-        localStorage.setItem("potionsBrewed", JSON.stringify(0))
-        potionsBrewed = 0;
-    }
-    console.log(potionsBrewed)
-    potionsBrewed += 1;
-    localStorage.setItem("potionsBrewed", JSON.stringify(potionsBrewed))
     // play 3 seconds of sound
     const audio = new Audio('assets/sounds/bubbling.wav');
     makeIngredientsNotDraggable();
 
     // change the cauldron gif to cauldron-brew.gif
     const cauldron = document.querySelector('.cauldron');
-    cauldron.style.backgroundImage = "url('assets/images/general/cauldron_brew.gif')";
+    document.querySelector('#couldron-img').setAttribute('src', 'assets/images/general/cauldron_brew.gif')
     audio.play();
     // wait 3 seconds
     setTimeout(function () {
         // change the cauldron gif to cauldron.gif
         audio.pause();
-        cauldron.style.backgroundImage = "url('assets/images/general/cauldron.gif')";
+        document.querySelector('#couldron-img').setAttribute('src', 'assets/images/general/cauldron.gif')
     }, 2500);
 
     for(let potion of potions) {
 
         if(arraysEqual(potion.ingredients, cauldronContents)) {
+            let potionsBrewed = JSON.parse(localStorage.getItem("potionsBrewed"));
+            if (!potionsBrewed) {
+                console.log('true')
+                localStorage.setItem("potionsBrewed", JSON.stringify(0))
+                potionsBrewed = 0;
+            }
+            console.log(potionsBrewed)
+            potionsBrewed += 1;
+            localStorage.setItem("potionsBrewed", JSON.stringify(potionsBrewed))
             const potionsInInventory = getInventory().length;
             dropdownAlertText.innerHTML = ` (${potionsBrewed}/10) You brewed: `;
-            const potionImg = document.createElement('div');
+            const potionImg = document.createElement('img');
             potionImg.classList.add('dropdown-alert-img');
-            potionImg.style.backgroundImage = `url('Project-Cauldron/${potion.picture}')`;
+            potionImg.setAttribute('src', `${potion.picture}`)
+            potionImg.style.width = '1.5rem';
+            potionImg.style.objectFit = 'fill';
             dropdownAlertText.appendChild(potionImg);
+            console.log(potionImg);
 
             // make the dropdown alert visible for 3 seconds, animate opacity using gsap
             gsap.to(dropdownAlert, {duration: 0.5, opacity: 1});
@@ -232,6 +235,7 @@ function updateContentList(ingredientName, ingredientImage) {
 
     ingredient.setAttribute("src", ingredientImage);
     ingredient.setAttribute("alt", ingredientName);
+    pictureFrame.classList.add("ingredient-for-recipie");
     ingredient.classList.add("ingredient-img", "dragable");
     pictureFrame.appendChild(ingredient);
 
