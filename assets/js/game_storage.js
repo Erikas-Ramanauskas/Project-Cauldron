@@ -27,3 +27,24 @@ export function getCharacter(characterName) {
     }
     return character;
 }
+
+
+// check if potion is applied
+export function isPotionApplied() {
+    let potionApplied = localStorage.getItem("potionApplied");
+    if (potionApplied === "true") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// set potion applied
+export function setPotionApplied() {
+    localStorage.setItem("potionApplied", "true");
+}
+
+// reset potion applied
+export function resetPotionApplied() {
+    localStorage.setItem("potionApplied", "false");
+}
