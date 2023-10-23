@@ -1,6 +1,8 @@
 # Project Cauldron
 ## 🎃🎃🎃 Phantom Forge: A Halloween Hackathon 🎃🎃🎃
 
+![Responsive](as/images/Responsive.png)
+
 ## Overview
 Witches Brew is a one player game against the computer. The player commences with a health level and levels of strength, agility and dexterity. As the game proceeds the player must fight off enemies that also have strength, agility and dexterity levels. Against any given enemy the player will lose health points as a fight proceeds if the player's strength, agility and dexterity combined are less than that of the opponent. If the player's health points reach zero the game is over! However the player also has access to ingredients for making potions. Different potions will affect the strength, agility and dexterity of the player or of the enemy thus affecting the players ability to win. Brew the right potions to stay alive, stay in the game and continue to beat your enemies!!
 
