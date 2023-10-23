@@ -1,28 +1,10 @@
+// For Code institute Assesment
+// this file is left for further development but currently is not in use
+
+
 let cauldronContents = [];
 let potions;
 let ingredients;
-
-import showRecipeBook from "./recipe_book.js";
-import { createInventory, resetInventory, getInventory, addToInventory, removeFromInventory } from "./inventory.js";
-
-// standart drag and drop functions
-const draggableConfig = {
-    onstart: function (event) {
-
-    },
-    onmove: function (event) {
-        var target = event.target;
-        var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
-        var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-
-        target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-        target.setAttribute('data-x', x);
-        target.setAttribute('data-y', y);
-    },
-    onend: function (event) {
-        resetElementPosition(event.target);
-    },
-};
 
 document.addEventListener("DOMContentLoaded", function () {
     const ingredientElements = document.querySelectorAll('.ingredient');
@@ -36,13 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
             potions = componentsData.potions;
             ingredients = componentsData.ingredients;
 
-            for (let i = 0; i < ingredientElements.length; i++) {
-                ingredientElements[i].style.backgroundImage = `url('${ingredients[i].picture}')`;
-                // set the ingredient's name as a data attribute
-                ingredientElements[i].setAttribute('data-name', ingredients[i].name);
-            }
+           
             checkLocalStorage()
             createIngredientInventory();
+            addNewEventListeners("add")
     });
 
     document.querySelector('.cauldron').addEventListener('click', function () {
@@ -51,54 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelector('#recipie-book-img-container').addEventListener('click', function () {
         showRecipeBook();
-    });
-
-    // for (let i = 0; i < ingredientElements.length; i++) {
-    //     ingredientElements[i].addEventListener('mouseover', function () {
-    //         gsap.to(ingredientElements[i], {duration: 0.2, scale: 1.1});
-    //     });
-    //     ingredientElements[i].addEventListener('mouseout', function () {
-    //         gsap.to(ingredientElements[i], {duration: 0.2, scale: 1});
-    //     });
-    // }
-
-    makeIngredientsDraggable();
-
-    interact('.cauldron').dropzone({
-        accept: '.ingredient',
-        ondragenter: function (event) {
-            const ingredient = event.relatedTarget;
-            ingredient.classList.add('cauldron-hover');
-        },
-        ondragleave: function (event) {
-            const ingredient = event.relatedTarget;
-            ingredient.classList.remove('cauldron-hover');
-        },
-        ondrop: function (event) {
-            const ingredient = event.relatedTarget;
-            ingredient.classList.remove('cauldron-hover');
-
-            // Add the ingredient to the cauldron
-            const ingredientName = ingredient.getAttribute('data-name');
-            if (cauldronContents.length < 4){
-                cauldronContents.push(ingredient.firstElementChild.getAttribute('alt'));
-                // get ingredient child element
-                updateContentList(ingredient.firstElementChild.getAttribute('alt'), ingredient.firstElementChild.getAttribute('src'));
-            } else if (cauldronContents.length === 4) {
-                cauldronContents.push(ingredient.firstElementChild.getAttribute('alt'));
-                updateContentList(ingredient.firstElementChild.getAttribute('alt'), ingredient.firstElementChild.getAttribute('src'));
-                // append greyscaled-image class to all ingredients
-                const ingredientsInventory = document.querySelectorAll('.ingredient');
-                for (let i = 0; i < ingredientsInventory.length; i++) {
-                    ingredientsInventory[i].classList.add('greyscaled-image');
-                }
-                // make ingredients not draggable
-                makeIngredientsNotDraggable();
-
-            }
-
-            resetElementPosition(ingredient);
-        },
     });
 
 });
@@ -115,20 +46,6 @@ function checkLocalStorage() {
         }
         localStorage.setItem("potions", JSON.stringify(potions));
     }
-}
-
-function makeIngredientsDraggable() {
-    interact('.ingredient').draggable(draggableConfig);
-}
-
-function makeIngredientsNotDraggable() {
-    interact('.ingredient').unset();
-}
-
-function resetElementPosition(element) {
-    element.style.transform = 'translate(0px, 0px)';
-    element.setAttribute('data-x', 0);
-    element.setAttribute('data-y', 0);
 }
 
 function arraysEqual(arr1, arr2) {
@@ -151,7 +68,6 @@ function arraysEqual(arr1, arr2) {
 
 const dropdownAlert = document.querySelector('.dropdown-alert');
 const dropdownAlertText = document.querySelector('.dropdown-alert-text');
-
 
 function brewPotion(potions, cauldronContents) {
     // play 3 seconds of sound
@@ -221,7 +137,12 @@ function brewPotion(potions, cauldronContents) {
     resetContentList(cauldronContents);
 }
 
-function updateContentList(ingredientName, ingredientImage) {
+
+
+function updateContentList(id) {
+    
+    ingredientName =  potions[id].name
+    ingredientImage =  potions[id].picture
 
     let parent = document.createElement("div");
     let pictureFrame = document.createElement("div");
@@ -252,52 +173,6 @@ function resetContentList(cauldronContents) {
         ingredientsInventory[i].classList.remove('greyscaled-image');
     }
     makeIngredientsDraggable();
-}
-
-function addDiscoveredPotion(potionID) {
-// Get the array of potions from local storage
-
-    const potions = JSON.parse(localStorage.getItem('potions')) || [];
-
-    if (potionID >= 0 && potionID < potions.length ) {
-        // If the potion is found, set its "discovered" attribute to true
-        potions[potionID].discovered = true;
-
-        // Update the potions array in local storage
-        localStorage.setItem('potions', JSON.stringify(potions));
-    } else {
-        console.log(`Potion with ID ${potionID} was not found.`);
-    }
-}
-
-function addToIngredienstListHTML() {
-    const ingredientsInventory = document.getElementById("recipie-ingredients");
-    ingredientsInventory.innerHTML = "";
-
-    // loop through brewed potions and add them to the potions inventory
-    for (let i = 0; i < 5; i++) {
-        let parent = document.createElement("div");
-        let pictureFrame = document.createElement("div");
-        let ingredient = document.createElement("img");
-        let text = document.createElement("p");
-
-        ingredient.setAttribute("src", ingredients[i].picture);
-        ingredient.setAttribute("alt", ingredients[i].name);
-        ingredient.classList.add("ingredient-img", "dragable");
-        pictureFrame.appendChild(ingredient);
-
-        parent.setAttribute("id", "ingredient-" + i);
-        parent.classList.add("ingredient-for-recipie");
-        parent.setAttribute("data-ingredient-id", i);
-        parent.setAttribute("data-item", "ingredient");
-
-        text.innerHTML = ingredients[i].name;
-
-        parent.appendChild(pictureFrame);
-        parent.appendChild(text);
-
-        ingredientsInventory.appendChild(parent);
-    }
 }
 
 function createIngredientInventory() {
