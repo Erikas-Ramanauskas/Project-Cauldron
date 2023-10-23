@@ -5,16 +5,28 @@ import generateCharacters from './generate_characters.js';
 import applyPotion from './apply_potion.js';
 import attack from './attack.js';
 
-runGame();
+let difficulty = 0.1;
+let audio = true;
+
+runGame(difficulty);
 
 document.getElementById('attack-btn').addEventListener('click', attackBtnHandler);
+document.getElementById('sounds').addEventListener('click', function () {
+    if (audio) {
+        audio = false;
+        document.getElementById('sounds').innerHTML = 'Sounds: OFF';
+    } else {
+        audio = true;
+        document.getElementById('sounds').innerHTML = 'Sounds: ON';
+    }
+});
 
-function runGame() {
+function runGame(difficulty) {
     let turn = getGameRound();
     if (!turn || turn <= 0) {
         // if no turn or turn is 0, start new game
         setGameRound(1);
-        runRound()
+        runRound(difficulty)
             .then(() => {
                 // get characters from local storage
                 let villain = getCharacter("villain");
@@ -39,7 +51,7 @@ function runGame() {
 }
 
 // generate characters for new round
-function runRound(difficulty = 0.1) {
+function runRound(difficulty) {
     return generateCharacters(difficulty, "assets/images/hero.png")
         .then(characters => {
             let villain = characters.enemy;
@@ -59,6 +71,20 @@ function attackBtnHandler () {
     let player = getCharacter("player");
     let villain = getCharacter("villain");
     let gameResult = attack(player, villain);
+    const sound = new Audio('assets/sounds/witchs_laugh.wav');
+    const sound2 = new Audio('assets/sounds/demon_grunt.wav');
+
+    let random = Math.floor(Math.random() * 2) + 1;
+    if (audio) {
+        if (random === 1) {
+            sound.play();
+        } else {
+            sound2.play();
+        }
+    }
+
+    console.log(gameResult.player);
+    console.log(gameResult.enemy);
 
     if (gameResult === true) {
         // player won

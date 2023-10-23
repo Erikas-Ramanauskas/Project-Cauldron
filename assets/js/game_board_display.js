@@ -32,16 +32,16 @@ export function displayPlayer(player) {
     const playerDexterity = document.querySelector('#player-dexterity');
 
     playerHealth.setAttribute('aria-valuenow', player.health);
-    playerHealth.style.width = player.health + '%';
+    playerHealth.style.width = player.health * 2 + '%';
 
     playerStrength.setAttribute('aria-valuenow', player.strength);
-    playerStrength.style.width = player.strength + '%';
+    playerStrength.style.width = player.strength * 2 + '%';
 
     playerAgility.setAttribute('aria-valuenow', player.agility);
-    playerAgility.style.width = player.agility + '%';
+    playerAgility.style.width = player.agility * 2 + '%';
 
     playerDexterity.setAttribute('aria-valuenow', player.dexterity);
-    playerDexterity.style.width = player.dexterity + '%';
+    playerDexterity.style.width = player.dexterity * 2 + '%';
 }
 
 export function displayVillain(villain) {
@@ -56,16 +56,16 @@ export function displayVillain(villain) {
     villainImage.setAttribute('src', villain.picture);
 
     villainHealth.setAttribute('aria-valuenow', villain.health);
-    villainHealth.style.width = villain.health + '%';
+    villainHealth.style.width = villain.health * 2 + '%';
 
     villainStrength.setAttribute('aria-valuenow', villain.strength);
-    villainStrength.style.width = villain.strength + '%';
+    villainStrength.style.width = villain.strength * 2 + '%';
 
     villainAgility.setAttribute('aria-valuenow', villain.agility);
-    villainAgility.style.width = villain.agility + '%';
+    villainAgility.style.width = villain.agility * 2 + '%';
 
     villainDexterity.setAttribute('aria-valuenow', villain.dexterity);
-    villainDexterity.style.width = villain.dexterity + '%';
+    villainDexterity.style.width = villain.dexterity * 2 + '%';
 
 }
 

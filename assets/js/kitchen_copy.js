@@ -27,6 +27,10 @@ const draggableConfig = {
 document.addEventListener("DOMContentLoaded", function () {
     const ingredientElements = document.querySelectorAll('.ingredient');
 
+    document.querySelector('.back-btn').addEventListener('click', function () {
+        window.location.href = 'game.html';
+    });
+
     // parse json file
     fetch('assets/json/components_data.json')
         .then((response) => response.json())
@@ -42,17 +46,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 ingredientElements[i].setAttribute('data-name', ingredients[i].name);
             }
             checkLocalStorage()
-            createIngredientInventory();
     });
-
 
     document.querySelector('.cauldron').addEventListener('click', function () {
         brewPotion(potions, cauldronContents);
     });
 
-    // document.querySelector('.recipe-book').addEventListener('click', function () {
-    //     showRecipeBook();
-    // });
+    document.querySelector('.recipe-book').addEventListener('click', function () {
+        showRecipeBook();
+    });
 
     // for (let i = 0; i < ingredientElements.length; i++) {
     //     ingredientElements[i].addEventListener('mouseover', function () {
@@ -171,7 +173,10 @@ function brewPotion(potions, cauldronContents) {
     for(let potion of potions) {
 
         if(arraysEqual(potion.ingredients, cauldronContents)) {
-            const potionsInInventory = getInventory().length;
+            let potionsInInventory = 0;
+            for (potion of getInventory()) {
+                potionsInInventory += potion.amount;
+            }
             dropdownAlertText.innerHTML = ` (${potionsInInventory+1}/10) You brewed: `;
             const potionImg = document.createElement('div');
             potionImg.classList.add('dropdown-alert-img');
@@ -251,36 +256,5 @@ function addDiscoveredPotion(potionID) {
         localStorage.setItem('potions', JSON.stringify(potions));
     } else {
         console.log(`Potion with ID ${potionID} was not found.`);
-    }
-}
-
-function createIngredientInventory() {
-    const ingredientsInventory = document.getElementById("ingredients-list");
-    ingredientsInventory.innerHTML = "";
-
-    // loop through brewed potions and add them to the potions inventory
-    for (let i = 0; i < ingredients.length; i++) {
-        let parent = document.createElement("div");
-        parent.classList.add("ingredient");
-        let ingredient = document.createElement("img");
-
-        ingredient.setAttribute("src", ingredients[i].picture);
-        ingredient.setAttribute("alt", ingredients[i].name);
-        ingredient.classList.add("ingredient-img", "dragable");
-
-        parent.setAttribute("id", "ingredient-" + i);
-        parent.classList.add("ingredient-container");
-        parent.setAttribute("data-ingredient-id", i);
-        parent.setAttribute("data-item", "ingredient");
-        parent.setAttribute("data-ingredient-ammount", 0);
-
-        // tooltip
-        parent.setAttribute("data-bs-toggle", "tooltip");
-        parent.setAttribute("data-bs-placement", "top");
-        parent.setAttribute("data-bs-title", ingredients[i].name);
-
-        parent.appendChild(ingredient);
-
-        ingredientsInventory.appendChild(parent);
     }
 }

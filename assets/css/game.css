@@ -165,3 +165,22 @@ body {
 .menu_icon:hover {
     color: var(--ligth-orange-color);
 }
+
+#sounds {
+    position: absolute;
+    color: white;
+    right: 0px;
+    top: 0px;
+    width: 150px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+/* media query for medium screen size and smaller */
+
+@media (max-width: 768px) {
+    .card-body {
+        width: 200%;
+    }
+}
