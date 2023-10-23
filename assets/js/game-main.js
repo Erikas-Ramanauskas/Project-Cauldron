@@ -25,7 +25,7 @@ let gameturn = 0
 fetch('assets/json/components_data.json')
     .then((response) => response.json())
     .then((json) => {
-        components_data = json;
+       components_data = json;
         potions = components_data.potions;
         ingredients = components_data.ingredients;
         villains = components_data.villains;
