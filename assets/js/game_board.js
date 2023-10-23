@@ -1,5 +1,7 @@
 import { getInventory, removeFromInventory, resetInventory } from "./inventory.js"
-import { getCharacter, setCurrentCharacter, getGameRound, setGameRound } from "./game_storage.js"
+import {
+    getCharacter, setCurrentCharacter, getGameRound, setGameRound, setPotionApplied, isPotionApplied, resetPotionApplied
+} from "./game_storage.js"
 import { displayRound, displayPlayer, displayVillain, displayPotions } from "./game_board_display.js"
 import generateCharacters from './generate_characters.js';
 import applyPotion from './apply_potion.js';
@@ -55,14 +57,24 @@ function runRound(difficulty = 0.1) {
 }
 
 // attack handler
-function attackBtnHandler () {
+function attackBtnHandler() {
+    // check if the potion is applied
+    if (!isPotionApplied()) {
+        // FIXME: show toast instead of alert
+        alert('You must apply a potion before attacking!');
+        return;
+    }
+    // reset potion applied
+    resetPotionApplied();
+
+
     let player = getCharacter("player");
     let villain = getCharacter("villain");
     let gameResult = attack(player, villain);
 
     if (gameResult === true) {
         // player won
-        console.log('player won');
+        // FIXME: show toast instead of alert and animate next round font transition
         alert('You won!');
         let turn = getGameRound();
         turn++;
@@ -84,7 +96,7 @@ function attackBtnHandler () {
             })
     } else if (gameResult === false) {
         // player lost
-        console.log('player lost');
+        // FIXME: show toast instead of alert
         alert('You lost!');
         // reset round and inventory
         setGameRound(0);
@@ -107,16 +119,19 @@ export function adjustStats(potionId, characterName) {
     console.log(characterName);
     let inventory = getInventory();
     let potion = inventory.find(item => item.id === potionId);
-    let character = getCharacter(characterName);
-    character = applyPotion(character, potion);
-    setCurrentCharacter(character, characterName);
+    let previous_character = getCharacter(characterName);
+    let new_character = applyPotion(previous_character, potion);
+    setCurrentCharacter(new_character, characterName);
 
     if (characterName === "player") {
-        displayPlayer(character);
+        displayPlayer(new_character);
     } else {
-        displayVillain(character);
+        displayVillain(new_character);
     }
 
     // remove potion from inventory
     removeFromInventory(potionId);
+
+    // set potion applied
+    setPotionApplied();
 }
