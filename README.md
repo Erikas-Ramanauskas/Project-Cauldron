@@ -114,13 +114,32 @@ In particular:
 Images have been used to provide much of the colour for the site as outlined above. They are also used to create specific components of the game play. ChatGPT has been used to create some images and others have been sourced from freepik.com and attributed in the credits below.
 
 ### Wireframes
-...
+<details><summary>Home Page</summary>
+<img src="docs/images/home.png"
+alt="wireframe of the home page"></details>
+<details><summary>Game Page</summary>
+<img src="docs/images/game.png"
+alt="wireframe of the game page"></details>
+<details><summary>Kitchen Page</summary>
+<img src="docs/images/kitchen.png"
+alt="wireframe of the kitchen page"></details>
+<details><summary>Recipe Book</summary>
+<img src="docs/images/recipe-book.png"
+alt="wireframe of the recipe book"></details>
+<details><summary>Creators Page</summary>
+<img src="docs/images/creators.png"
+alt="wireframe of the creators page"></details>
+<details><summary>Rules Page</summary>
+<img src="docs/images/rules.png"
+alt="wireframe of the rules page"></details>
+
 
 ## Features
 ### Home Page
 - Designed to look like a game menu rather than a website home page.
 - Contains a colourful background image in keeping with the theme of the game.
 - A simple game menu is located front and centre.
+![home-page](docs/images/feature-home.png)
 ### Game Menu
 - This is the key feature on the home page.
 - Contains 4 buttons that are links leading to the Game Page, the Witches Kitchen, the Creators Page and the Rules Page
@@ -131,19 +150,23 @@ Images have been used to provide much of the colour for the site as outlined abo
 - Potions Area displays the brewed potions the player currently has available together with their properties and allows the player choose potions to use in the current round.
 - Kitchen button allows the player to visit the Witches Kitchen at any point to brew potions.
 - Clicking the Fight button allows the player to fight the enemy and complete the round once they are ready.
+![game-page](docs/images/feature-game.png)
 ### Witches Kitchen
 - Recipe Book image when clicked on opens the book and allows the player to view potions that can be brewed from the various ingredients.
 - The ingredients area shows currently available ingredients.
 - Drag and Drop allows available ingredients to be dragged and dropped into the Cauldron.
 - Dropping ingredients into the cauldron “mixes” them and dropping in ingredients in a combination from the book will create the specified potion.
 - The potions area displays created potions and these are then available in the Game Page also as described above.
+![kitchen-page](docs/images/feature-kitchen.png)
 ### Rules Page
 - Contains a text area outlining the rules of the game.
 - Buttons allow navigation to other pages. This simple navigation approach is consistent with the game style applied throughout.
+![rules-page](docs/images/feature-rules.png)
 ### Creators Page
 - Contains a simple card for each of the members of the team behind the project.
 - The cards are also links to each of the team members chosen personal website allowing users and players to find out more about the team.
 - Each of the creators have been assigned humorous titles in line with the overall fantasy/Halloween theme.
+![creators-page](docs/images/features-creators.png)
 
 ## Technologies Used
 - HTML
