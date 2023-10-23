@@ -214,9 +214,6 @@ This site has been deployed from a GitHub repository using GitHub technology to 
 - Hackathon Facilitator Joy Zadan for guidance and encouragement.
 
 ## Team
-- Melody Shutt
-    - [GitHub](https://github.com/Melody-Lisa)
-    - [LinkedIn](http://www.linkedin.com/in/melodyshutt)
 - Pavlo Myskov
     - [GitHub](https://github.com/FlashDrag)
     - [LinkedIn](https://www.linkedin.com/in/pavlo-myskov)
