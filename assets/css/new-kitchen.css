@@ -49,7 +49,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 5rem;
+    padding: 10rem;
     position: relative;
     overflow: visible;
 }
@@ -89,7 +89,7 @@ body{
     object-fit: fill;
 }
 
-.recipie-book-container{
+.recipie-book-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -227,17 +227,11 @@ body{
 }
 .ingredient{
      background-repeat: no-repeat;
+    z-index: 10000;
     position: relative;
 }
 
-#recipie-ingredients img {
-    width: 20%;
-}
 
-#recipie-ingredients > div {
-    display: flex;
-    align-items: center;
-}
 
 
 @media screen and (max-width: 1024px) {
