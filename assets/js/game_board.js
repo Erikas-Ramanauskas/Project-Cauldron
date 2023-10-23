@@ -2,7 +2,7 @@ import { getInventory, removeFromInventory, resetInventory } from "./inventory.j
 import {
     getCharacter, setCurrentCharacter, getGameRound, setGameRound, setPotionApplied, isPotionApplied, resetPotionApplied
 } from "./game_storage.js"
-import { displayRound, displayPlayer, displayVillain, displayPotions } from "./game_board_display.js"
+import { displayRound, displayPlayer, displayVillain, displayPotions, displayToastMsg } from "./game_board_display.js"
 import generateCharacters from './generate_characters.js';
 import applyPotion from './apply_potion.js';
 import attack from './attack.js';
@@ -60,8 +60,7 @@ function runRound(difficulty = 0.1) {
 function attackBtnHandler() {
     // check if the potion is applied
     if (!isPotionApplied()) {
-        // FIXME: show toast instead of alert
-        alert('You must apply a potion before attacking!');
+        displayToastMsg('You must apply a potion before attacking!');
         return;
     }
     // reset potion applied
@@ -74,8 +73,7 @@ function attackBtnHandler() {
 
     if (gameResult === true) {
         // player won
-        // FIXME: show toast instead of alert and animate next round font transition
-        alert('You won!');
+        displayToastMsg('You won!');
         let turn = getGameRound();
         turn++;
         setGameRound(turn);
@@ -96,8 +94,7 @@ function attackBtnHandler() {
             })
     } else if (gameResult === false) {
         // player lost
-        // FIXME: show toast instead of alert
-        alert('You lost!');
+        displayToastMsg('You lost!');
         // reset round and inventory
         setGameRound(0);
 

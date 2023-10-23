@@ -120,3 +120,10 @@ function initializeTooltips() {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 }
+
+export function displayToastMsg(message) {
+    const toastEl = document.querySelector(".toast");
+    const toast = new bootstrap.Toast(toastEl);
+    toastEl.querySelector(".toast-body").innerHTML = message;
+    toast.show();
+}

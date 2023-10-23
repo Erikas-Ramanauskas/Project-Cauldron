@@ -165,3 +165,9 @@ body {
 .menu_icon:hover {
     color: var(--ligth-orange-color);
 }
+
+.toast {
+    background: rgb(49,38,62);
+    background: linear-gradient(0deg, rgba(116, 13, 121, 0.863) 0%, rgba(198, 147, 35, 0.877) 100%);
+    color: #ffffff;
+}
