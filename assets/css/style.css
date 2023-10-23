@@ -1,12 +1,20 @@
 /* Global */
 
+  @import url('https://fonts.googleapis.com/css2?family=Eater&family=Fontdiner+Swanky&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box !important;
-    font-family: 'Shadows Into Light', cursive;
+    box-sizing: border-box !important;   
+    font-family: 'Fontdiner Swanky', serif;
     letter-spacing: 1px;
 }
+
+h1,h2,h3,h4,h5,h6 {
+   font-family: 'Eater', serif;
+}
+
 
 :root{
     --orange-color: #eca72c;
@@ -50,11 +58,47 @@ body {
 
 /* Home page */
 .main-heading {
-    font-size: 65px;
+
     text-align: center;
     padding-top: 70px;
     padding-bottom: 20px;
 }
+
+.logo-svg {
+  width: 50rem;
+  height: 10rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .logo-svg {
+        width: 40rem;
+        height: 8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo-svg {
+        width: 30rem;
+        height: 6rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .logo-svg {
+        width: 20rem;
+        height: 4rem;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    .logo-svg {
+        width: 15rem;
+        height: 3rem;
+    }
+    
+}
+
 
 .background {
     background: url('../images/background_720.webp') no-repeat center center;
@@ -90,4 +134,39 @@ body {
     background: rgb(49,38,62);
     background: radial-gradient(circle, rgba(49,38,62,1) 0%, rgba(224, 178, 104, 0.806) 48%, rgba(0,0,0,1) 100%);;
     color: #ffffff;
+}
+
+
+/* svg path css */
+
+
+.path {
+  width: 50%;
+  stroke-dashoffset: 600;
+  stroke-dasharray: 600;
+  fill: none;
+  stroke-width: 1;
+  stroke: white;
+
+  animation: draw 5s linear forwards;
+}
+
+@keyframes draw {
+  0% {
+    fill: none;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    fill: rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    fill: white;
+    stroke-dashoffset: 0;
+  }
+}
+
+svg {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.9));
 }
