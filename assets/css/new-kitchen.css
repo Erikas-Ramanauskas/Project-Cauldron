@@ -49,7 +49,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 3rem;
+    padding: 5rem;
     position: relative;
     overflow: visible;
 }
@@ -298,7 +298,6 @@ body{
     
     #recipie-ingredients{
         padding: 0, 0, 1rem, 0;
-
     }
     
     #recipie-book-container{
@@ -308,8 +307,7 @@ body{
     #ingredients-list{
         height: 100%;
         align-content: space-around;    
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding: 3rem;
     }
 }
 
