@@ -8,7 +8,7 @@ import { createInventory, resetInventory, getInventory, addToInventory, removeFr
 
 const draggableConfig = {
     onstart: function (event) {
-        
+        event.target.classList.add('dragging');
     },
     onmove: function (event) {
         var target = event.target;
@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
             checkLocalStorage()
             createIngredientInventory();
     });
+
 
     document.querySelector('.cauldron').addEventListener('click', function () {
         brewPotion(potions, cauldronContents);
