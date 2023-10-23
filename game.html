@@ -22,6 +22,8 @@
     Sounds: ON
   </div>
 
+
+
   <!-- Navigation menu -->
 
   <div class="dropdown">
@@ -33,6 +35,12 @@
       <a class="menu_icon" href="index.html">Home</a>
       <a class="menu_icon" href="kitchen.html">Kitchen</a>
     </ul>
+  </div>
+
+   <!-- Attack Button -->
+   <div class="w-100 position-relative text-center pt-1">
+    <h3 id="round" class="text-white"></h3>
+    <button id="attack-btn" class="btn btn-danger btn-lg pt-5">Attack</button>
   </div>
 
   <!-- Toast msg -->
@@ -49,7 +57,7 @@
   <div class="row w-100 flex-grow-1" id="game-board">
 
     <!-- Villain Card -->
-    <div class="col-4">
+    <div class="col-6 pb-5">
       <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
         <div class="card-header w-100 bg-transparent border-0">
           <h5 id="villainName" class="card-title text-center"></h5>
@@ -94,14 +102,8 @@
     </div>
     <!-- ./villain card -->
 
-    <!-- Attack Button -->
-    <div class="col-2 h-100 d-flex flex-column justify-content-around align-items-center position-relative">
-      <h3 id="round" class="text-white"></h3>
-      <button id="attack-btn" class="btn btn-danger btn-lg">Attack</button>
-    </div>
-
     <!-- Player Card -->
-    <div class="col-4">
+    <div class="col-6 pb-5">
       <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
         <div class="card-header w-100 bg-transparent border-0">
           <h5 class="card-title text-center player-name">Player</h5>
@@ -148,6 +150,11 @@
   </div>
   <!-- ./characters -->
 
+  <div class="w-100 position-relative text-center">
+
+  </div>
+
+
   <!-- Inventory -->
   <div id="inventory-potions-container" class="row w-100 mt-auto">
     <!-- Inventory potions -->
@@ -158,23 +165,6 @@
   </div>
 
 
-  <!-- Game Rules Modal -->
-  <div class="modal fade" id="gameRulesModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="gameRulesLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-center w-100">Game Rules</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Ratione, illum ut, quidem voluptatibus, mollitia in repellendus
-          officia error a nam velit explicabo dolorem nostrum. Iste odio quisquam repellat quibusdam dicta
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Modal -->
   <div class="modal fade" id="playerSelect" data-bs-backdrop="static"

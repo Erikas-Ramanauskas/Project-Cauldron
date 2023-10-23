@@ -38,11 +38,6 @@ body {
     width: 100%;
 }
 
-.villain, .player {
-    width: 50%;
-    height: auto;
-    display: block;
-}
 
 .card-body {
     display: flex;
@@ -104,19 +99,9 @@ body {
     width: 2.5rem;
 }
 
-.character-hover::before {
-    content: "+";
-    position: absolute;
-    right: -1px;
-    width: 20px;
-    height: 20px;
-    background-color: green;
-    color: white;
-    text-align: center;
-    line-height: 15px;
-    border-radius: 50%;
-    font-size: 16px;
-    border: 1px solid black;
+.character-hover {
+    filter: drop-shadow(0px 0px 10px rgba(230, 158, 5, 0.737)) brightness(1.2) !important;
+    transition: filter 0.3s;
 }
 
 /* Navigation menu */
@@ -177,14 +162,41 @@ body {
     align-items: center;
 }
 
-/* media query for medium screen size and smaller */
+.card-img-bottom {
+    width: 100%;
+    object-fit: contain;
+}
 
-@media (max-width: 768px) {
-    .card-body {
-        width: 200%;
+.round {
+    position: absolute;
+    top: 50%; /* Move it 50% down from the top */
+    left: 50%; /* Move it 50% from the left */
+    transform: translate(-50%, -50%);
+}
+
+@media (min-width: 1200px) {
+    .card-img-bottom {
+        height: 400px;
     }
 }
 
+@media (max-width: 1200px) {
+    .card-img-bottom {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-img-bottom {
+        height: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .card-img-bottom {
+        height: 150px;
+    }
+}
 
 .toast {
     background: rgb(49,38,62);
@@ -198,7 +210,12 @@ body {
     transition: transform 0.3s;
 }
 
-.player img {
-    /* object shadow */
+.player img, .villain img {
     filter: drop-shadow(0px 0px 10px rgba(215, 149, 8, 0.687));
+}
+
+.potion-hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s;
 }

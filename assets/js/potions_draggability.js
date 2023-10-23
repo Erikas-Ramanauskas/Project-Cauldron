@@ -38,18 +38,25 @@ makePotionsDraggable();
 interact('.player').dropzone({
     accept: '.potion',
     ondragenter: function (event) {
-        const potion = event.relatedTarget;
-        potion.classList.add('character-hover');
+        const playerImage = event.target.querySelector('img'); // Select the img inside the player element
+        if (playerImage) {
+            playerImage.classList.add('character-hover');
+        }
     },
     ondragleave: function (event) {
-        const potion = event.relatedTarget;
-        potion.classList.remove('character-hover');
+        const playerImage = event.target.querySelector('img'); // Select the img inside the player element
+        if (playerImage) {
+            playerImage.classList.remove('character-hover');
+        }
     },
     ondrop: function (event) {
-        const potion = event.relatedTarget;
-        potion.classList.remove('character-hover');
+        const playerImage = event.target.querySelector('img'); // Select the img inside the player element
+        if (playerImage) {
+            playerImage.classList.remove('character-hover');
+        }
 
-        // get data porion-id from potion
+        // get data potion-id from potion
+        const potion = event.relatedTarget;
         const potionId = potion.getAttribute("data-potion-id");
 
         adjustStats(potionId, "player");
@@ -63,18 +70,25 @@ interact('.player').dropzone({
 interact('.villain').dropzone({
     accept: '.potion',
     ondragenter: function (event) {
-        const potion = event.relatedTarget;
-        potion.classList.add('character-hover');
+        const villainImage = event.target.querySelector('img'); // Select the img inside the villain element
+        if (villainImage) {
+            villainImage.classList.add('character-hover');
+        }
     },
     ondragleave: function (event) {
-        const potion = event.relatedTarget;
-        potion.classList.remove('character-hover');
+        const villainImage = event.target.querySelector('img'); // Select the img inside the villain element
+        if (villainImage) {
+            villainImage.classList.remove('character-hover');
+        }
     },
     ondrop: function (event) {
-        const potion = event.relatedTarget;
-        potion.classList.remove('character-hover');
+        const villainImage = event.target.querySelector('img'); // Select the img inside the villain element
+        if (villainImage) {
+            villainImage.classList.remove('character-hover');
+        }
 
-        // get data porion-id from potion
+        // get data potion-id from potion
+        const potion = event.relatedTarget;
         const potionId = potion.getAttribute("data-potion-id");
 
         adjustStats(potionId, "villain");
