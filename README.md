@@ -4,7 +4,7 @@
 ![mockup](docs/images/mockup.png)
 
 ## Overview
-Witches Brew is a one player game against the computer. It combines elements of strategy and computer generated randomness – or good and bad luck from a player perspective! The player commences with a vitality level and levels of strength, agility and dexterity. As the game proceeds the player must fight off enemies that also have strength, agility and dexterity levels. Losing to enemies will reduce the players vitality level. However the player also starts with ingredients for potions and continues to gather them throughout the game. Different potions will affect the strength, agility and dexterity of the player or of the enemy thus affecting the players ability to win. Brew the right potions to stay alive, stay in the game and continue to beat your enemies!!
+Witches Brew is a one player game against the computer. The player commences with a health level and levels of strength, agility and dexterity. As the game proceeds the player must fight off enemies that also have strength, agility and dexterity levels. Against any given enemy the player will lose health points as a fight proceeds if the player's strength, agility and dexterity combined are less than that of the opponent. If the player's health points reach zero the game is over! However the player also has access to ingredients for making potions. Different potions will affect the strength, agility and dexterity of the player or of the enemy thus affecting the players ability to win. Brew the right potions to stay alive, stay in the game and continue to beat your enemies!!
 
 
 Live demo: https://Erikas-Ramanauskas.github.io/Project-Cauldron
@@ -14,7 +14,16 @@ Live demo: https://Erikas-Ramanauskas.github.io/Project-Cauldron
 
 
 ## How to Play
-...
+- At the outset the player is assigned health points as well as levels for strength, agility and dexterity.
+- In each round the player will face an enemy with its own strength, agility and dexterity levels
+- To defeat an enemy the player must fight the enemy using the Fight button.
+- Each time the fight button is clicked the totals for strength, agility and dexterity for both player and enemy at that given time are assessed. If the enemy is stronger the player loses a health point. Each time prior to clicking the fight button the player can brew potions that can affect player or enemy levels. This is key to the game strategy and is explained further below.
+- The player must keep fighting until the enemy is defeated or the the player runs out of health points.
+- If the player health points go to zero the game ends.
+- If you defeat an enemy you proceed to the next round and the health points are reset.
+- The player also has access to ingredients in the Witches Kitchen. These ingredients can be used to make potions. The potions can then be used to increase your levels or decrease those of your enemy as per the properties of the particular potion. The recipes for and properties of all potions are found in the recipe book.
+- At any point in the game a player can enter the Witches Kitchen and brew potions. The player can brew a maximum of ten potions against any one enemy.
+- Create your potions wisely. Win as many fights as you can. Stay alive!
 
 
 ## Agile Methodology
