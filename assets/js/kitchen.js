@@ -235,6 +235,7 @@ function updateContentList(ingredientName, ingredientImage) {
 
     ingredient.setAttribute("src", ingredientImage);
     ingredient.setAttribute("alt", ingredientName);
+    pictureFrame.classList.add("ingredient-for-recipie");
     ingredient.classList.add("ingredient-img", "dragable");
     pictureFrame.appendChild(ingredient);
 
