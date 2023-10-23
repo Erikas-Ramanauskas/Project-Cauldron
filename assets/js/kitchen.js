@@ -152,7 +152,17 @@ function arraysEqual(arr1, arr2) {
 const dropdownAlert = document.querySelector('.dropdown-alert');
 const dropdownAlertText = document.querySelector('.dropdown-alert-text');
 
+
 function brewPotion(potions, cauldronContents) {
+    let potionsBrewed = JSON.parse(localStorage.getItem("potionsBrewed"));
+    if (!potionsBrewed) {
+        console.log('true')
+        localStorage.setItem("potionsBrewed", JSON.stringify(0))
+        potionsBrewed = 0;
+    }
+    console.log(potionsBrewed)
+    potionsBrewed += 1;
+    localStorage.setItem("potionsBrewed", JSON.stringify(potionsBrewed))
     // play 3 seconds of sound
     const audio = new Audio('assets/sounds/bubbling.wav');
     makeIngredientsNotDraggable();
@@ -172,7 +182,7 @@ function brewPotion(potions, cauldronContents) {
 
         if(arraysEqual(potion.ingredients, cauldronContents)) {
             const potionsInInventory = getInventory().length;
-            dropdownAlertText.innerHTML = ` (${potionsInInventory+1}/10) You brewed: `;
+            dropdownAlertText.innerHTML = ` (${potionsBrewed}/10) You brewed: `;
             const potionImg = document.createElement('div');
             potionImg.classList.add('dropdown-alert-img');
             potionImg.style.backgroundImage = `url('Project-Cauldron/${potion.picture}')`;
@@ -188,7 +198,7 @@ function brewPotion(potions, cauldronContents) {
             resetContentList(cauldronContents);
 
             console.log(potionsInInventory);
-            if (potionsInInventory < 10) {
+            if (potionsBrewed < 10) {
                 addToInventory(potion);
             } else {
                 dropdownAlertText.innerHTML = 'Inventory full';
