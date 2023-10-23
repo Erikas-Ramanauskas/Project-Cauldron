@@ -1,7 +1,8 @@
 // main variables
-import { getInventory, removeFromInventory, addToInventory } from "./inventory.js"
+import { getInventory, removeFromInventory, addToInventory, resetInventory } from "./inventory.js"
 import generateCharacters from './generate_characters.js';
 import applyPotion from './apply_potion.js';
+import attack from './attack.js';
 
 runGame();
 
@@ -54,7 +55,6 @@ function runGame() {
         setGameRound(1);
         runRound()
             .then(() => {
-                console.log('villain');
                 // get characters from local storage
                 let villain = getCharacter("villain");
                 let player = getCharacter("player");
@@ -73,6 +73,47 @@ function runGame() {
         displayVillain(villain);
         displayPlayer(player);
         displayPotions();
+    }
+}
+
+// attack handler
+function attackBtnHandler () {
+    let player = getCharacter("player");
+    let villain = getCharacter("villain");
+    let gameResult = attack(player, villain);
+
+    if (gameResult === true) {
+        // player won
+        console.log('player won');
+        let turn = getGameRound();
+        turn++;
+        setGameRound(turn);
+        runRound()
+            .then(() => {
+                // get characters from local storage
+                let villain = getCharacter("villain");
+                let player = getCharacter("player");
+                // display characters
+                displayVillain(villain);
+                displayPlayer(player);
+                resetInventory();
+                displayPotions();
+            })
+    } else if (gameResult === false) {
+        // player lost
+        console.log('player lost');
+        // reset round and inventory
+        setGameRound(0);
+        resetInventory();
+        displayPotions();
+        // TODO: ask if player wants to play again using a modal
+    } else {
+        // game continues
+        console.log('game continues');
+        setCurrentCharacter(gameResult.player, "player");
+        setCurrentCharacter(gameResult.enemy, "villain");
+        displayPlayer(gameResult.player);
+        displayVillain(gameResult.enemy);
     }
 }
 
@@ -289,6 +330,9 @@ interact('.villain').dropzone({
         resetElementPosition(potion);
     },
 });
+
+
+document.getElementById('attack-btn').addEventListener('click', attackBtnHandler);
 
 // Keyboard event for menu open
 document.addEventListener('keydown', function (event) {
