@@ -48,3 +48,23 @@ export function setPotionApplied() {
 export function resetPotionApplied() {
     localStorage.setItem("potionApplied", "false");
 }
+
+export function isCharacterSelected() {
+    let characterId = localStorage.getItem("selectedCharacterId");
+    if (characterId) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+export function setSelectedCharacter(characterId, characterName) {
+    localStorage.setItem("selectedCharacterId", characterId);
+    localStorage.setItem("selectedCharacterName", characterName);
+}
+
+export function getSelectedCharacter() {
+    let characterId = localStorage.getItem("selectedCharacterId");
+    let characterName = localStorage.getItem("selectedCharacterName");
+    return { characterId, characterName };
+}

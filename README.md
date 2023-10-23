@@ -1,8 +1,6 @@
 # Project Cauldron
 ## 🎃🎃🎃 Phantom Forge: A Halloween Hackathon 🎃🎃🎃
 
-![mockup](docs/images/mockup.png)
-
 ## Overview
 Witches Brew is a one player game against the computer. The player commences with a health level and levels of strength, agility and dexterity. As the game proceeds the player must fight off enemies that also have strength, agility and dexterity levels. Against any given enemy the player will lose health points as a fight proceeds if the player's strength, agility and dexterity combined are less than that of the opponent. If the player's health points reach zero the game is over! However the player also has access to ingredients for making potions. Different potions will affect the strength, agility and dexterity of the player or of the enemy thus affecting the players ability to win. Brew the right potions to stay alive, stay in the game and continue to beat your enemies!!
 
@@ -10,8 +8,38 @@ Witches Brew is a one player game against the computer. The player commences wit
 Live demo: https://Erikas-Ramanauskas.github.io/Project-Cauldron
 
 ## Table of contents
-...
-
+- [Project Cauldron](#project-cauldron)
+   * [🎃🎃🎃 Phantom Forge: A Halloween Hackathon 🎃🎃🎃](#-phantom-forge-a-halloween-hackathon-)
+   * [Overview](#overview)
+   * [Table of contents](#table-of-contents)
+   * [How to Play](#how-to-play)
+   * [Agile Methodology](#agile-methodology)
+      + [Project Goals](#project-goals)
+      + [Target Audience](#target-audience)
+      + [User Stories](#user-stories)
+         - [First time user](#first-time-user)
+         - [Game player](#game-player)
+      + [Development process](#development-process)
+   * [UX Design](#ux-design)
+   * [UI Design](#ui-design)
+      + [Fonts](#fonts)
+      + [Colours](#colours)
+      + [Sounds](#sounds)
+      + [Images and Animations](#images-and-animations)
+      + [Wireframes](#wireframes)
+   * [Features](#features)
+      + [Home Page](#home-page)
+      + [Game Menu](#game-menu)
+      + [Game Page](#game-page)
+      + [Witches Kitchen](#witches-kitchen)
+      + [Rules Page](#rules-page)
+      + [Creators Page](#creators-page)
+   * [Technologies Used](#technologies-used)
+   * [Testing](#testing)
+   * [Deployment](#deployment)
+   * [Credits](#credits)
+   * [Acknowledgements](#acknowledgements)
+   * [Team](#team)
 
 ## How to Play
 - At the outset the player is assigned health points as well as levels for strength, agility and dexterity.
@@ -99,8 +127,6 @@ At the start of each sprint, the _User Stories_ are selected from the _Product B
 All aspects of the UX design flow directly from the fact that the goal is the creation of a browser based game. From the moment the user navigates to the website the user should feel that they are now playing a game. Therefore the landing page does not have a navigation bar and footer typical of most information provision type sites. Instead it has a button based “game menu”. The menu is positioned front and centre and the user options are simple and clear. The second element is the inclusion of a colourful background in keeping with the theme of the site. This colourful theme simple navigation is repeated throughout. The pages containing the game rules and creator information continue this approach. The game itself is contained across 2 pages. These continue the overall design approach but contain increased imagery and colour. The aim is to clearly let the user know that they are now in the game proper and also to achieve the goal of providing elements to explore.
 
 ## UI Design
-### Components
-...
 
 ### Fonts
 The font used is "Shadows Into Light" from Google Fonts and was chosen to reflect the spooky, Halloween, witches theme while maintaining readability. Other somewhat more stylised and potentially suitable fonts were also trialled but it was considered that readability was compromised.

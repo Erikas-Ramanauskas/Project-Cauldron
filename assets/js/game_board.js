@@ -1,8 +1,8 @@
 import { getInventory, removeFromInventory, resetInventory } from "./inventory.js"
 import {
-    getCharacter, setCurrentCharacter, getGameRound, setGameRound, setPotionApplied, isPotionApplied, resetPotionApplied
+    getCharacter, setCurrentCharacter, getGameRound, setGameRound, setPotionApplied, isPotionApplied, resetPotionApplied, isCharacterSelected
 } from "./game_storage.js"
-import { displayRound, displayPlayer, displayVillain, displayPotions } from "./game_board_display.js"
+import { displayRound, displayPlayer, displayVillain, displayPotions, displayToastMsg } from "./game_board_display.js"
 import generateCharacters from './generate_characters.js';
 import applyPotion from './apply_potion.js';
 import attack from './attack.js';
@@ -70,12 +70,18 @@ function runRound(difficulty) {
 
 // attack handler
 function attackBtnHandler() {
-    // check if the potion is applied
-    if (!isPotionApplied()) {
-        // FIXME: show toast instead of alert
-        alert('You must apply a potion before attacking!');
+
+    if (!isCharacterSelected()) {
+        displayToastMsg('Select a character before playing!');
         return;
     }
+
+    // check if the potion is applied
+    if (!isPotionApplied()) {
+        displayToastMsg('Apply a potion before attacking!');
+        return;
+    }
+
     // reset potion applied
     resetPotionApplied();
 
@@ -100,8 +106,7 @@ function attackBtnHandler() {
 
     if (gameResult === true) {
         // player won
-        // FIXME: show toast instead of alert and animate next round font transition
-        alert('You won!');
+        displayToastMsg('You won!');
         let turn = getGameRound();
         turn++;
         setGameRound(turn);
@@ -119,17 +124,29 @@ function attackBtnHandler() {
                 resetInventory();
                 displayPotions();
                 displayRound();
+                localStorage.setItem("potionsBrewed", JSON.stringify(0));
             })
     } else if (gameResult === false) {
         // player lost
-        // FIXME: show toast instead of alert
-        alert('You lost!');
+        displayToastMsg('You lost!');
         // reset round and inventory
         setGameRound(0);
-        resetInventory();
-        displayPotions();
-        displayRound();
+
+        runRound()
+            .then(() => {
+                // get characters from local storage
+                let villain = getCharacter("villain");
+                let player = getCharacter("player");
+                // display characters
+                displayVillain(villain);
+                displayPlayer(player);
+                resetInventory();
+                displayPotions();
+                displayRound();
+                localStorage.setItem("potionsBrewed", JSON.stringify(0))
+            })
         // TODO: ask if player wants to play again using a modal
+
     } else {
         // game continues
         console.log('game continues');

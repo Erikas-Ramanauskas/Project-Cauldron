@@ -2,6 +2,7 @@
 
 import { getInventory } from "./inventory.js"
 import { getGameRound } from "./game_storage.js"
+import {  isCharacterSelected, setSelectedCharacter, getSelectedCharacter } from "./game_storage.js"
 
 
 export function displayRound() {
@@ -11,16 +12,19 @@ export function displayRound() {
 }
 
 function displayPlayerImg() {
-    const characterId = localStorage.getItem('selectedCharacterId');
-    const characterName = localStorage.getItem('selectedCharacterName');
-
     const playerName = document.querySelector('.player-name');
     const playerCharacter = document.querySelector('.player img');
 
-    playerName.innerHTML = 'Player';
+    if (!isCharacterSelected()) {
+        playerCharacter.setAttribute('src', 'assets/images/player/no-character.png');
+        displaySelectCharacterModal();
+    } else {
+        const characterId = getSelectedCharacter().characterId;
+        playerCharacter.setAttribute('src', 'assets/images/player/' + characterId + '.png');
+    }
 
-    playerCharacter.setAttribute('src', 'assets/images/player/' + characterId + '.png');
-    playerCharacter.setAttribute('alt', characterName);
+    playerName.innerHTML = 'Player';
+    playerCharacter.setAttribute('alt', "Player");
 };
 
 export function displayPlayer(player) {
@@ -119,4 +123,17 @@ function initializeTooltips() {
     // Initialize the tooltips
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+}
+
+export function displayToastMsg(message) {
+    const toastEl = document.querySelector(".toast");
+    const toast = new bootstrap.Toast(toastEl);
+    toastEl.querySelector(".toast-body").innerHTML = message;
+    toast.show();
+}
+
+export function displaySelectCharacterModal() {
+    const modalEl = document.getElementById('playerSelect');
+    const modal = new bootstrap.Modal(modalEl);
+    modal.show();
 }
