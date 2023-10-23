@@ -10,8 +10,39 @@ Witches Brew is a one player game against the computer. The player commences wit
 Live demo: https://Erikas-Ramanauskas.github.io/Project-Cauldron
 
 ## Table of contents
-...
-
+- [Project Cauldron](#project-cauldron)
+   * [🎃🎃🎃 Phantom Forge: A Halloween Hackathon 🎃🎃🎃](#-phantom-forge-a-halloween-hackathon-)
+   * [Overview](#overview)
+   * [Table of contents](#table-of-contents)
+   * [How to Play](#how-to-play)
+   * [Agile Methodology](#agile-methodology)
+      + [Project Goals](#project-goals)
+      + [Target Audience](#target-audience)
+      + [User Stories](#user-stories)
+         - [First time user](#first-time-user)
+         - [Game player](#game-player)
+      + [Development process](#development-process)
+   * [UX Design](#ux-design)
+   * [UI Design](#ui-design)
+      + [Components](#components)
+      + [Fonts](#fonts)
+      + [Colours](#colours)
+      + [Sounds](#sounds)
+      + [Images and Animations](#images-and-animations)
+      + [Wireframes](#wireframes)
+   * [Features](#features)
+      + [Home Page](#home-page)
+      + [Game Menu](#game-menu)
+      + [Game Page](#game-page)
+      + [Witches Kitchen](#witches-kitchen)
+      + [Rules Page](#rules-page)
+      + [Creators Page](#creators-page)
+   * [Technologies Used](#technologies-used)
+   * [Testing](#testing)
+   * [Deployment](#deployment)
+   * [Credits](#credits)
+   * [Acknowledgements](#acknowledgements)
+   * [Team](#team)
 
 ## How to Play
 - At the outset the player is assigned health points as well as levels for strength, agility and dexterity.
