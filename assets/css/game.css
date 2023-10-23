@@ -104,19 +104,9 @@ body {
     width: 2.5rem;
 }
 
-.character-hover::before {
-    content: "+";
-    position: absolute;
-    right: -1px;
-    width: 20px;
-    height: 20px;
-    background-color: green;
-    color: white;
-    text-align: center;
-    line-height: 15px;
-    border-radius: 50%;
-    font-size: 16px;
-    border: 1px solid black;
+.character-hover {
+    filter: drop-shadow(0px 0px 10px rgba(230, 158, 5, 0.737)) brightness(1.2) !important;
+    transition: filter 0.3s;
 }
 
 /* Navigation menu */
@@ -198,7 +188,12 @@ body {
     transition: transform 0.3s;
 }
 
-.player img {
-    /* object shadow */
+.player img, .villain img {
     filter: drop-shadow(0px 0px 10px rgba(215, 149, 8, 0.687));
+}
+
+.potion-hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s;
 }
