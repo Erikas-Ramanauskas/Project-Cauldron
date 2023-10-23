@@ -37,6 +37,7 @@ body{
     flex-direction: column;
     justify-content: flex-end;
     height: 100%;
+    overflow: visible;
 }
 
 #ingredients-list{
@@ -50,6 +51,7 @@ body{
     flex-wrap: wrap;
     padding: 3rem;
     position: relative;
+    overflow: visible;
 }
 
 #recipie-ingredients-container{
