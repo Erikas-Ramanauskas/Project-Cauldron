@@ -98,6 +98,7 @@ function attackBtnHandler() {
                 resetInventory();
                 displayPotions();
                 displayRound();
+                localStorage.setItem("potionsBrewed", JSON.stringify(0));
             })
     } else if (gameResult === false) {
         // player lost
@@ -116,6 +117,7 @@ function attackBtnHandler() {
                 resetInventory();
                 displayPotions();
                 displayRound();
+                localStorage.setItem("potionsBrewed", JSON.stringify(0))
             })
         // TODO: ask if player wants to play again using a modal
 
