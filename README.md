@@ -188,7 +188,35 @@ alt="wireframe of the rules page"></details>
 - Github Pages (for deployment)
 
 ## Testing
-See [TESTING.md](TESTING.md) for details.
+| # | Feature | Expected Outcome | Testing Performed | Pass/Fail |
+| :---: | :--- | :---: | :---: | :---: |
+| | Navigation | | | |
+| --- | --- | --- | --- | --- |
+| 1 | Home page - game | redirect to game | press button | ✅ |
+| 2 | Home page - kitchen | redirect to kitchen | press button | ✅ |
+| 3 | Home page - creators | redirect to creators page | press button | ✅ |
+| 4 | Home page - game rules | redirect to game rules page | press button | ✅ |
+| 5 | game rules - home page | redirect to home page | press button | ✅ |
+| -- | --- | --- | --- | --- |
+| | Game Engine | | | |
+| --- | --- | --- | --- | --- |
+| 6 | Drag potion to character | Stats changed + potion amount - 1 | drag potion | ✅ |
+| 7 | Reduce potion amount | Amount badge - 1 | drag potion | ✅ |
+| 8 | Increase / Decrease player stats | Player stats + potion stats | drag potion + attack | ✅ |
+| 9 | Increase / Decrease enemy stats | Enemy stats + potion stats | drag potion + attack | ✅ |
+| 10 | Game win | User feedback + new game | attack | ✅ |
+| 11 | Game lose | User feedback | attack | ✅ |
+| -- | --- | --- | --- | --- |
+| | Recipe Book | | | |
+| --- | --- | --- | --- | --- |
+| 12 | Open | Show recipe book | press icon | ✅ |
+| 13 | Close | Close recipe book | press icon | ✅ |
+| 14 | Next page | Show next potion stats + recipe | press icon | ✅ |
+| 15 | Previous page | Show previous potion stats + recipe | press icon | ✅ |
+| -- | --- | --- | --- | --- |
+| | Creators Page | | | |
+| --- | --- | --- | --- | --- |
+| 16 | Links to creator github / linkedin | Open page in new tab | press cards | ✅ |
 
 ## Deployment
 This site has been deployed from a GitHub repository using GitHub technology to GitHub Pages. The site can be accessed <a href="https://erikas-ramanauskas.github.io/Project-Cauldron/" target="_blank">here</a>.
