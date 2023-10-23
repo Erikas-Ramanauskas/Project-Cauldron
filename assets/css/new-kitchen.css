@@ -24,6 +24,7 @@ body{
     height: 100vh;
     width: 100vw;
     position: relative;
+    touch-action: none;
 }
 
 #recipie-ingredients-img{
@@ -49,7 +50,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 10rem;
+    padding: 5rem;
     position: relative;
     overflow: visible;
 }
@@ -198,6 +199,10 @@ body{
     text-align: center;
     text-wrap: nowrap;
     margin: 2rem;
+}
+
+.ingredient-for-recipie > div{
+    width: 5rem;
 }
 
 

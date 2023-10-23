@@ -1,7 +1,9 @@
-"use strict";
+// For Code institute Assesment
+// this file is left for further development but currently is not in use
 
-let draggables = document.getElementsByClassName("dragable");
-let cauldron = document.querySelector('.cauldron img');
+let draggables = document.getElementsByClassName("ingredient");
+let cauldron = document.querySelector('.cauldron');
+// cauldron-hover class to be added if we want effects on coldron
 let player = document.querySelector(".character-card img");
 let villain = document.querySelector(".villain-card img");
 
@@ -26,7 +28,7 @@ function preventOnDragStart(draggables) {
 
 
 function callAllDragables() {
-  draggables = document.getElementsByClassName("dragable");
+  draggables = document.getElementsByClassName("ingredient");
   addNewEventListeners("reset");
 }
 
@@ -38,7 +40,7 @@ function callAllDropables(itemType) {
         const data = [player, villain]
         findDropBoxesCenters(data);
     } else if (itemType === `ingredient`) {
-        cauldron = document.querySelector('.cauldron img');
+        cauldron = document.querySelector('.cauldron');
         findDropBoxesCenters(cauldron);
     } else {
         throw new Error(`Item type was not given`);
@@ -184,13 +186,14 @@ function findingMacthingSquares(mouseX, mouseY) {
 // removes highlight from all elements
 function removeHighlight() {
   cauldron.classList.remove(`highlight`);
-  player.classList.remove(`highlight`);
-  villain.classList.remove(`highlight`);
+  if (player) player.classList.remove(`highlight`);
+  if (villain) villain.classList.remove(`highlight`);
 }
 
 
 // reacts when the pointers is pressed on one of the shapes
 function onPointerDown(e) {
+  console.log(e);
   e.preventDefault();
   
     // cleasn up dragable element if it is not empty
@@ -231,6 +234,7 @@ function onPointerDown(e) {
 
 // pointerMove purpose is to find the pointer location on the screen
 function pointerMove(e) {
+  console.log(e);
     e.preventDefault();
     
   // removes any higlights
@@ -245,6 +249,7 @@ function pointerMove(e) {
 //Drag end works like onMouseUp and does all events right after.
 // used this instead of pointer up because while using draggable property pointer events dont triger.
 function pointerup(e) {
+  console.log(e);
   
   removeHighlight()
 
@@ -270,7 +275,7 @@ function pointerup(e) {
         if (target == `cauldron`) {
            const ingredientID = dropedElement.getAttribute("data-ingredient-id")
            //    call function to add ingredient to cauldron
-           console.log(ingredientID);
+           updateContentList(ingredientID)
             
           
           
@@ -301,4 +306,5 @@ function pointerup(e) {
   // cleaning up data after drag ended
   dragableItem = {};
 }
+
 

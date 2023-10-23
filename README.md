@@ -203,6 +203,71 @@ alt="wireframe of the rules page"></details>
 - Each of the creators have been assigned humorous titles in line with the overall fantasy/Halloween theme.
 ![creators-page](docs/images/features-creators.png)
 
+| # | Feature | Desirability | Importance | Viability | Delivered |
+| :---: | :--- | :---: | :---: | :---: | :---: |
+| | Home page | | | | |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Naviagtion-Game | 5 | 5 | 5 | ✅ |
+| 2 | Naviagtion-Kitchen | 5 | 5 | 5 | ✅ |
+| 3 | Naviagtion-How to play | 5 | 5 | 5 | ✅ |
+| 4 | Naviagtion-Credits | 2 | 3 | 5 | ✅ |
+| 5 | Logo - Link to home page | 1 | 1 | 5 | ❌ |
+| 6 | Background image | 5 | 2 | 5 | ✅ |
+| -- | --- | --- | --- | --- | --- |
+| | Game page | | | | |
+| --- | --- | --- | --- | --- | --- |
+| 7 | Link to home page | 2 | 2 | 4 | ✅ |
+| 8 | Button- Recipie book modal | 5 | 4 | 2 | ✅ |
+| 9 | Button- link to game rules page | 5 | 4 | 1 | ❌ |
+| 10 | Displayed player stats | 5 | 5 | 3 | ✅ |
+| 11 | Displayed Vilain Stats | 5 | 5 | 3 | ✅ |
+| 12 | Displayed Potions tab | 5 | 5 | 4 | ✅ |
+| 13 | Drag and drop functionality for ingredients and potions | 4 | 4 | 2 | ✅ |
+| 14 | Ingredients draged to coldroun turns in to potions | 5 | 5 | 3 | ✅ |
+| 15 | Displayed Enemy picture | 5 | 2 | 5 | ✅ |
+| 16 | Displayed Player picture | 5 | 2 | 5 | ✅ |
+| 17 | Link to kitchen page | 5 | 5 | 5 | ✅ |
+| 18 | Sound effects | 3 | 1 | 5 | ❌ |
+| 19 | Visual effects | 3 | 1 | 5 | ❌ |
+| -- | --- | --- | --- | --- | --- |
+| | Kitchen Page | | | | |
+| --- | --- | --- | --- | --- | --- |
+| 20 | Ability to see all posible ingredients | 5 | 5 | 5 | ✅ |
+| 21 | Ability to see potions and its stats within recipie book | 5 | 4 | 5 | ✅ |
+| 22 | Potions only avialable to see if they have been discovered | 1 | 1 | 5 | ❌ |
+| 23 | Draging ingredients to coldroun coldroun has visual effects | 3 | 1 | 4 | ✅ |
+| 24 | Dragging ingredients to cauldron plays audio | 2 | 1 | 5 | ✅ |
+| 25 | Brewed potions gets added to inventory | 5 | 5 | 3 | ✅ |
+| 26 | Page has a way to get back to the game | 5 | 5 | 5 | ✅ |
+| 27 | Page has a header displaying the page name | 2 | 1 | 5 | ❌ |
+| 28 | Player can see what potions have been put in cauldron | 4 | 2 | 2 | ✅ |
+| -- | --- | --- | --- | --- | --- |
+| | Creators page | | | | |
+| --- | --- | --- | --- | --- | --- |
+| 29 | Creator cards | 5 | 5 | 5 | ✅ |
+| 30 | Link to profiles | 5 | 4 | 5 | ✅ |
+| 31 | Visual effects | 3 | 1 | 5 | ✅ |
+| 32 | Background image | 5 | 1 | 5 | ✅ |
+| 33 | Navigation to home page | 5 | 5 | 5 | ✅ |
+| -- | --- | --- | --- | --- | --- |
+| | Game rules page | | | | |
+| --- | --- | --- | --- | --- | --- |
+| 34 | Game rules explanation | 5 | 5 | 5 | ✅ |
+| 35 | Navigation to home page | 5 | 5 | 5 | ✅ |
+| 36 | Navigation to game | 3 | 1 | 5 | ✅ |
+| 37 | Navigation to kitchen | 2 | 1 | 5 | ✅ |
+| -- | --- | --- | --- | --- | --- |
+| | Unique hero ideas | | | | |
+| --- | --- | --- | --- | --- | --- |
+| 38 | 3 diferent colour dice turns in to 2 black dice | | | | ❌ |
+| 39 | Sacrifice 3 life to get black random dice | | | | ❌ |
+| 40 | Have more dice overal then other heroes | | | | ❌ |
+| 41 | Turning certain 2 colour dice (Example blue) rewards 2 black random dice | | | | ❌ |
+| 42 | Sacrifice any dice to take away singe vilain fighting square | | | | ❌ |
+| 43 | Sarcifiice a dice to rerol 2 other dice | | | | ❌ |
+
+
+
 ## Technologies Used
 - HTML
 - CSS
@@ -249,6 +314,7 @@ This site has been deployed from a GitHub repository using GitHub technology to 
 
 ## Credits
 - ChatGPT was used to generate some of the images used in this project.
+- Midjorney AI used to generate villains.
 - Project and Readme templates were provided by Code Institute.
 - "Shadows Into Light" font is taken from Google Fonts.
 - Image for recipe book:

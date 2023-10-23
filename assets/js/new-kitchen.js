@@ -1,3 +1,6 @@
+// For Code institute Assesment
+// this file is left for further development but currently is not in use
+
 "use strict";
 
 let potions;
