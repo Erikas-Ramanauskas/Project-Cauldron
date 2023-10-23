@@ -4,7 +4,7 @@
 ![mockup](docs/images/mockup.png)
 
 ## Overview
-Witches Brew is a one player game against the computer. It combines elements of strategy and computer generated randomness – or good and bad luck from a player perspective! The player commences with a vitality level and levels of strength, agility and dexterity. As the game proceeds the player must fight off enemies that also have strength, agility and dexterity levels. Losing to enemies will reduce the players vitality level. However the player also starts with ingredients for potions and continues to gather them throughout the game. Different potions will affect the strength, agility and dexterity of the player or of the enemy thus affecting the players ability to win. Brew the right potions to stay alive, stay in the game and continue to beat your enemies!!
+Witches Brew is a one player game against the computer. The player commences with a health level and levels of strength, agility and dexterity. As the game proceeds the player must fight off enemies that also have strength, agility and dexterity levels. Against any given enemy the player will lose health points as a fight proceeds if the player's strength, agility and dexterity combined are less than that of the opponent. If the player's health points reach zero the game is over! However the player also has access to ingredients for making potions. Different potions will affect the strength, agility and dexterity of the player or of the enemy thus affecting the players ability to win. Brew the right potions to stay alive, stay in the game and continue to beat your enemies!!
 
 
 Live demo: https://Erikas-Ramanauskas.github.io/Project-Cauldron
@@ -14,7 +14,16 @@ Live demo: https://Erikas-Ramanauskas.github.io/Project-Cauldron
 
 
 ## How to Play
-...
+- At the outset the player is assigned health points as well as levels for strength, agility and dexterity.
+- In each round the player will face an enemy with its own strength, agility and dexterity levels
+- To defeat an enemy the player must fight the enemy using the Fight button.
+- Each time the fight button is clicked the totals for strength, agility and dexterity for both player and enemy at that given time are assessed. If the enemy is stronger the player loses a health point. Each time prior to clicking the fight button the player can brew potions that can affect player or enemy levels. This is key to the game strategy and is explained further below.
+- The player must keep fighting until the enemy is defeated or the the player runs out of health points.
+- If the player health points go to zero the game ends.
+- If you defeat an enemy you proceed to the next round and the health points are reset.
+- The player also has access to ingredients in the Witches Kitchen. These ingredients can be used to make potions. The potions can then be used to increase your levels or decrease those of your enemy as per the properties of the particular potion. The recipes for and properties of all potions are found in the recipe book.
+- At any point in the game a player can enter the Witches Kitchen and brew potions. The player can brew a maximum of ten potions against any one enemy.
+- Create your potions wisely. Win as many fights as you can. Stay alive!
 
 
 ## Agile Methodology
@@ -114,13 +123,32 @@ In particular:
 Images have been used to provide much of the colour for the site as outlined above. They are also used to create specific components of the game play. ChatGPT has been used to create some images and others have been sourced from freepik.com and attributed in the credits below.
 
 ### Wireframes
-...
+<details><summary>Home Page</summary>
+<img src="docs/images/home.png"
+alt="wireframe of the home page"></details>
+<details><summary>Game Page</summary>
+<img src="docs/images/game.png"
+alt="wireframe of the game page"></details>
+<details><summary>Kitchen Page</summary>
+<img src="docs/images/kitchen.png"
+alt="wireframe of the kitchen page"></details>
+<details><summary>Recipe Book</summary>
+<img src="docs/images/recipe-book.png"
+alt="wireframe of the recipe book"></details>
+<details><summary>Creators Page</summary>
+<img src="docs/images/creators.png"
+alt="wireframe of the creators page"></details>
+<details><summary>Rules Page</summary>
+<img src="docs/images/rules.png"
+alt="wireframe of the rules page"></details>
+
 
 ## Features
 ### Home Page
 - Designed to look like a game menu rather than a website home page.
 - Contains a colourful background image in keeping with the theme of the game.
 - A simple game menu is located front and centre.
+![home-page](docs/images/feature-home.png)
 ### Game Menu
 - This is the key feature on the home page.
 - Contains 4 buttons that are links leading to the Game Page, the Witches Kitchen, the Creators Page and the Rules Page
@@ -131,19 +159,23 @@ Images have been used to provide much of the colour for the site as outlined abo
 - Potions Area displays the brewed potions the player currently has available together with their properties and allows the player choose potions to use in the current round.
 - Kitchen button allows the player to visit the Witches Kitchen at any point to brew potions.
 - Clicking the Fight button allows the player to fight the enemy and complete the round once they are ready.
+![game-page](docs/images/feature-game.png)
 ### Witches Kitchen
 - Recipe Book image when clicked on opens the book and allows the player to view potions that can be brewed from the various ingredients.
 - The ingredients area shows currently available ingredients.
 - Drag and Drop allows available ingredients to be dragged and dropped into the Cauldron.
 - Dropping ingredients into the cauldron “mixes” them and dropping in ingredients in a combination from the book will create the specified potion.
 - The potions area displays created potions and these are then available in the Game Page also as described above.
+![kitchen-page](docs/images/feature-kitchen.png)
 ### Rules Page
 - Contains a text area outlining the rules of the game.
 - Buttons allow navigation to other pages. This simple navigation approach is consistent with the game style applied throughout.
+![rules-page](docs/images/feature-rules.png)
 ### Creators Page
 - Contains a simple card for each of the members of the team behind the project.
 - The cards are also links to each of the team members chosen personal website allowing users and players to find out more about the team.
 - Each of the creators have been assigned humorous titles in line with the overall fantasy/Halloween theme.
+![creators-page](docs/images/features-creators.png)
 
 ## Technologies Used
 - HTML

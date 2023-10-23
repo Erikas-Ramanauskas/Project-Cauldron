@@ -230,7 +230,14 @@ body{
     position: relative;
 }
 
+#recipie-ingredients img {
+    width: 20%;
+}
 
+#recipie-ingredients > div {
+    display: flex;
+    align-items: center;
+}
 
 
 @media screen and (max-width: 1024px) {

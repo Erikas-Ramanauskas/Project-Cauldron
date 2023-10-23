@@ -27,6 +27,10 @@ const draggableConfig = {
 document.addEventListener("DOMContentLoaded", function () {
     const ingredientElements = document.querySelectorAll('.ingredient');
 
+    document.querySelector('.back-btn').addEventListener('click', function () {
+        window.location.href = 'game.html';
+    });
+
     // parse json file
     fetch('assets/json/components_data.json')
         .then((response) => response.json())
@@ -42,17 +46,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 ingredientElements[i].setAttribute('data-name', ingredients[i].name);
             }
             checkLocalStorage()
-            createIngredientInventory();
     });
-
 
     document.querySelector('.cauldron').addEventListener('click', function () {
         brewPotion(potions, cauldronContents);
     });
 
-    // document.querySelector('.recipe-book').addEventListener('click', function () {
-    //     showRecipeBook();
-    // });
+    document.querySelector('.recipe-book').addEventListener('click', function () {
+        showRecipeBook();
+    });
 
     // for (let i = 0; i < ingredientElements.length; i++) {
     //     ingredientElements[i].addEventListener('mouseover', function () {
@@ -153,6 +155,15 @@ const dropdownAlert = document.querySelector('.dropdown-alert');
 const dropdownAlertText = document.querySelector('.dropdown-alert-text');
 
 function brewPotion(potions, cauldronContents) {
+    let potionsBrewed = JSON.parse(localStorage.getItem("potionsBrewed"));
+    if (!potionsBrewed) {
+        console.log('true')
+        localStorage.setItem("potionsBrewed", JSON.stringify(0))
+        potionsBrewed = 0;
+    }
+    console.log(potionsBrewed)
+    potionsBrewed += 1;
+    localStorage.setItem("potionsBrewed", JSON.stringify(potionsBrewed))
     // play 3 seconds of sound
     const audio = new Audio('assets/sounds/bubbling.wav');
     makeIngredientsNotDraggable();
@@ -171,11 +182,14 @@ function brewPotion(potions, cauldronContents) {
     for(let potion of potions) {
 
         if(arraysEqual(potion.ingredients, cauldronContents)) {
-            const potionsInInventory = getInventory().length;
-            dropdownAlertText.innerHTML = ` (${potionsInInventory+1}/10) You brewed: `;
+            let potionsInInventory = 0;
+            for (potion of getInventory()) {
+                potionsInInventory += potion.amount;
+            }
+            dropdownAlertText.innerHTML = ` (${potionsBrewed}/10) You brewed: `;
             const potionImg = document.createElement('div');
             potionImg.classList.add('dropdown-alert-img');
-            potionImg.style.backgroundImage = `url('Project-Cauldron/${potion.picture}')`;
+            potionImg.style.backgroundImage = `url('${potion.picture}')`;
             dropdownAlertText.appendChild(potionImg);
 
             // make the dropdown alert visible for 3 seconds, animate opacity using gsap
@@ -188,10 +202,10 @@ function brewPotion(potions, cauldronContents) {
             resetContentList(cauldronContents);
 
             console.log(potionsInInventory);
-            if (potionsInInventory < 10) {
+            if (potionsBrewed <= 10) {
                 addToInventory(potion);
             } else {
-                dropdownAlertText.innerHTML = 'Inventory full';
+                dropdownAlertText.innerHTML = 'No more potions allowed';
                 gsap.to(dropdownAlert, {duration: 0.5, opacity: 1});
                 setTimeout(function () {
                     gsap.to(dropdownAlert, {duration: 0.5, opacity: 0});
@@ -251,36 +265,5 @@ function addDiscoveredPotion(potionID) {
         localStorage.setItem('potions', JSON.stringify(potions));
     } else {
         console.log(`Potion with ID ${potionID} was not found.`);
-    }
-}
-
-function createIngredientInventory() {
-    const ingredientsInventory = document.getElementById("ingredients-list");
-    ingredientsInventory.innerHTML = "";
-
-    // loop through brewed potions and add them to the potions inventory
-    for (let i = 0; i < ingredients.length; i++) {
-        let parent = document.createElement("div");
-        parent.classList.add("ingredient");
-        let ingredient = document.createElement("img");
-
-        ingredient.setAttribute("src", ingredients[i].picture);
-        ingredient.setAttribute("alt", ingredients[i].name);
-        ingredient.classList.add("ingredient-img", "dragable");
-
-        parent.setAttribute("id", "ingredient-" + i);
-        parent.classList.add("ingredient-container");
-        parent.setAttribute("data-ingredient-id", i);
-        parent.setAttribute("data-item", "ingredient");
-        parent.setAttribute("data-ingredient-ammount", 0);
-
-        // tooltip
-        parent.setAttribute("data-bs-toggle", "tooltip");
-        parent.setAttribute("data-bs-placement", "top");
-        parent.setAttribute("data-bs-title", ingredients[i].name);
-
-        parent.appendChild(ingredient);
-
-        ingredientsInventory.appendChild(parent);
     }
 }

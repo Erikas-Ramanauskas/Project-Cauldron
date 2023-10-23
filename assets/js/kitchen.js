@@ -8,7 +8,7 @@ import { createInventory, resetInventory, getInventory, addToInventory, removeFr
 
 const draggableConfig = {
     onstart: function (event) {
-        
+
     },
     onmove: function (event) {
         var target = event.target;
@@ -49,9 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
         brewPotion(potions, cauldronContents);
     });
 
-    // document.querySelector('.recipe-book').addEventListener('click', function () {
-    //     showRecipeBook();
-    // });
+    document.querySelector('#recipie-book-img-container').addEventListener('click', function () {
+        showRecipeBook();
+    });
 
     // for (let i = 0; i < ingredientElements.length; i++) {
     //     ingredientElements[i].addEventListener('mouseover', function () {
@@ -81,11 +81,12 @@ document.addEventListener("DOMContentLoaded", function () {
             // Add the ingredient to the cauldron
             const ingredientName = ingredient.getAttribute('data-name');
             if (cauldronContents.length < 4){
-                cauldronContents.push(ingredientName);
-                updateContentList(ingredientName, ingredient.style.backgroundImage);
+                cauldronContents.push(ingredient.firstElementChild.getAttribute('alt'));
+                // get ingredient child element
+                updateContentList(ingredient.firstElementChild.getAttribute('alt'), ingredient.firstElementChild.getAttribute('src'));
             } else if (cauldronContents.length === 4) {
-                cauldronContents.push(ingredientName);
-                updateContentList(ingredientName, ingredient.style.backgroundImage);
+                cauldronContents.push(ingredient.firstElementChild.getAttribute('alt'));
+                updateContentList(ingredient.firstElementChild.getAttribute('alt'), ingredient.firstElementChild.getAttribute('src'));
                 // append greyscaled-image class to all ingredients
                 const ingredientsInventory = document.querySelectorAll('.ingredient');
                 for (let i = 0; i < ingredientsInventory.length; i++) {
@@ -151,7 +152,17 @@ function arraysEqual(arr1, arr2) {
 const dropdownAlert = document.querySelector('.dropdown-alert');
 const dropdownAlertText = document.querySelector('.dropdown-alert-text');
 
+
 function brewPotion(potions, cauldronContents) {
+    let potionsBrewed = JSON.parse(localStorage.getItem("potionsBrewed"));
+    if (!potionsBrewed) {
+        console.log('true')
+        localStorage.setItem("potionsBrewed", JSON.stringify(0))
+        potionsBrewed = 0;
+    }
+    console.log(potionsBrewed)
+    potionsBrewed += 1;
+    localStorage.setItem("potionsBrewed", JSON.stringify(potionsBrewed))
     // play 3 seconds of sound
     const audio = new Audio('assets/sounds/bubbling.wav');
     makeIngredientsNotDraggable();
@@ -171,7 +182,7 @@ function brewPotion(potions, cauldronContents) {
 
         if(arraysEqual(potion.ingredients, cauldronContents)) {
             const potionsInInventory = getInventory().length;
-            dropdownAlertText.innerHTML = ` (${potionsInInventory+1}/10) You brewed: `;
+            dropdownAlertText.innerHTML = ` (${potionsBrewed}/10) You brewed: `;
             const potionImg = document.createElement('div');
             potionImg.classList.add('dropdown-alert-img');
             potionImg.style.backgroundImage = `url('Project-Cauldron/${potion.picture}')`;
@@ -187,7 +198,7 @@ function brewPotion(potions, cauldronContents) {
             resetContentList(cauldronContents);
 
             console.log(potionsInInventory);
-            if (potionsInInventory < 10) {
+            if (potionsBrewed < 10) {
                 addToInventory(potion);
             } else {
                 dropdownAlertText.innerHTML = 'Inventory full';
@@ -212,17 +223,24 @@ function brewPotion(potions, cauldronContents) {
 }
 
 function updateContentList(ingredientName, ingredientImage) {
-    const contentList = document.querySelector('.content-list');
-    const contentItem = document.createElement('div');
-    const ingredientNameElement = document.createElement('h2');
 
-    contentItem.classList.add('content-item');
-    ingredientNameElement.classList.add('ingredient-name');
-    ingredientNameElement.innerHTML = ingredientName;
-    contentItem.appendChild(ingredientNameElement);
+    let parent = document.createElement("div");
+    let pictureFrame = document.createElement("div");
+    let ingredient = document.createElement("img");
+    let text = document.createElement("p");
+    console.log(ingredientName)
 
-    contentItem.style.backgroundImage = ingredientImage;
-    contentList.appendChild(contentItem);
+    ingredient.setAttribute("src", ingredientImage);
+    ingredient.setAttribute("alt", ingredientName);
+    ingredient.classList.add("ingredient-img", "dragable");
+    pictureFrame.appendChild(ingredient);
+
+    text.innerHTML = ingredientName;
+
+    parent.appendChild(pictureFrame);
+    parent.appendChild(text);
+
+    document.querySelector('.content-list').appendChild(parent);
 }
 
 function resetContentList(cauldronContents) {
@@ -250,6 +268,36 @@ function addDiscoveredPotion(potionID) {
         localStorage.setItem('potions', JSON.stringify(potions));
     } else {
         console.log(`Potion with ID ${potionID} was not found.`);
+    }
+}
+
+function addToIngredienstListHTML() {
+    const ingredientsInventory = document.getElementById("recipie-ingredients");
+    ingredientsInventory.innerHTML = "";
+
+    // loop through brewed potions and add them to the potions inventory
+    for (let i = 0; i < 5; i++) {
+        let parent = document.createElement("div");
+        let pictureFrame = document.createElement("div");
+        let ingredient = document.createElement("img");
+        let text = document.createElement("p");
+
+        ingredient.setAttribute("src", ingredients[i].picture);
+        ingredient.setAttribute("alt", ingredients[i].name);
+        ingredient.classList.add("ingredient-img", "dragable");
+        pictureFrame.appendChild(ingredient);
+
+        parent.setAttribute("id", "ingredient-" + i);
+        parent.classList.add("ingredient-for-recipie");
+        parent.setAttribute("data-ingredient-id", i);
+        parent.setAttribute("data-item", "ingredient");
+
+        text.innerHTML = ingredients[i].name;
+
+        parent.appendChild(pictureFrame);
+        parent.appendChild(text);
+
+        ingredientsInventory.appendChild(parent);
     }
 }
 
