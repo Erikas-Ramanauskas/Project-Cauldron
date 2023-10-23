@@ -272,9 +272,8 @@ function pointerup(e) {
            //    call function to add ingredient to cauldron
            console.log(ingredientID);
             
-            
-            
-            
+          
+          
         } else if (target == `player`) {
             const potionID = dropedElement.getAttribute("data-potion-id")
             //    call function to add potion to player

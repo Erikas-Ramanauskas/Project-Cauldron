@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    overflow-x: hidden;
+}
+
+:root {
+    --text: #eca72c;
+    --background: #504069;
+    --primary: #ee5622;
+    --secondary: #31263e;
+    --accent: #221E22;
+
+    --orange-color: #eca72c;
+    --dark-orange-color: #ee5622;
+    --black-color: #504069;
+    --white-color: #fff;
+}
+
+body{
+    background-image: url('../images/general/witches_kitchen_background.png');
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+#recipie-ingredients-img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: fill;
+}
+
+#ingredients-list-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+#ingredients-list{
+    background-image: url('../images/general/frame_cauldron_content.png');
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3rem;
+}
+
+#recipie-ingredients-container{
+    background-image: url('../images/general/frame_cauldron_content.png');
+    background-size: 100% 100%;
+    padding-top: 3rem ;
+}
+
+#recipie-ingredients-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+
+#recipie-ingredients{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0 3rem 3rem 3rem;
+}
+
+#recipie-book-img-container> img, 
+#return-buton-container> img{
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: fill;
+}
+
+.recipie-book-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.recipie-book-container .row{
+    height: 100%;
+    width: 100%;
+}
+
+#recipie-book-img-container,
+#return-buton-container{
+    aspect-ratio: 1/1;
+    width: 12rem;
+    border-radius: 50%;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+#recipie-book-img-container{
+   animation: pulse-gold 2s infinite;
+}
+
+#recipie-book-img-container:hover{
+   animation: pulse-gold 0.5s infinite;
+   cursor: pointer;
+}
+
+#return-buton-container{
+    animation: pulse-purple 2s infinite;
+}
+
+#return-buton-container:hover{
+   animation: pulse-purple 0.5s infinite;
+   cursor: pointer;
+}
+
+@keyframes pulse-purple {
+    0% {
+    box-shadow: 0 0 10px rgba(177, 1, 230, 0.5);
+    }
+    50% {
+    box-shadow: 0 0 20px rgba(177, 1, 230, 1);
+    }
+    100% {
+    box-shadow: 0 0 10px rgba(177, 1, 230, 0.5);
+    }
+}
+
+@keyframes pulse-gold {
+    0% {
+    box-shadow: 0 0 10px rgba(230, 150, 2, 0.5);
+    }
+    50% {
+    box-shadow: 0 0 20px rgba(230, 150, 2, 1);
+    }
+    100% {
+    box-shadow: 0 0 10px rgba(230, 150, 2, 0.5);
+    }
+}
+
+
+.recipie-book-container div a,
+.recipie-book-container div button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-aling{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#couldron-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#couldron-img-container{
+    height: 50vh;
+    aspect-ratio: 0.7/1;
+}
+
+#couldron-img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+.ingredient-for-recipie{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: auto;
+}
+
+/* current ingredients text targeting */
+.ingredient-for-recipie > p{
+    text-align: center;
+    text-wrap: nowrap;
+    margin: 2rem;
+}
+
+
+
+/* general ingredients images */
+.ingredient-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/*  current ingredients image targeting */
+.ingredient-for-recipie > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    width: 5rem; 
+}
+
+.ingredient-container {
+  padding: 3px;
+  width: 5rem; 
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+    #recipie-ingredients-header{
+        font-size: 1.5rem;
+    }
+    
+    .ingredient-container {
+     padding: 1px;
+     width: 4rem; 
+    }
+    
+    .ingredient-for-recipie > div{
+        display: inline-block; 
+        padding: 0;
+        width: 4rem; 
+    }
+    
+    .ingredient-for-recipie > p{
+         line-height: 1;
+         margin: 1rem;
+    }
+    
+    
+    #recipie-ingredients{
+        padding: 0, 0, 1rem, 0;
+
+    }
+    
+    #recipie-book-container{
+        padding-bottom: 0.5rem;
+    }
+    
+    #ingredients-list{
+        height: 100%;
+        align-content: space-around;    
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/*  */
+@media screen and (max-width: 992px) {
+    #recipie-ingredients-header{
+        font-size: 1.2rem;
+    }
+    
+    .ingredient-container {
+     padding: 1px;
+     width: 3rem; 
+    }
+    
+    #recipie-ingredients-container{
+        padding: 2rem 1rem 1rem 0 ;
+      
+    }
+    
+    .ingredient-for-recipie{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .ingredient-for-recipie > div{
+        display: inline-block; 
+        padding: 0;
+        width: 3rem; 
+    }
+    
+    .ingredient-for-recipie > p{
+         line-height: 1;
+         margin: 1rem;
+    }
+    
+    
+    #recipie-ingredients{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0;
+        padding: 0;
+    }
+    
+    #recipie-book-container{
+        padding-bottom: 0.5rem;
+    }
+    
+    #ingredients-list{
+       height: 100%;
+       align-content: space-around;    
+       padding: 1rem 5rem 1rem 5rem;
+    }
+    
+    #return-buton-container, 
+    #recipie-book-img-container{
+        width: 7rem;
+    }
+    
+    #couldron-img-container{
+        height: 45vh;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .ingredient-for-recipie > p{
+        display: none;
+    }
+    
+    #return-buton-container, 
+    #recipie-book-img-container{
+        width: 4rem;
+    }
+    
+       #couldron-img-container{
+        height: 25vh;
+    }
+    
+    #ingredients-list{
+       height: 100%;
+       align-content: space-around;    
+       padding: 1rem 2rem 1rem 2rem;
+    }
+    
+    .recipie-book-container{
+        height: auto;
+    }
+    
+    #recipie-ingredients-container{
+        padding: 1rem 2rem 2rem 1rem ;
+      
+    }
+}

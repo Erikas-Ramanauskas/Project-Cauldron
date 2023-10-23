@@ -13,9 +13,9 @@ function findPotionStats(id) {
 
 // function updates players html stats
 function playerStatsUpdate(strength, agility, dexterity, vitality) {
-    const addedStrength = Number(strength);
-    const addedAgility = Number(agility);
-    const addedDexterity = Number(dexterity);
+    const addedStrength = strength == "?" ? 0 : Number(strength);
+    const addedAgility = agility == "?" ? 0 : Number(agility);
+    const addedDexterity = dexterity == "?" ? 0 : Number(dexterity);
     const addedVitality = Number(vitality);
     
     playerStats.strength + addedStrength < 0 ? playerStats.strength = 0 : playerStats.strength += addedStrength;
@@ -39,9 +39,9 @@ function playerStatsUpdate(strength, agility, dexterity, vitality) {
 
 // function updates villain stats
 function villainStatsUpdate(strength, agility, dexterity) {
-    const addedStrength = Number(strength);
-    const addedAgility = Number(agility);
-    const addedDexterity = Number(dexterity);
+    const addedStrength = strength == "?" ? 0 : Number(strength);
+    const addedAgility = strength == "?" ? 0 : Number(strength);
+    const addedDexterity = strength == "?" ? 0 : Number(strength);
     
     villainStats.strength + addedStrength < 0 ? villainStats.strength = 0 : villainStats.strength += addedStrength;
     villainStats.agility + addedAgility < 0 ? villainStats.agility = 0 : villainStats.agility += addedAgility;
