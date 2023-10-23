@@ -1,10 +1,21 @@
 /* Game board */
+
+@font-face {
+    font-family: funny_witches;
+    src: url('/assets/fonts/witches_magic.ttf') format('truetype');
+}
+
+* {
+    font-family: 'funny_witches', sans-serif;
+}
+
 body {
     overflow-x: hidden;
     touch-action: none;
     background: url('../images/background_720.webp') no-repeat center center;
     background-size: cover;
 }
+
 #game-board {
     --bs-gutter-x: 0;
     display: flex;
@@ -18,19 +29,33 @@ body {
     justify-content: center;
     border: none;
 }
+
 .card-title {
     color: #eca72c;
 }
 
 .card-img-bottom {
-    width: 110%;
+    width: 100%;
+}
+
+.villain, .player {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
 }
 
 /* Stats */
 .card-header {
     max-width: 15rem;
 }
-.player-stats-section, .villain-stats-section {
+
+.player-stats-section,
+.villain-stats-section {
     background: url('../images/general/frame_stats.png') no-repeat center center;
     background-size: cover;
 }
@@ -41,8 +66,13 @@ body {
     --bs-progress-font-size: 0.55rem;
     border: 0.5px solid rgba(137, 133, 133, 0.311);
 }
+
 .progress-bar {
     border-radius: 10px;
+}
+
+.potion {
+    margin: 10px 3vw;
 }
 
 /* Potions */
@@ -51,6 +81,8 @@ body {
     min-height: 5rem;
     background: url('../images/general/frame_inventory.png') no-repeat center 0;
     background-size: cover;
+    position: absolute;
+    bottom: 0;
 }
 
 .potion-img {
@@ -59,7 +91,8 @@ body {
     display: block;
 }
 
-.grabbable, .potion-img:hover {
+.grabbable,
+.potion-img:hover {
     cursor: grab;
 }
 
@@ -84,4 +117,51 @@ body {
     border-radius: 50%;
     font-size: 16px;
     border: 1px solid black;
-  }
+}
+
+/* Navigation menu */
+
+.btn {
+    background: none;
+    border: none;
+}
+.btn:hover {
+    color: #eca72c;
+    background: none;
+    border: none;
+}
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    background: none;
+    border: none;
+}
+.dropdown {
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown-menu.show{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/general/frame_stats.png);
+    background-size: 172px;
+    background-repeat: no-repeat;
+    border: none;
+    width: 171px;
+    height: 82px;
+    --bs-dropdown-bg: none;
+}
+
+.menu_icon {
+    display: flex;
+    flex-direction: column;
+    color: var(--purple-color);
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.menu_icon:hover {
+    color: var(--ligth-orange-color);
+}

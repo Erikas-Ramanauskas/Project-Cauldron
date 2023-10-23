@@ -1,20 +1,70 @@
-.rules-button-box {
-    width: 60%;
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
+
+.btn {
+    width: 50%;
+}
+
 
 .rules-button-custom{
     margin: 3px;
 }
 
-.rules-background {
-    width: 90%;
-    background: url('../images/general/frame_kitchen_ingredients.png') no-repeat center center;
-    background-size: cover;
+.rules-card {
+    background-color: #504069af;
+    border-radius: 20px;
+    width: 90vw;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 50%;
+    align-items: center;
+    padding: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+
+    color: var(--ligth-orange-color);
+    font-size: 15px;
+    line-height: 30px;
+    font-family: sans-serif;
 }
 
-.rules-card {
-    width: 80%;
-    color: var(--black-color);
-    border-radius: 20px;
-    font-size: 15px;
+
+@media screen and (max-width: 768px)  {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 70%;
+    }
+    
+    .rules-card {
+        font-size: 22px;
+    }
+
+}
+
+@media screen and (max-width: 480px)  {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 70%;
+    }
+    
+    .rules-card {
+        font-size: 22px;
+    }
+
 }

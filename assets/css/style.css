@@ -1,28 +1,24 @@
 /* Global */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box !important;
-    font-family: 'UnifrakturMaguntia', sans-serif;
+    font-family: 'Shadows Into Light', cursive;
     letter-spacing: 1px;
 }
 
-:root {
-    --text: #eca72c;
-    --background: #504069;
-    --primary: #ee5622;
-    --secondary: #31263e;
-    --accent: #221E22;
-
+:root{
     --orange-color: #eca72c;
-    --dark-orange-color: #ee5622;
-    --black-color: #504069;
+    --ligth-orange-color: #f0c478;
+    --purple-color: #504069;
     --white-color: #fff;
 }
 
 body {
     overflow-x: hidden;
 }
+
 
 /* used for potions and ingredients that has current 0 value */
 .greyscaled-image {
@@ -35,7 +31,7 @@ body {
 }
 
 .black-color-text {
-    color: var(--black-color);
+    color: var(--purple-color);
 }
 
 .btn-custom-orange {
@@ -44,7 +40,7 @@ body {
 }
 
 .btn-custom-orange:hover {
-    background-color: var(--dark-orange-color);
+    background-color: var(--ligth-orange-color);
 }
 
 .white-color-text {
@@ -56,7 +52,7 @@ body {
 .main-heading {
     font-size: 65px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 70px;
     padding-bottom: 20px;
 }
 
@@ -90,3 +86,8 @@ body {
     color: inherit;
 }
 
+#playerSelect .modal-content {
+    background: rgb(49,38,62);
+    background: radial-gradient(circle, rgba(49,38,62,1) 0%, rgba(224, 178, 104, 0.806) 48%, rgba(0,0,0,1) 100%);;
+    color: #ffffff;
+}
