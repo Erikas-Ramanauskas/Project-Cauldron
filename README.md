@@ -117,7 +117,7 @@ In particular:
 
 
 ### Sounds
-...
+Short sounds such as a witches cackle have been used to add to the game atmosphere. These were sourced from <a href="https://freesound.org/">Freesound</a>.
 
 ### Images and Animations
 Images have been used to provide much of the colour for the site as outlined above. They are also used to create specific components of the game play. ChatGPT has been used to create some images and others have been sourced from freepik.com and attributed in the credits below.
@@ -188,7 +188,35 @@ alt="wireframe of the rules page"></details>
 - Github Pages (for deployment)
 
 ## Testing
-See [TESTING.md](TESTING.md) for details.
+| # | Feature | Expected Outcome | Testing Performed | Pass/Fail |
+| :---: | :--- | :---: | :---: | :---: |
+| | Navigation | | | |
+| --- | --- | --- | --- | --- |
+| 1 | Home page - game | redirect to game | press button | ✅ |
+| 2 | Home page - kitchen | redirect to kitchen | press button | ✅ |
+| 3 | Home page - creators | redirect to creators page | press button | ✅ |
+| 4 | Home page - game rules | redirect to game rules page | press button | ✅ |
+| 5 | game rules - home page | redirect to home page | press button | ✅ |
+| -- | --- | --- | --- | --- |
+| | Game Engine | | | |
+| --- | --- | --- | --- | --- |
+| 6 | Drag potion to character | Stats changed + potion amount - 1 | drag potion | ✅ |
+| 7 | Reduce potion amount | Amount badge - 1 | drag potion | ✅ |
+| 8 | Increase / Decrease player stats | Player stats + potion stats | drag potion + attack | ✅ |
+| 9 | Increase / Decrease enemy stats | Enemy stats + potion stats | drag potion + attack | ✅ |
+| 10 | Game win | User feedback + new game | attack | ✅ |
+| 11 | Game lose | User feedback | attack | ✅ |
+| -- | --- | --- | --- | --- |
+| | Recipe Book | | | |
+| --- | --- | --- | --- | --- |
+| 12 | Open | Show recipe book | press icon | ✅ |
+| 13 | Close | Close recipe book | press icon | ✅ |
+| 14 | Next page | Show next potion stats + recipe | press icon | ✅ |
+| 15 | Previous page | Show previous potion stats + recipe | press icon | ✅ |
+| -- | --- | --- | --- | --- |
+| | Creators Page | | | |
+| --- | --- | --- | --- | --- |
+| 16 | Links to creator github / linkedin | Open page in new tab | press cards | ✅ |
 
 ## Deployment
 This site has been deployed from a GitHub repository using GitHub technology to GitHub Pages. The site can be accessed <a href="https://erikas-ramanauskas.github.io/Project-Cauldron/" target="_blank">here</a>.
@@ -207,15 +235,13 @@ This site has been deployed from a GitHub repository using GitHub technology to 
 <a href="https://www.freepik.com/free-vector/alchemical-laboratory-with-magic-books-potions_37205185.htm#query=kitchen%20halloween%20game%20background&position=5&from_view=search&track=ais">Image by upklyak</a> on Freepik
 - Image for ripped paper images:
 <a href="https://www.freepik.com/free-vector/set-ripped-paper-cardboard-pieces-black_37340853.htm#query=ripped%20paper%20game%20art&position=48&from_view=search&track=ais">Image by upklyak</a> on Freepik
+- Sounds sourced from <a href="https://freesound.org/">Freesound</a>.
 
 ## Acknowledgements
 - Code Institute and the Hackathon team for running the Code Institute October 2023 Hackathon
 - Hackathon Facilitator Joy Zadan for guidance and encouragement.
 
 ## Team
-- Melody Shutt
-    - [GitHub](https://github.com/Melody-Lisa)
-    - [LinkedIn](http://www.linkedin.com/in/melodyshutt)
 - Pavlo Myskov
     - [GitHub](https://github.com/FlashDrag)
     - [LinkedIn](https://www.linkedin.com/in/pavlo-myskov)
