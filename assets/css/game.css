@@ -167,6 +167,13 @@ body {
     object-fit: contain;
 }
 
+.round {
+    position: absolute;
+    top: 50%; /* Move it 50% down from the top */
+    left: 50%; /* Move it 50% from the left */
+    transform: translate(-50%, -50%);
+}
+
 @media (min-width: 1200px) {
     .card-img-bottom {
         height: 400px;
