@@ -117,7 +117,7 @@ In particular:
 
 
 ### Sounds
-...
+Short sounds such as a witches cackle have been used to add to the game atmosphere. These were sourced from <a href="https://freesound.org/">Freesound</a>.
 
 ### Images and Animations
 Images have been used to provide much of the colour for the site as outlined above. They are also used to create specific components of the game play. ChatGPT has been used to create some images and others have been sourced from freepik.com and attributed in the credits below.
@@ -207,6 +207,7 @@ This site has been deployed from a GitHub repository using GitHub technology to 
 <a href="https://www.freepik.com/free-vector/alchemical-laboratory-with-magic-books-potions_37205185.htm#query=kitchen%20halloween%20game%20background&position=5&from_view=search&track=ais">Image by upklyak</a> on Freepik
 - Image for ripped paper images:
 <a href="https://www.freepik.com/free-vector/set-ripped-paper-cardboard-pieces-black_37340853.htm#query=ripped%20paper%20game%20art&position=48&from_view=search&track=ais">Image by upklyak</a> on Freepik
+- Sounds sourced from <a href="https://freesound.org/">Freesound</a>.
 
 ## Acknowledgements
 - Code Institute and the Hackathon team for running the Code Institute October 2023 Hackathon
