@@ -1,53 +1,14 @@
 // main variables
-import { getInventory, removeFromInventory, addToInventory, resetInventory } from "./inventory.js"
+import { getInventory, removeFromInventory, resetInventory } from "./inventory.js"
+import { getCharacter, setCurrentCharacter, getGameRound, setGameRound } from "./game_storage.js"
+import { displayPlayer, displayVillain, displayPotions } from "./game_board_display.js"
 import generateCharacters from './generate_characters.js';
 import applyPotion from './apply_potion.js';
 import attack from './attack.js';
 
 runGame();
 
-// save game round in local storage
-function setGameRound(turn) {
-    localStorage.setItem("turn", turn);
-}
-
-// get game round from local storage
-function getGameRound() {
-    let turn = localStorage.getItem("turn");
-    return turn;
-}
-
-// save character in local storage
-function setCurrentCharacter(character, characterName) {
-    localStorage.setItem(characterName, JSON.stringify(character));
-}
-
-// get character from local storage
-function getCharacter(characterName) {
-    let character = localStorage.getItem(characterName);
-    if (!character) {
-        character = {};
-    } else {
-        character = JSON.parse(character);
-    }
-    return character;
-}
-
-// generate characters
-function runRound(difficulty = 0.1) {
-    return generateCharacters(difficulty, "assets/images/hero.png")
-        .then(characters => {
-            let villain = characters.enemy;
-            let player = characters.player;
-
-            // save characters in local storage
-            setCurrentCharacter(villain, "villain");
-            setCurrentCharacter(player, "player");
-        })
-        .catch(err => {
-            console.error("Error generating characters:", err);
-        });
-}
+document.getElementById('attack-btn').addEventListener('click', attackBtnHandler);
 
 function runGame() {
     let turn = getGameRound();
@@ -76,6 +37,41 @@ function runGame() {
     }
 }
 
+// generate characters for new round
+function runRound(difficulty = 0.1) {
+    return generateCharacters(difficulty, "assets/images/hero.png")
+        .then(characters => {
+            let villain = characters.enemy;
+            let player = characters.player;
+
+            // save characters in local storage
+            setCurrentCharacter(villain, "villain");
+            setCurrentCharacter(player, "player");
+        })
+        .catch(err => {
+            console.error("Error generating characters:", err);
+        });
+}
+
+// adjust stats based on potion used
+function adjustStats(potionId, characterName) {
+    console.log(characterName);
+    let inventory = getInventory();
+    let potion = inventory.find(item => item.id === potionId);
+    let character = getCharacter(characterName);
+    character = applyPotion(character, potion);
+    setCurrentCharacter(character, characterName);
+
+    if (characterName === "player") {
+        displayPlayer(character);
+    } else {
+        displayVillain(character);
+    }
+
+    // remove potion from inventory
+    removeFromInventory(potionId);
+}
+
 // attack handler
 function attackBtnHandler () {
     let player = getCharacter("player");
@@ -88,7 +84,10 @@ function attackBtnHandler () {
         let turn = getGameRound();
         turn++;
         setGameRound(turn);
-        runRound()
+
+        let difficulty = turn * 0.1;
+        // run new round with increased difficulty
+        runRound(difficulty)
             .then(() => {
                 // get characters from local storage
                 let villain = getCharacter("villain");
@@ -117,129 +116,8 @@ function attackBtnHandler () {
     }
 }
 
-function displayPlayerImg() {
-    const characterId = localStorage.getItem('selectedCharacterId');
-    const characterName = localStorage.getItem('selectedCharacterName');
 
-    const playerName = document.querySelector('.player-name');
-    const playerCharacter = document.querySelector('.player img');
-
-    playerName.innerHTML = 'Player';
-
-    playerCharacter.setAttribute('src', 'assets/images/player/' + characterId + '.png');
-    playerCharacter.setAttribute('alt', characterName);
-};
-
-function displayPlayer(player) {
-    displayPlayerImg();
-
-    const playerHealth = document.querySelector('#player-hp');
-    const playerStrength = document.querySelector('#player-strength');
-    const playerAgility = document.querySelector('#player-agility');
-    const playerDexterity = document.querySelector('#player-dexterity');
-
-    playerHealth.setAttribute('aria-valuenow', player.health);
-    playerHealth.style.width = player.health + '%';
-
-    playerStrength.setAttribute('aria-valuenow', player.strength);
-    playerStrength.style.width = player.strength + '%';
-
-    playerAgility.setAttribute('aria-valuenow', player.agility);
-    playerAgility.style.width = player.agility + '%';
-
-    playerDexterity.setAttribute('aria-valuenow', player.dexterity);
-    playerDexterity.style.width = player.dexterity + '%';
-}
-
-function displayVillain(villain) {
-    const villainName = document.querySelector('#villainName');
-    const villainImage = document.querySelector('#villainImage');
-    const villainHealth = document.querySelector('#villain-hp');
-    const villainStrength = document.querySelector('#villain-strength');
-    const villainAgility = document.querySelector('#villain-agility');
-    const villainDexterity = document.querySelector('#villain-dexterity');
-
-    villainName.innerHTML = villain.name;
-    villainImage.setAttribute('src', villain.picture);
-
-    villainHealth.setAttribute('aria-valuenow', villain.health);
-    villainHealth.style.width = villain.health + '%';
-
-    villainStrength.setAttribute('aria-valuenow', villain.strength);
-    villainStrength.style.width = villain.strength + '%';
-
-    villainAgility.setAttribute('aria-valuenow', villain.agility);
-    villainAgility.style.width = villain.agility + '%';
-
-    villainDexterity.setAttribute('aria-valuenow', villain.dexterity);
-    villainDexterity.style.width = villain.dexterity + '%';
-
-}
-
-// adjust stats based on potion used
-function adjustStats(potionId, characterName) {
-    console.log(characterName);
-    let inventory = getInventory();
-    let potion = inventory.find(item => item.id === potionId);
-    let character = getCharacter(characterName);
-    character = applyPotion(character, potion);
-    setCurrentCharacter(character, characterName);
-
-    if (characterName === "player") {
-        displayPlayer(character);
-    } else {
-        displayVillain(character);
-    }
-
-    // remove potion from inventory
-    removeFromInventory(potionId);
-}
-/**
-* Adds brewed potions to the potions inventory
-*/
-function displayPotions() {
-    let potions = getInventory();   // get potions from local storage
-    let potionsInventory = document.getElementById("inventory-potions");
-    potionsInventory.innerHTML = "";
-    for (let potion of potions) {
-        const potionElement = document.createElement("li");
-        const potionImg = document.createElement("img");
-        const badge = document.createElement("span");
-
-        potionImg.setAttribute("src", potion.picture);
-        potionImg.setAttribute("alt", potion.name);
-        potionImg.classList.add("potion-img");
-
-        // // tooltip
-        potionElement.setAttribute("data-bs-html", true);
-        potionElement.setAttribute("data-bs-toggle", "tooltip");
-        potionElement.setAttribute("data-bs-placement", "top");
-        const tooltip = `
-            ${potion.name}<br>
-            <span class="text-danger">Strength</span>: ${potion.strength}<br>
-            <span class="text-success">Agility</span>: ${potion.agility}<br>
-            <span class="text-info">Dexterity</span>: ${potion.dexterity}
-        `
-        potionElement.setAttribute("data-bs-title", tooltip);
-
-        potionElement.classList.add("potion", "position-relative", "list-inline-item", "grabbable");
-        potionElement.setAttribute("id", "potion-" + potion.id);
-        potionElement.setAttribute("data-potion-id", potion.id);
-        potionElement.setAttribute("data-potion-ammount", 0);
-
-        // badge with potion amount
-        badge.classList.add("position-absolute", "top-0", "start-100", "translate-middle", "badge", "bg-secondary", "rounded-pill");
-        badge.innerHTML = potion.amount;
-
-        potionElement.appendChild(potionImg);
-        potionElement.appendChild(badge);
-
-        potionsInventory.appendChild(potionElement);
-
-        initializeTooltips();
-    }
-}
-
+// potions draggability
 const draggableConfig = {
     onstart: function (event) {
         event.target.classList.add('grabbing');
@@ -331,8 +209,8 @@ interact('.villain').dropzone({
     },
 });
 
+// ./potions draggability
 
-document.getElementById('attack-btn').addEventListener('click', attackBtnHandler);
 
 // Keyboard event for menu open
 document.addEventListener('keydown', function (event) {
