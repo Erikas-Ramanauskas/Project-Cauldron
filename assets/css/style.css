@@ -65,40 +65,7 @@ body {
     padding-bottom: 20px;
 }
 
-.logo-svg {
-  width: 50rem;
-  height: 10rem;
-}
 
-@media screen and (max-width: 1200px) {
-    .logo-svg {
-        width: 40rem;
-        height: 8rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .logo-svg {
-        width: 30rem;
-        height: 6rem;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .logo-svg {
-        width: 20rem;
-        height: 4rem;
-    }
-    
-}
-
-@media screen and (max-width: 400px) {
-    .logo-svg {
-        width: 15rem;
-        height: 3rem;
-    }
-    
-}
 
 
 .background {
@@ -140,6 +107,41 @@ body {
 
 /* svg path css */
 
+.logo-svg {
+  width: 50rem;
+  height: 10rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .logo-svg {
+        width: 40rem;
+        height: 8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo-svg {
+        width: 30rem;
+        height: 6rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .logo-svg {
+        width: 20rem;
+        height: 4rem;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    .logo-svg {
+        width: 15rem;
+        height: 3rem;
+    }
+    
+}
+
 
 .path {
   width: 50%;
@@ -158,7 +160,7 @@ body {
   }
 
   50% {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 200;
     fill: rgba(255, 255, 255, 0);
   }
 
@@ -170,4 +172,48 @@ body {
 
 svg {
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.9));
+}
+
+.letter-1 {
+  animation-delay: 0.2s;
+}
+
+.letter-2 {
+  animation-delay: 0.4s;
+}
+
+.letter-3 {
+  animation-delay: 0.6s;
+}
+
+.letter-4 {
+  animation-delay: 0.8s;
+}
+
+.letter-5 {
+  animation-delay: 1.0s;
+}
+
+.letter-6 {
+  animation-delay: 1.2s;
+}
+
+.letter-7 {
+  animation-delay: 1.4s;
+}
+
+.letter-8 {
+  animation-delay: 1.6s;
+}
+
+.letter-9 {
+  animation-delay: 1.8s;
+}
+
+.letter-10 {
+  animation-delay: 2s;
+}
+
+.letter-11 {
+  animation-delay: 2.1s;
 }
